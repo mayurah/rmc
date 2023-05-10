@@ -1,0 +1,5 @@
+base referer
+rect $class_r_t_r_xt_notifier.html 8,232 112,258
+rect $class_r_t_r_x_view_notifier.html 136,232 264,258
+rect $class_r_t_r_event_notifier_imp.html 54,82 204,109
+rect $class_r_t_r_event_notifier.html 65,8 193,34

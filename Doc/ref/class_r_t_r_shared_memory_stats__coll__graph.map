@@ -1,0 +1,5 @@
+base referer
+rect $class_r_t_r_timer_cmd.html 457,295 569,322
+rect $class_r_t_r_public_object.html 313,373 438,399
+rect $class_r_t_r_managed_object.html 193,295 337,322
+rect $class_r_t_r_lockable_obj.html 187,205 310,231

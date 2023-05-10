@@ -1,0 +1,32 @@
+! [MyHelperAdmin]
+! These parameters are used by MyHelperAdmin class to initialize
+! the shared memory and also to publish its memory statistics
+! to the shared memory.
+*.Publisher.admin.sharedMemoryKey      : 999
+*.Publisher.admin.semaphoreKey         : 999
+*.Publisher.admin.sharedMemorySize     : 20000
+*.Publisher.admin.maxClients           : 2
+*.Publisher.admin.enableMemoryStats    : True
+
+! [Logger]
+*.Publisher.logger.install_file_action    : True
+*.Publisher.logger.install_stderr_action  : False
+*.Publisher.logger.install_system_action  : False
+!*.Publisher.logger.display_configuration : False
+
+! [LogAction.FileAction]
+*.Publisher.logger.defaultFileAction.selector  : *.Info
+*.Publisher.logger.defaultFileAction.file      : Publisher.log
+*.Publisher.logger.defaultFileAction.max_bytes : 100000
+*.Publisher.logger.defaultFileAction.flush     : True
+*.Publisher.logger.defaultFileAction.truncate  : False
+*.Publisher.logger.defaultFileAction.enable    : True
+
+! [LogAction.StderrAction]
+*.Publisher.logger.defaultStdErrorAction.enable   : True
+*.Publisher.logger.defaultStdErrorAction.selector : *.Info
+
+! [LogAction.SystemAction]
+*.Publisher.logger.defaultSystemAction.enable   : True
+*.Publisher.logger.defaultSystemAction.selector : *.Info
+!

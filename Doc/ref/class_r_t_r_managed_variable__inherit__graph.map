@@ -1,0 +1,7 @@
+base referer
+rect $class_r_t_r_managed_boolean.html 8,157 160,184
+rect $class_r_t_r_managed_counter.html 184,157 336,184
+rect $class_r_t_r_managed_large_numeric.html 360,157 549,184
+rect $class_r_t_r_managed_numeric.html 573,157 728,184
+rect $class_r_t_r_managed_string.html 752,157 890,184
+rect $class_r_t_r_lockable_obj.html 393,8 516,34

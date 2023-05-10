@@ -1,0 +1,4 @@
+base referer
+rect $class_r_t_r_proxy_managed_boolean.html 109,232 296,258
+rect $class_r_t_r_proxy_managed_variable.html 109,157 296,184
+rect $class_r_t_r_lockable_obj.html 141,82 264,109

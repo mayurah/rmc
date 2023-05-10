@@ -1,0 +1,5 @@
+base referer
+rect $class_r_t_r_proxy_managed_gauge_config.html 21,381 240,408
+rect $class_r_t_r_proxy_managed_numeric.html 398,232 588,258
+rect $class_r_t_r_proxy_managed_variable.html 400,157 586,184
+rect $class_r_t_r_lockable_obj.html 432,82 554,109
