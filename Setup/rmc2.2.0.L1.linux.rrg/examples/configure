@@ -1,0 +1,446 @@
+#!/bin/sh
+echo " "
+echo "This configure utility will create a makefile for a specific platform."
+echo " "
+echo "Please answer the following questions regarding the environment in which "
+echo "you will be building the examples..."
+echo " " 
+echo " " 
+
+#
+# RMC_INSTALL_DIR
+#
+prompt="==> Enter the full pathname of the RMC node: "
+default=${RMC_INSTALL_DIR-`dirname \`pwd\``} # change
+echo " "
+echo "$prompt [$default]:"
+read response 
+if [ "$response" != "" ]; then
+	value=$response
+else
+	value=$default
+fi
+while [ ! -d "$value" ]; do
+	echo "The directory \"$value\" does not exist."
+	echo " "
+	echo "$prompt [$default]:"
+	read response 
+	if [ "$response" != "" ]; then
+		value=$response
+	else
+		value=$default
+	fi
+done
+RMC_INSTALL_DIR=$value #change
+echo "       ++ The RMC_INSTALL_DIR is set to $RMC_INSTALL_DIR"
+echo ""
+
+#
+# PLATFORM
+#
+
+prompt1="==> Enter the number of this platform: 
+
+     Currently supported UNIX platforms are:
+             <1> sun4_5.10 (Sparc)    - Solaris 10
+             <2> sun4_5.10.64 (Sparc) - Solaris 10 (64 bits)
+             <3> sun4_5.10 (x86)      - Solaris 10
+	     <4> sun4_5.10.64 (x86)   - Solaris 10 (64 bits)
+	     <5> linux5X 	      - RedHat AS 5.0 or Suse 11 
+	     <6> linux5X (x86_64)     - RedHat AS 5.0 or Suse 11 (64 bits)
+	     <7> linux6X 	      - RedHat AS 6.0 
+	     <8> linux6X (x86_64)     - RedHat AS 6.0 (64 bits)
+	     <9> linux7X (x86_64)     - OracleLinux 7.0 (64 bits)"
+
+default="0" 
+echo "$prompt1"
+read response 
+if [ "$response" != "" ]; then
+	value=$response
+else
+	value=$default
+fi
+while ( [ $value -lt 1 ] || [ $value -gt 10 ]); do
+	echo "You must choose from the list of integers (1-10)."
+	echo " "
+	echo "$prompt1"
+	read response 
+	if [ "$response" != "" ]; then
+		value=$response
+	else
+		value=$default
+	fi
+done
+case $value in
+1)
+        PLATFORM=SOL10_SPARC_32_SS12
+        EXTRA_LIBS="-lsocket -lnsl -lpthread -lposix4"
+        EXTRA_INCLUDES="-Dsun4 -Dsun4_SunOS_510 -DSOLARIS2 -Dsun4_SunOS_5X -DSYSENT_H -DTRACING_ENABLED -D_REENTRANT -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS"
+        ;;
+2)
+        PLATFORM=SOL10_SPARC_64_SS12
+        EXTRA_LIBS="-lsocket -lnsl -lpthread -lposix4"
+        EXTRA_INCLUDES="-Dsun4 -Dsun4_SunOS_510_64 -DSOLARIS2 -DCOMPILE_64BITS -Dsun4_SunOS_5X -DSYSENT_H -DTRACING_ENABLED -D_REENTRANT -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS"
+        ;;
+3)
+        PLATFORM=SOL10_X86_32_SS12
+        EXTRA_LIBS="-lsocket -lnsl -lpthread -lposix4"
+        EXTRA_INCLUDES="-Di86pc -Di86pc_SunOS_510 -DSOLARIS2 -Dsun4_SunOS_5X -DSYSENT_H -DDEV_LITTLE_ENDIAN -DTRACING_ENABLED -D_REENTRANT -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS"
+        ;;
+4)
+        PLATFORM=SOL10_X86_64_SS12
+        EXTRA_LIBS="-lsocket -lnsl -lpthread -lposix4"
+        EXTRA_INCLUDES="-Di86pc -Di86pc_SunOS_510_64 -DSOLARIS2 -DCOMPILE_64BITS -Dsun4_SunOS_5X -DSYSENT_H -DDEV_LITTLE_ENDIAN -DTRACING_ENABLED -D_REENTRANT -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS"
+        ;;
+5)
+        PLATFORM=RHEL5_32_GCC412
+        EXTRA_LIBS="-lpthread -lrt"
+        ;;
+6)
+        PLATFORM=RHEL5_64_GCC412
+        EXTRA_LIBS="-lpthread -lrt"
+        ;;
+7)
+        PLATFORM=RHEL6_32_GCC444
+        EXTRA_LIBS="-lpthread -lrt"
+        ;;
+8)
+        PLATFORM=RHEL6_64_GCC444
+        EXTRA_LIBS="-lpthread -lrt"
+        ;;
+9)
+        PLATFORM=OL7_64_GCC482
+        EXTRA_LIBS="-lpthread -lrt"
+        ;;
+esac
+echo "       ++ PLATFORM has been set to $PLATFORM"
+echo "" 
+
+
+
+#
+# RANLIB
+#
+case $PLATFORM in 
+"solaris8"|"hp"|SOL*)
+	RANLIB=ranlib
+	;;
+esac
+
+#
+# COMPILER
+#
+case $PLATFORM in
+SOL*)
+	COMPILER=ss12
+	compName="SunStudio12"
+	;;
+"RHEL5_32_GCC412")
+        EXTRA_INCLUDES="-Dx86_Linux_4X -Dx86_Linux_5X -D_iso_stdcpp_ -Dx86_Linux_CLOCK_MONOTONIC -DLinuxVersion=5 -D_REENTRANT -D_SVID_SOURCE=1 -D_BSD_SOURCE=1 -D_POSIX_SOURCE=1 -D_POSIX_C_SOURCE=199506L -D_XOPEN_SOURCE=500 -DLinux -DLINUX -DDEV_LITTLE_ENDIAN -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS -D_GNU_SOURCE -DTRACING_ENABLED"
+        COMPILER=gnu
+        compName="GNU"
+        ;;
+"RHEL5_64_GCC412")
+        EXTRA_INCLUDES="-Dx86_Linux_4X -Dx86_Linux_5X -D_iso_stdcpp_ -Dx86_Linux_CLOCK_MONOTONIC -DLinuxVersion=5 -DCOMPILE_64BITS -D_REENTRANT -D_SVID_SOURCE=1 -D_BSD_SOURCE=1 -D_POSIX_SOURCE=1 -D_POSIX_C_SOURCE=199506L -D_XOPEN_SOURCE=500 -DLinux -DLINUX -DDEV_LITTLE_ENDIAN -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS -D_GNU_SOURCE -DTRACING_ENABLED"
+        COMPILER=gnu
+        compName="GNU"
+        ;;
+"RHEL6_32_GCC444")
+        EXTRA_INCLUDES="-Dx86_Linux_4X -Dx86_Linux_5X -Dx86_Linux_6X -D_iso_stdcpp_ -Dx86_Linux_CLOCK_MONOTONIC -DLinuxVersion=6 -D_REENTRANT -D_SVID_SOURCE=1 -D_BSD_SOURCE=1 -D_POSIX_SOURCE=1 -D_POSIX_C_SOURCE=199506L -D_XOPEN_SOURCE=500 -DLinux -DLINUX -DDEV_LITTLE_ENDIAN -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS -D_GNU_SOURCE -DTRACING_ENABLED"
+        COMPILER=gnu
+        compName="GNU"
+        ;;
+"RHEL6_64_GCC444")
+        EXTRA_INCLUDES="-Dx86_Linux_4X -Dx86_Linux_5X -Dx86_Linux_6X -D_iso_stdcpp_ -Dx86_Linux_CLOCK_MONOTONIC -DLinuxVersion=6 -DCOMPILE_64BITS -D_REENTRANT -D_SVID_SOURCE=1 -D_BSD_SOURCE=1 -D_POSIX_SOURCE=1 -D_POSIX_C_SOURCE=199506L -D_XOPEN_SOURCE=500 -DLinux -DLINUX -DDEV_LITTLE_ENDIAN -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS -D_GNU_SOURCE -DTRACING_ENABLED"
+        COMPILER=gnu
+        compName="GNU"
+        ;;
+"OL7_64_GCC482")
+        EXTRA_INCLUDES="-Dx86_Linux_4X -Dx86_Linux_5X -Dx86_Linux_6X -D_iso_stdcpp_ -Dx86_64_OracleLinux_7X.64 -Dx86_Linux_CLOCK_MONOTONIC -DLinuxVersion=7 -DCOMPILE_64BITS -D_REENTRANT -D_SVID_SOURCE=1 -D_BSD_SOURCE=1 -D_POSIX_SOURCE=1 -D_POSIX_C_SOURCE=199506L -D_XOPEN_SOURCE=500 -DLinux -DLINUX -DDEV_LITTLE_ENDIAN -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS -D_GNU_SOURCE -DTRACING_ENABLED"
+        COMPILER=gnu
+        compName="GNU"
+        ;;
+esac
+echo "       ++ COMPILER has been set to $COMPILER"
+echo "       ++ NOTE: $compName is the only supported compiler on platform $PLATFORM."
+echo "" 
+
+#
+# PLATFORM_COMP
+#
+PLATFORM_COMP=$PLATFORM-$COMPILER
+echo "       ++ PLATFORM-COMPILER has been set to $PLATFORM_COMP"
+echo "" 
+
+#
+# REPOSITORY_NAME & PLATFORM_REPOSITORY_FLAGS
+#
+case $COMPILER in 
+"ss12")
+	REPOSITORY_NAME=
+	PLATFORM_REPOSITORY_FLAGS="-ptr"
+	;;
+"gnu")
+        REPOSITORY_NAME=
+        PLATFORM_REPOSITORY_FLAGS=
+        ;;
+*)
+	REPOSITORY_NAME="ptrepository"
+	PLATFORM_REPOSITORY_FLAGS="-ptr"
+	;;
+esac
+echo "       ++ REPOSITORY_NAME is set to ${REPOSITORY_NAME}"
+echo " " 
+echo "       ++ PLATFORM_REPOSITORY_FLAGS is set to ${PLATFORM_REPOSITORY_FLAGS}"
+echo " " 
+
+#
+# NO_STL
+#
+
+prompt="==> If you would like to use NO_STL libraries, please Enter 'y':" 
+
+echo $prompt
+read input
+if [ "$input" != "y" ]; then
+	RMC_SML_LIBRARY_NAME=librmcsml
+	RMC_SFSML_LIBRARY_NAME=librmcsfsml
+	RMC_CON_LIBRARY_NAME=librmccon
+	RMC_PUB_LIBRARY_NAME=librmcpub
+	RMC_THRD_LIBRARY_NAME=librmcpthrd
+	RMC_XTML_LIBRARY_NAME=librmcxtml
+	echo "set to STL"
+else
+	EXTRA_INCLUDES="$EXTRA_INCLUDES -D_RDEV_NO_STL_"	
+	RMC_SML_LIBRARY_NAME=librmcsml_NO_STL
+	RMC_SFSML_LIBRARY_NAME=librmcsfsml_NO_STL
+	RMC_CON_LIBRARY_NAME=librmccon_NO_STL
+	RMC_PUB_LIBRARY_NAME=librmcpub_NO_STL
+	RMC_THRD_LIBRARY_NAME=librmcpthrd_NO_STL
+	RMC_XTML_LIBRARY_NAME=librmcxtml_NO_STL
+	TYPE=NO_STL
+	SUF=_NO_STL
+	echo "set to NO_STL"
+fi
+
+#
+# CC
+#
+	
+prompt="==> Enter the full pathname of the **$compName** c++ compiler command:" # change 
+
+case $COMPILER in
+"ss12")
+	default=${CC-/usr/local/bin/CC} 
+	;;
+"gnu")
+        default=${CC-/usr/bin/g++}
+        ;;
+esac
+
+echo "$prompt [$default]:"
+read response 
+if [ "$response" != "" ]; then
+	value=$response
+else
+	value=$default
+fi
+
+while [ ! -x "$value" ] || [ -d "$value" ] || [ ! -f "$value" ]; do
+
+	echo " "
+	if [ -d "$value" ]; then
+		echo "       \"$value\" is a directory, not an executable. Choose again..."
+	else
+		if [ ! -f "$value" ]; then
+			echo "       \"$value\" does not exist! Choose again..."
+		else
+			if [ ! -x "$value" ]; then
+				echo "       \"$value\" is not executable:"
+				echo " "
+				echo "`ls -l $value`"
+				echo " "
+				echo "       Choose again..."
+			fi;
+		fi;
+	fi;
+
+	echo " "
+	echo "$prompt [$default]:"
+	read response 
+	if [ "$response" != "" ]; then
+		value=$response
+	else
+		value=$default
+	fi
+done
+CC=$value 
+echo " " 
+echo "       ++ CC is set to $CC"
+echo " " 
+
+#if [ "$PLATFORM" = "solaris8" ]; then
+case "$PLATFORM" in
+SOL*)
+
+#
+# X11_INCLUDE_DIR
+#
+case $PLATFORM in
+SOL*)
+	default=${X11_INCLUDE_DIR-/usr/openwin/include}
+	;;
+*)
+	default=""
+	;;
+esac
+
+prompt="==> Enter the full pathname of the X11 header include directory:"
+echo "$prompt [$default]:"
+read response
+if [ "$response" != "" ]; then
+	value=$response
+else
+	value=$default
+fi
+while [ ! -d "$value" ]; do
+	echo "The directory \"$value\" does not exist."
+	echo " "
+	echo "$prompt [$default]:"
+	read response
+	if [ "$response" != "" ]; then
+		value=$response
+	else
+		value=$default
+	fi
+done
+X11_INCLUDE_DIR=$value
+
+echo " "
+echo "     The X11_INCLUDE_DIR is set to $X11_INCLUDE_DIR"
+echo " "
+
+#
+# X11_LIB_DIR
+#
+case $PLATFORM in
+SOL*)
+	default=${X11_LIB_DIR-/usr/openwin/lib}
+	;;
+*)
+	default=""
+	;;
+esac
+
+prompt="==> Enter the full pathname of the X11 library directory:"
+echo "$prompt [$default]:"
+read response
+if [ "$response" != "" ]; then
+	value=$response
+else
+	value=$default
+fi
+while [ ! -d "$value" ]; do
+	echo "The directory \"$value\" does not exist."
+	echo " "
+	echo "$prompt [$default]:"
+	read response
+	if [ "$response" != "" ]; then
+		value=$response
+	else
+		value=$default
+	fi
+done
+X11_LIB_DIR=$value
+
+echo " "
+echo "     The X11_LIB_DIR is set to $X11_LIB_DIR"
+echo " "
+
+#fi  # end of section not to be included if we're on linux
+esac
+
+#
+# 32/64 bit flags
+#
+case $PLATFORM in
+"SOL10_SPARC_32_SS12")
+        CCOPT_FLAGS="-xtarget=ultra -xarch=sparc -m32"
+        ;;
+"SOL10_SPARC_64_SS12")
+        CCOPT_FLAGS="-xtarget=ultra3 -xarch=sparcvis -m64"
+        ;;
+"SOL10_X86_32_SS12")
+        CCOPT_FLAGS="-xtarget=opteron -xarch=sse2 -m32"
+        ;;
+"SOL10_X86_64_SS12")
+        CCOPT_FLAGS="-xtarget=opteron -xarch=sse2 -m64"
+        ;;
+"RHEL5_32_GCC412")
+        CCOPT_FLAGS="-m32"
+        ;;
+"RHEL5_64_GCC412")
+	CCOPT_FLAGS="-m64"
+	;;
+"RHEL6_32_GCC444")
+        CCOPT_FLAGS="-m32"
+        ;;
+"RHEL6_64_GCC444")
+	CCOPT_FLAGS="-m64"
+	;;
+"OL7_64_GCC482")
+	CCOPT_FLAGS="-m64"
+	;;
+esac
+
+echo ""
+echo "Creating a new \"makefile.include\" based on the information "
+echo "you have provided..."
+sed "
+s#@RMC_INSTALL_DIR@#$RMC_INSTALL_DIR#g
+s#@PLATFORM@#$PLATFORM#g
+s#@COMPILER@#$COMPILER#g
+s#@PLATFORM_COMP@#$PLATFORM_COMP#g
+s#@PLATFORM_COMP@#$PLATFORM_COMP#g
+s#@CC@#$CC#g
+s#@REPOSITORY_NAME@#$REPOSITORY_NAME#g
+s#@PLATFORM_REPOSITORY_FLAGS@#$PLATFORM_REPOSITORY_FLAGS#g
+s#@RANLIB@#$RANLIB#g
+s#@X11_INCLUDE_DIR@#$X11_INCLUDE_DIR#g
+s#@X11_LIB_DIR@#$X11_LIB_DIR#g
+s#@EXTRA_LIBS@#$EXTRA_LIBS#g
+s#@EXTRA_INCLUDES@#$EXTRA_INCLUDES#g
+s#@CCOPT_FLAGS@#$CCOPT_FLAGS#g
+s#@RMC_SML_LIBRARY_NAME@#$RMC_SML_LIBRARY_NAME#g
+s#@RMC_SFSML_LIBRARY_NAME@#$RMC_SFSML_LIBRARY_NAME#g
+s#@RMC_CON_LIBRARY_NAME@#$RMC_CON_LIBRARY_NAME#g
+s#@RMC_PUB_LIBRARY_NAME@#$RMC_PUB_LIBRARY_NAME#g
+s#@RMC_THRD_LIBRARY_NAME@#$RMC_THRD_LIBRARY_NAME#g
+s#@RMC_XTML_LIBRARY_NAME@#$RMC_XTML_LIBRARY_NAME#g
+s#@NO_STL_FLAG@#$NO_STL_FLAG#g
+s#@TYPE@#$TYPE#g
+s#@SUF@#$SUF#g
+" <makefile.in >makefile.include
+echo ""
+echo "Done."
+echo " "
+echo " "
+echo "NOTE: If the example programs have already been built for another platform"
+echo "and compiler, invoke \"make -f Makefile clean\" to remove all object"
+echo "files and executables before attempting another build."
+echo " "
+echo " "
+echo "You may now invoke builds for any of the example directories."
+echo " "
+echo "First, invoke \"make -f Makefile ranl\" to run ranlib on the RMC libraries, "
+echo "if applicable."
+echo " "
+echo "Then you can build the examples. Here are your options:"
+echo "   - invoke \"make -f Makefile\" to build ALL examples"
+echo "   - change directory to one of the example directories and invoke \"make\" "
+echo "   - change directory to one of the example directories and invoke \"make\" "
+echo "     along with the name of an example to build. Only that example will "
+echo "     be built. "
+echo " "
+echo "END RMC Makefile configuration."
+echo " "

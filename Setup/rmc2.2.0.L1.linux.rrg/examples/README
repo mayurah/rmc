@@ -1,0 +1,28 @@
+This directory contains the following:
+* configure
+    - shell script used on Unix platorms to setup the environment to build
+      examples on a specific platform and compiler. This script asks the 
+      user questions regarding the platform, compiler and various utility 
+      paths and creates a makefile, "makefile.include", that is included by 
+      all other makefiles.
+
+* makefile.in 
+    - template makefile used by the configure script.
+
+============================================
+BUILDING THE RMC EXAMPLES ON UNIX PLATFORMS:
+============================================
+
+In order to build the RMC examples, the following steps must be taken:
+
+1) Invoke "sh ./configure" and answer all of the questions is asks.
+   You will need to know your platform, C++ compiler path.
+
+2) Invoke "make" in the desired sub-directory. This will build all the
+   examples the sub directory.
+   
+   Optionally, you can also build a particular example by invoking
+   "make X" where "X" is the name of a specific example to build.
+
+Note that all executables and object files are put into the same directory 
+where the source code resides.

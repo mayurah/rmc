@@ -1,0 +1,25 @@
+ICOS Reference                : 5757 
+
+Program Name                  : Refinitiv Management Classes 
+
+Program Version               : 2.X 
+
+Sub-Products                  : NONE 
+
+Classification
+--------------
+
+US ECCN                       : EAR99 
+
+EU ECCN                       : None 
+
+Refinitiv Export Code   : NL 
+
+Export Note                   : This export code means ‘Not Licensable’ and 
+                                is applied to items that can be exported 
+                                ‘no license required’, under both EU and US 
+                                regulations. Exports of NL items can be 
+                                made to all countries except embargoed 
+                                countries (Cuba, Iran, Sudan, Syria, and 
+                                North Korea). 
+

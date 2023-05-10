@@ -1,0 +1,4 @@
+base referer
+rect $class_r_t_r_server_shared_memory_root.html 366,970 574,997
+rect $class_r_t_r_shared_memory_stats.html 385,1021 556,1048
+rect $class_r_t_r_shm_m_o_server_mem_pool.html 373,1122 568,1149

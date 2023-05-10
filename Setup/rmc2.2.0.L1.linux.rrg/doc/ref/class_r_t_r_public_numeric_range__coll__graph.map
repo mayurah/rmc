@@ -1,0 +1,5 @@
+base referer
+rect $class_r_t_r_managed_numeric_range.html 250,480 445,506
+rect $class_r_t_r_managed_numeric.html 270,402 425,429
+rect $class_r_t_r_managed_variable.html 153,296 305,322
+rect $class_r_t_r_lockable_obj.html 186,205 309,232
