@@ -1,5 +1,0 @@
-base referer
-rect $class_r_t_r_public_object.html 685,231 810,258
-rect $class_r_t_r_lockable_obj.html 255,82 378,109
-rect $class_r_t_r_managed_process.html 578,306 730,333
-rect $class_r_t_r_shared_memory_stats.html 754,306 925,333

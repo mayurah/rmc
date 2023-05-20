@@ -1,6 +1,0 @@
-base referer
-rect $class_r_t_r_managed_gauge.html 438,58 582,85
-rect $class_r_t_r_managed_numeric_config.html 413,109 608,135
-rect $class_r_t_r_managed_numeric_range.html 413,159 608,186
-rect $class_r_t_r_public_numeric.html 442,362 578,389
-rect $class_r_t_r_managed_variable.html 9,185 161,211

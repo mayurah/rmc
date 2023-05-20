@@ -1,5 +1,0 @@
-base referer
-rect $class_r_t_r_select_notifier.html 397,160 527,186
-rect $class_r_t_r_windows_notifier.html 389,261 535,288
-rect $class_r_t_r_x_event_notifier.html 394,312 530,338
-rect $class_r_t_r_event_notifier.html 7,160 135,186

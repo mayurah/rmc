@@ -1,9 +1,0 @@
-base referer
-rect $class_r_t_r_managed_object.html 242,7 386,34
-rect $class_r_t_r_managed_object_directory.html 216,58 413,85
-rect $class_r_t_r_managed_variable.html 238,109 390,135
-rect $class_r_t_r_proxy_managed_object.html 225,311 404,338
-rect $class_r_t_r_proxy_managed_object_class_directory.html 182,362 446,389
-rect $class_r_t_r_proxy_managed_object_server.html 205,413 424,439
-rect $class_r_t_r_proxy_managed_object_server_pool.html 192,463 437,490
-rect $class_r_t_r_proxy_managed_variable.html 221,514 408,541

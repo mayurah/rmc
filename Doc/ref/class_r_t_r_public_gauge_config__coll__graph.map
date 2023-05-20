@@ -1,6 +1,0 @@
-base referer
-rect $class_r_t_r_managed_gauge_config.html 255,557 439,583
-rect $class_r_t_r_managed_gauge.html 275,479 419,506
-rect $class_r_t_r_managed_numeric.html 270,402 425,429
-rect $class_r_t_r_managed_variable.html 153,295 305,322
-rect $class_r_t_r_lockable_obj.html 186,205 309,231

@@ -1,5 +1,0 @@
-base referer
-rect $class_r_t_r_managed_process.html 8,306 160,333
-rect $class_r_t_r_shared_memory_stats.html 184,306 354,333
-rect $class_r_t_r_managed_object.html 104,157 248,183
-rect $class_r_t_r_lockable_obj.html 46,82 169,109

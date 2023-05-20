@@ -1,6 +1,0 @@
-base referer
-rect $class_r_t_r_managed_boolean_config.html 165,306 357,333
-rect $class_r_t_r_public_boolean.html 381,306 514,333
-rect $class_r_t_r_managed_variable.html 185,157 337,184
-rect $class_r_t_r_lockable_obj.html 132,82 254,109
-rect $class_r_t_r_public_boolean_config.html 272,381 445,408
