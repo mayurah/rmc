@@ -1,0 +1,118 @@
+########### 0
+pmosp event: Added a pmos  @Connected
+pmos is inSync
+pmos event: in Sync  @Connected
+found handle to an mo: 
+     instance identifier is jabdlpc0042.1.ads
+     name is jabdlpc0042.1.ads
+     class identifier is ManagedProcess.SinkDist
+*****************************************0
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.sink.server.ws.transmissionBus.
+     name is sink.server.ws.transmissionBus.
+     class identifier is WSOCKServer
+*****************************************1
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.sink.server.ripc.transmissionBus
+     name is sink.server.ripc.transmissionBus
+     class identifier is RIPCServer
+*****************************************2
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.clientSessionThread.4
+     name is clientSessionThread.4
+     class identifier is clientSessionThread
+*****************************************3
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.clientSessionThread.3
+     name is clientSessionThread.3
+     class identifier is clientSessionThread
+*****************************************4
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.clientSessionThread.2
+     name is clientSessionThread.2
+     class identifier is clientSessionThread
+*****************************************5
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.clientSessionThread.1
+     name is clientSessionThread.1
+     class identifier is clientSessionThread
+*****************************************6
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.sslConnectionManager
+     name is sslConnectionManager
+     class identifier is SSLConnectionManager
+*****************************************7
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.sink.server.ipc.transmissionBus
+     name is sink.server.ipc.transmissionBus
+     class identifier is IPCServer
+*****************************************8
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.userDatabase
+     name is userDatabase
+     class identifier is ConsumerDb.SinkDist
+*****************************************9
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.itemDatabase
+     name is itemDatabase
+     class identifier is itemDatabase
+*****************************************10
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.serviceDB
+     name is serviceDB
+     class identifier is StreamServiceMonitor
+*****************************************11
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.netRecDB
+     name is netRecDB
+     class identifier is SinkNetRecSinkSvr
+*****************************************12
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.sinkSide.rrcp6.transmissionBus
+     name is sinkSide.rrcp6.transmissionBus
+     class identifier is TransmissionBus
+*****************************************13
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.rrcpTransport.1.sinkSide.rrcp.transmissionBus
+     name is rrcpTransport.1.sinkSide.rrcp.transmissionBus
+     class identifier is rrcpTransmissionBus
+*****************************************14
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.rrmpMarketDataAgent
+     name is rrmpMarketDataAgent
+     class identifier is MarketDataAgent
+*****************************************15
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.trlsManager
+     name is trlsManager
+     class identifier is TrlsManager
+*****************************************16
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.latencyMonitor
+     name is latencyMonitor
+     class identifier is LatencyMonitor
+*****************************************17
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.fidDatabase
+     name is fidDatabase
+     class identifier is SSLFidDatabase
+*****************************************18
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.debugLogger
+     name is debugLogger
+     class identifier is DebugLog
+*****************************************19
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.dacs
+     name is dacs
+     class identifier is DacsConnectionMgr
+*****************************************20
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.ThreadBindingStats
+     name is ThreadBindingStats
+     class identifier is ThreadBindingStats
+*****************************************21
+found child handle to an root: 
+     instance identifier is jabdlpc0042.1.ads.admin.MemoryStats
+     name is admin.MemoryStats
+     class identifier is ShmemMOServerStats

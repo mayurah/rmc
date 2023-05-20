@@ -1,0 +1,153 @@
+#**************************************************************************
+#
+#
+# (C) Copyright 2008,2020 Refinitiv; All rights reserved
+#
+#
+#***************************************************************************
+#
+# This Makefile contains variables that define the libraries, utilities and
+# options used to build RMC example programs.
+#
+# IMPORTANT NOTE: Several variables in this file MUST be set by the user 
+# before attempting to build any examples. In particular, these variables 
+# define the location of:
+#
+#	* the C++ compiler
+#	* the make utility
+#   * the directory in which the RMC is installed
+#
+#
+#===========================================================================
+# MANDATORY USER DEFINED VARIABLES
+#	YOU MUST SET UP THE FOLLOWING VARIABLES!
+#===========================================================================
+
+# The PLATFORM variable defines the name of the platform. Valid values
+# are: sun4, sun4_5.4, hp, nt
+PLATFORM=OL7_64_GCC482
+
+# The COMPILER variable defines the type of compiler that is used. Valid
+# values are: 
+#       oc - ObjectCenter for sun4, sun4_5.4, hp
+#       sw - SparcWorks for sun4, sun4_5.4
+#	s1s - SunOne Studio for sun4_5.X
+#       ms - Micosoft Visual C++ for NT
+COMPILER=gnu
+
+# The CC variable defines the path to the C++ compiler.
+#
+# For example: CC=/usr/bin/CC
+CC=/usr/bin/g++
+
+# The RMC_INSTALL_DIR determines the full path of the directory in which
+# the RMC is installed. (The directory RMC_INSTALL_DIR contains, among
+# others, the include, lib and rmc directories.)
+#
+# For example: RMC_INSTALL_DIR=/usr/refinitiv/rmc
+RMC_INSTALL_DIR=/opt/rmc-lib-sdk
+
+# The RANLIB variable defines the the ranlib command, if it exists. 
+# If this is null, it implies no ranlib is available or needed for the
+# given platform.
+#
+# For example: RANLIB=ranlib
+RANLIB=
+
+# The X11_INCLUDE_DIR variable defines the path to the X11
+# header files
+#
+X11_INCLUDE_DIR=
+
+# The X11_LIB_DIR variable defines the path to the X11 libraries
+#
+X11_LIB_DIR=
+
+# The EXTRA_LIBS variable defines any extra libraries needed for this platform. 
+EXTRA_LIBS=-lpthread -lrt
+
+# The EXTRA_INCLUDES variable defines any extra included directories or defines
+# needed for this platform. 
+EXTRA_INCLUDES=-Dx86_Linux_4X -Dx86_Linux_5X -Dx86_Linux_6X -D_iso_stdcpp_ -Dx86_64_OracleLinux_7X.64 -Dx86_Linux_CLOCK_MONOTONIC -DLinuxVersion=7 -DCOMPILE_64BITS -D_REENTRANT -D_SVID_SOURCE=1 -D_BSD_SOURCE=1 -D_POSIX_SOURCE=1 -D_POSIX_C_SOURCE=199506L -D_XOPEN_SOURCE=500 -DLinux -DLINUX -DDEV_LITTLE_ENDIAN -DDEV_POS_THR -D_POSIX_PTHREAD_SEMANTICS -D_GNU_SOURCE -DTRACING_ENABLED -D_RDEV_NO_STL_
+
+# Flag for 32/64 bit
+CCOPT_FLAGS=-m64
+
+# Suffix for NO_STL
+TYPE=NO_STL
+SUF=_NO_STL
+
+#===========================================================================
+# END MANDATORY USER DEFINED VARIABLES
+#===========================================================================
+
+#===========================================================================
+# OPTIONAL USER DEFINED VARIABLES
+#	THESE VARIABLES MAY BE REDEFINED, BUT PRESET VALUES ARE PROVIDED.
+#===========================================================================
+
+# The COMPILER_SUFFIX determines the version of RMC library to be used.
+#
+# For example, to compile with the assertion version of libraries use:     
+# COMPILER_SUFFIX=-a
+# 
+# To compile with the non-assertion version of libraries,
+# leave the variable blank: 
+# COMPILER_SUFFIX=
+
+COMPILER_SUFFIX=
+
+#===========================================================================
+# END OPTIONAL USER DEFINED VARIABLES
+#===========================================================================
+
+#===========================================================================
+# PREDEFINED VARIABLES
+#	YOU SHOULD NOT NEED TO CHANGE THESE VARIABLES.
+#===========================================================================
+
+# Platform and compiler
+#PLATFORM_COMP=$(PLATFORM)-$(COMPILER)
+PLATFORM_COMP=$(PLATFORM)
+
+# Header include directories
+HEADER_INCLUDE=-I$(RMC_INSTALL_DIR)/include $(EXTRA_INCLUDES)
+
+# RMC Setup
+RMC_LIB_DIR=$(RMC_INSTALL_DIR)/lib/$(PLATFORM_COMP)
+
+MC_LIB_DIR=$(RMC_INSTALL_DIR)/lib/$(PLATFORM_COMP)
+
+# RMC Select Notifier Mainloop library
+RMC_SML_LIBRARY=$(RMC_LIB_DIR)/librmcsml_NO_STL$(COMPILER_SUFFIX).a
+
+# RMC Safe Sig Notifier Mainloop library
+RMC_SFSML_LIBRARY=$(RMC_LIB_DIR)/librmcsfsml_NO_STL$(COMPILER_SUFFIX).a
+
+# RMC Consumer library
+RMC_CON_LIBRARY=$(RMC_LIB_DIR)/librmccon_NO_STL$(COMPILER_SUFFIX).a
+
+# RMC Publisher library
+RMC_PUB_LIBRARY=$(RMC_LIB_DIR)/librmcpub_NO_STL$(COMPILER_SUFFIX).a
+
+# RMC Thread library
+RMC_THRD_LIBRARY=$(RMC_LIB_DIR)/librmcpthrd_NO_STL$(COMPILER_SUFFIX).a
+
+# RMC XT Mainloop library
+RMC_XTML_LIBRARY=$(RMC_LIB_DIR)/librmcxtml_NO_STL$(COMPILER_SUFFIX).a $(EXTRA_LIBS)
+
+#RMC Browser Library
+RMC_BROWSER_LIBRARY=$(RMC_XTML_LIBRARY) $(RMC_CON_LIBRARY) $(RMC_THRD_LIBRARY)
+
+#RMC Publisher Library
+RMC_PUBLISHER_LIBRARY=$(RMC_SFSML_LIBRARY) $(RMC_PUB_LIBRARY) $(RMC_THRD_LIBRARY) $(EXTRA_LIBS)
+
+#RMC MonitorRoots Library
+RMC_MONITORROOTS_LIBRARY=$(RMC_THRD_LIBRARY) $(RMC_SML_LIBRARY) $(RMC_CON_LIBRARY) $(EXTRA_LIBS)
+
+#RMC Library
+RMC_LIBRARY=$(RMC_CON_LIBRARY) $(RMC_PUB_LIBRARY)
+
+#===========================================================================
+# END PREDEFINED VARIABLES
+#===========================================================================

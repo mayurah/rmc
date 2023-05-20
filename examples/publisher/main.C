@@ -120,8 +120,8 @@ int main(int argc, char **argv)
 
 	// Either use RTRServerSharedMemoryRoot code shown below
 	// or utilize the MyHelperAdmin helper class
-	/*	
-	RTRServerSharedMemoryRoot shm(appId, "sharedmem", "99", "99", 5, 30000, 2);
+
+	RTRServerSharedMemoryRoot shm(appId, "sharedmem", "82", "82", 5, 30000, 2);
 
 	if (shm.error()) return -1;
 
@@ -138,15 +138,14 @@ int main(int argc, char **argv)
 				);
 	
 	moPool.useStats(&_memoryStats);
-	*/	
 
-	MyHelperAdmin admin(class_id, appId);
-	if( admin.error() )
-	{
-		cerr << "publisher: Initialization Failed -Check Log-" << admin.text() << endl;
-		cerr << flush;
-		return 0;
-	}
+	// MyHelperAdmin admin(class_id, appId);
+	// if( admin.error() )
+	// {
+	// 	cerr << "publisher: Initialization Failed -Check Log-" << admin.text() << endl;
+	// 	cerr << flush;
+	// 	return 0;
+	// }
 
 	RootObject root(appId, "Publisher", "1.0");
 

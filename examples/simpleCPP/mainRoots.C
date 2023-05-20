@@ -11,6 +11,7 @@
 
 
 #include <iostream>
+#include <unistd.h>
 using namespace std;
 
 #include "rtr/selectni.h"		// Event loop implementation
@@ -18,29 +19,52 @@ using namespace std;
 
 #include "monitorRoots.h"
 
+
+
 int main(int argc, char **argv)
-{
-		// Create a base instance identifier
+{	
+	char *szServerId = NULL;
+	char szClassList[4096] = {0};
+	if (argc == 3)
+	{
+		szServerId = argv[1];
+		strcpy(szClassList, argv[2]);
+	}
+	else if (argc == 2)
+	{
+		szServerId = argv[1];
+	}
+	else
+	{
+		fprintf(stderr, "Usage: %s [memoryId] [className1,className2,className3..]\n", argv[0]);
+		return 0;
+	}
+	cout << argc << endl;
+	cout << szServerId << endl;
+	cout << szClassList << endl;
 
-		// You could just pass a hard-coded literal string into the
-		// constructors below. The appId approach is more elegant.
+	// Create a base instance identifier
 
-		RTRObjectId instanceId("shmApp");
-		RTRShmProxyManagedObjectServerPool *pool =
-				new RTRShmProxyManagedObjectServerPool(instanceId, "pool");
+	// You could just pass a hard-coded literal string into the
+	// constructors below. The appId approach is more elegant.
 
-		char *keyPtr[] = {(char *)"81", (char *)"456", (char *)"999"};
-		int len = 3;
-		for (int i = 0; i < len; i++)
-			pool->addServer(keyPtr[i]);
+	RTRObjectId instanceId("shmApp");
+	RTRShmProxyManagedObjectServerPool *pool =
+			new RTRShmProxyManagedObjectServerPool(instanceId, "pool");
 
-		// Monitor the server pool
-        Monitor mon(*pool);
+	// char *keyPtr[] = {(char *)"82", (char *)"456", (char *)"999"};
+	// int len = 3;
+	// for (int i = 0; i < len; i++)
+		// pool->addServer(keyPtr[i]);
+	pool->addServer(szServerId);
 
-		// This application uses the select() based event loop.
-		// You may choose a different implementation (e.g. Windows main loop
-		// XWindows Event Notifier, you're own implementation etc.).
-        RTRSelectNotifier::run();
+	// Monitor the server pool
+	Monitor mon(*pool, szClassList);	
+
+	// This application uses the select() based event loop.
+	// You may choose a different implementation (e.g. Windows main loop
+	// XWindows Event Notifier, you're own implementation etc.).
+	RTRSelectNotifier::run();
 
 	delete pool;
 

@@ -1,0 +1,6990 @@
+2
+82
+
+pmosp event: Added a pmos  @Connected
+pmos is inSync
+pmos event: in Sync  @Connected
+//////////////////////////////////////////
+///// start new check session
+### 1 classes in list: jabdlpc0042.1.ads 
+>>> jabdlpc0042.1.ads has 22 childs
+### add sink.server.ws.transmissionBus. to list
+### add sink.server.ripc.transmissionBus to list
+### add clientSessionThread.4 to list
+### add clientSessionThread.3 to list
+### add clientSessionThread.2 to list
+### add clientSessionThread.1 to list
+### add sslConnectionManager to list
+### add sink.server.ipc.transmissionBus to list
+### add userDatabase to list
+### add itemDatabase to list
+### add serviceDB to list
+### add netRecDB to list
+### add sinkSide.rrcp6.transmissionBus to list
+### add rrcpTransport.1.sinkSide.rrcp.transmissionBus to list
+### add rrmpMarketDataAgent to list
+### add trlsManager to list
+### add latencyMonitor to list
+### add fidDatabase to list
+### add debugLogger to list
+### add dacs to list
+### add ThreadBindingStats to list
+### add admin.MemoryStats to list
+///// Terminating session
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+///// start new check session
+### 23 classes in list: jabdlpc0042.1.ads admin.MemoryStats ThreadBindingStats dacs debugLogger fidDatabase latencyMonitor trlsManager rrmpMarketDataAgent rrcpTransport.1.sinkSide.rrcp.transmissionBus sinkSide.rrcp6.transmissionBus netRecDB serviceDB itemDatabase userDatabase sink.server.ipc.transmissionBus sslConnectionManager clientSessionThread.1 clientSessionThread.2 clientSessionThread.3 clientSessionThread.4 sink.server.ripc.transmissionBus sink.server.ws.transmissionBus. 
+>>> dacs has 1 childs
+### add sink to list
+>>> rrmpMarketDataAgent has 1 childs
+### add DNSapi to list
+>>> netRecDB has 2 childs
+### add rrmp6.keepAlive to list
+### add outgoingMessages to list
+>>> serviceDB has 5 childs
+### add aggregateServiceDataStreams to list
+### add outgoing6Messages to list
+### add incoming6MessagesFiltered to list
+### add incoming6Messages to list
+### add sinkParser to list
+>>> userDatabase has 12 childs
+### add user4 to list
+### add mount4 to list
+### add user3 to list
+### add mount3 to list
+### add user2 to list
+### add mount2 to list
+### add user1 to list
+### add mount1 to list
+### add userResponses to list
+### add userRequests to list
+### add inserts to list
+### add dataStreams to list
+///// Terminating session
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+///// start new check session
+### 44 classes in list: jabdlpc0042.1.ads rrmp6.keepAlive admin.MemoryStats ThreadBindingStats dacs sink debugLogger fidDatabase latencyMonitor trlsManager rrmpMarketDataAgent DNSapi rrcpTransport.1.sinkSide.rrcp.transmissionBus sinkSide.rrcp6.transmissionBus netRecDB outgoingMessages serviceDB sinkParser incoming6Messages incoming6MessagesFiltered outgoing6Messages aggregateServiceDataStreams itemDatabase userDatabase dataStreams inserts userRequests userResponses mount1 user1 mount2 user2 mount3 user3 mount4 user4 sink.server.ipc.transmissionBus sslConnectionManager clientSessionThread.1 clientSessionThread.2 clientSessionThread.3 clientSessionThread.4 sink.server.ripc.transmissionBus sink.server.ws.transmissionBus. 
+>>> mount1 has 5 childs
+$$$ get by child name (outgoingMessages) return NULL 
+### add incomingMessages to list
+$$$ get by child name (inserts) return NULL 
+$$$ get by child name (dataStreams) return NULL 
+### add attributes to list
+>>> user1 has 1 childs
+$$$ get by child name (dataStreams) return NULL 
+>>> mount2 has 5 childs
+$$$ get by child name (outgoingMessages) return NULL 
+$$$ get by child name (incomingMessages) return NULL 
+$$$ get by child name (inserts) return NULL 
+$$$ get by child name (dataStreams) return NULL 
+$$$ get by child name (attributes) return NULL 
+>>> user2 has 1 childs
+$$$ get by child name (dataStreams) return NULL 
+>>> mount3 has 5 childs
+$$$ get by child name (outgoingMessages) return NULL 
+$$$ get by child name (incomingMessages) return NULL 
+$$$ get by child name (inserts) return NULL 
+$$$ get by child name (dataStreams) return NULL 
+$$$ get by child name (attributes) return NULL 
+>>> user3 has 1 childs
+$$$ get by child name (dataStreams) return NULL 
+>>> mount4 has 5 childs
+$$$ get by child name (outgoingMessages) return NULL 
+$$$ get by child name (incomingMessages) return NULL 
+$$$ get by child name (inserts) return NULL 
+$$$ get by child name (dataStreams) return NULL 
+$$$ get by child name (attributes) return NULL 
+>>> user4 has 1 childs
+$$$ get by child name (dataStreams) return NULL 
+///// Terminating session
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+///// start new check session
+### 46 classes in list: jabdlpc0042.1.ads rrmp6.keepAlive admin.MemoryStats ThreadBindingStats dacs sink debugLogger fidDatabase latencyMonitor trlsManager rrmpMarketDataAgent DNSapi rrcpTransport.1.sinkSide.rrcp.transmissionBus sinkSide.rrcp6.transmissionBus netRecDB outgoingMessages serviceDB sinkParser incoming6Messages incoming6MessagesFiltered outgoing6Messages aggregateServiceDataStreams itemDatabase userDatabase dataStreams inserts userRequests userResponses mount1 attributes incomingMessages user1 mount2 user2 mount3 user3 mount4 user4 sink.server.ipc.transmissionBus sslConnectionManager clientSessionThread.1 clientSessionThread.2 clientSessionThread.3 clientSessionThread.4 sink.server.ripc.transmissionBus sink.server.ws.transmissionBus. 
+///// Terminating session
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+///// start new check session
+### class count is not increasing... 
+///// Terminating session
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+///// Start output data (no filter)
+
+{
+    "name" : "dumpViewDatabase"
+    "type" : "Boolean"
+    "description" : "Dump entire View database to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpGroupTable"
+    "type" : "Boolean"
+    "description" : "Dump group mapping table to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpAuditUserInfo"
+    "type" : "Boolean"
+    "description" : "Dump audit user information to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpAccessLock"
+    "type" : "Boolean"
+    "description" : "Dump watch items access lock information to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "softwareStatsReportTime"
+    "type" : "String"
+    "description" : "Software Statistics Reporting Time"
+    "value" : "23:45"
+},
+{
+    "name" : "reportSoftwareStats"
+    "type" : "Boolean"
+    "description" : "Report Software Statistics to DACS?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpHashTableStats"
+    "type" : "Boolean"
+    "description" : "Dump Hash Table Statistics to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpConsumerDatabase"
+    "type" : "Boolean"
+    "description" : "Dump entire consumer database to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpProducerDatabase"
+    "type" : "Boolean"
+    "description" : "Dump entire producer database to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpDatabase"
+    "type" : "Boolean"
+    "description" : "Dump entire database to a file?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "globalSiteId"
+    "type" : "NumericConfig"
+    "description" : "Global Site Id."
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "numContainers"
+    "type" : "NumericConfig"
+    "description" : "The number of RRMP buffer containers."
+    "active_value" : "40"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "40"
+    "factory_default" : "40"
+},
+{
+    "name" : "serverId"
+    "type" : "NumericConfig"
+    "description" : "The serverId to use for this p2ps."
+    "active_value" : "386"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "386"
+    "factory_default" : "0"
+},
+{
+    "name" : "transports"
+    "type" : "NumericConfig"
+    "description" : "The number of RRMP transports to create."
+    "active_value" : "1"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "1"
+    "factory_default" : "1"
+},
+{
+    "name" : "rrmpProtocols"
+    "type" : "StringConfig"
+    "description" : "The list of RRMP protocols to support."
+    "active_value" : "rrmp6"
+    "store_value" : "rrmp6"
+    "factory_default" : "rrmp6"
+},
+{
+    "name" : "jsonConverterVersion"
+    "type" : "String"
+    "description" : "The release version of the JSON converter static library."
+    "value" : "eta3.6.7.G2 rrg"
+},
+{
+    "name" : "loggerLevel"
+    "type" : "String"
+    "description" : "Change the logger level used by this process"
+    "value" : "*.Info"
+},
+{
+    "name" : "logItemError"
+    "type" : "Boolean"
+    "description" : "Log erroneous item requests."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "systemUname"
+    "type" : "String"
+    "description" : "Information from system uname."
+    "value" : "Linux jabdlpc0042 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64"
+},
+{
+    "name" : "systemRelease"
+    "type" : "String"
+    "description" : "Release information from /etc/system-release."
+    "value" : "CentOS Linux release 7.9.2009 (Core)"
+},
+{
+    "name" : "shutdown"
+    "type" : "Boolean"
+    "description" : "Should we terminate the process?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "clearStats"
+    "type" : "Boolean"
+    "description" : "clear current statistics for all instances"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "reloadDictionary"
+    "type" : "Boolean"
+    "description" : "Force reload of the field and enum dictionary?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "configTrace"
+    "type" : "Boolean"
+    "description" : "Trace access to the configuration database?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "reloadConfig"
+    "type" : "Boolean"
+    "description" : "Force reload of the configuration database?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "state"
+    "type" : "Gauge"
+    "description" : "The 4.0 NMA health capacity."
+    "min_value" : "1"
+    "max_value" : "4"
+    "low_water_mark" : "1"
+    "high_water_mark" : "1"
+},
+{
+    "name" : "configFile"
+    "type" : "String"
+    "description" : "The location of the configuration database being used by this process."
+    "value" : "/var/distribution/config/distribution.cnf"
+},
+{
+    "name" : "releaseVersion"
+    "type" : "String"
+    "description" : "Release Version of this process."
+    "value" : "ads3.6.3.L1.linux.rrg 64-bit"
+},
+{
+    "name" : "instance"
+    "type" : "String"
+    "description" : "The instance of this process."
+    "value" : "jabdlpc0042.1.ads"
+},
+{
+    "name" : "version"
+    "type" : "String"
+    "description" : "The version of the executable."
+    "value" : "Refinitiv Real-Time Distribution System 3.6.3.L1 (ssl 96d6912 100)"
+},
+{
+    "name" : "path"
+    "type" : "String"
+    "description" : "The executable path name."
+    "value" : "/opt/reuters/SOFTWARE/ads3.6.3.L1.linux.rrg/linux7_x86_64/bin/ads"
+},
+{
+    "name" : "time"
+    "type" : "String"
+    "description" : "The time the process was started."
+    "value" : "06:41:24 Tue May 16 2023"
+},
+{
+    "name" : "userID"
+    "type" : "Numeric"
+    "description" : "The user identifier."
+    "value" : "0"
+},
+{
+    "name" : "groupID"
+    "type" : "Numeric"
+    "description" : "The group identifier."
+    "value" : "0"
+},
+{
+    "name" : "processID"
+    "type" : "Numeric"
+    "description" : "The process identifier."
+    "value" : "13884"
+},
+{
+    "name" : "reusePort"
+    "type" : "Boolean"
+    "description" : "Is SO_REUSEPORT socket option set."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "flushInterval"
+    "type" : "Numeric"
+    "description" : "Maximum interval, in milliseconds, before flushing the channels."
+    "value" : "20"
+},
+{
+    "name" : "timedWrites"
+    "type" : "Boolean"
+    "description" : "Use timers to write data (instead of I/O events)."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "readBias"
+    "type" : "Numeric"
+    "description" : "Maximum number of messages to dispatch before releasing control."
+    "value" : "10"
+},
+{
+    "name" : "outputThresholdOK"
+    "type" : "Numeric"
+    "description" : "Output threshold low water level."
+    "value" : "75"
+},
+{
+    "name" : "outputThresholdBreach"
+    "type" : "Numeric"
+    "description" : "Output threshold high water limit."
+    "value" : "96"
+},
+{
+    "name" : "numInputBuffers"
+    "type" : "Numeric"
+    "description" : "The number of input buffers per session."
+    "value" : "100"
+},
+{
+    "name" : "maxOutputBuffers"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of output buffers per session."
+    "active_value" : "6500"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "400"
+    "factory_default" : "400"
+},
+{
+    "name" : "guaranteedOutputBuffers"
+    "type" : "Numeric"
+    "description" : "The number of guaranteed output buffers per session."
+    "value" : "5500"
+},
+{
+    "name" : "maxFragmentSize"
+    "type" : "Numeric"
+    "description" : "The maximum message fragment size."
+    "value" : "6144"
+},
+{
+    "name" : "poolSizePeakUsed"
+    "type" : "Numeric"
+    "description" : "The max number of pool size currently used"
+    "value" : "0"
+},
+{
+    "name" : "poolSizeUsed"
+    "type" : "Numeric"
+    "description" : "The number of pool size currently used"
+    "value" : "0"
+},
+{
+    "name" : "poolSize"
+    "type" : "Numeric"
+    "description" : "The number of buffers to put in the shared pool."
+    "value" : "22400"
+},
+{
+    "name" : "maxMounts"
+    "type" : "NumericConfig"
+    "description" : "The total number of channels to support."
+    "active_value" : "512"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "256"
+    "factory_default" : "256"
+},
+{
+    "name" : "dumpOutgoing"
+    "type" : "Boolean"
+    "description" : "Dump outgoing messages for all channels"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpIncoming"
+    "type" : "Boolean"
+    "description" : "Dump incoming messages for all channels"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "errors"
+    "type" : "Counter"
+    "description" : "The number of times an error has occured on a channel."
+    "value" : "0"
+},
+{
+    "name" : "overflows"
+    "type" : "Counter"
+    "description" : "The number of times a channel has overflown."
+    "value" : "0"
+},
+{
+    "name" : "compressPercentage"
+    "type" : "Gauge"
+    "description" : "The current outgoing data compression percentage over the last one second period."
+    "min_value" : "0"
+    "max_value" : "100"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesSentRate"
+    "type" : "Gauge"
+    "description" : "The current number of bytes sent on the wire across all channels per second (after compression)."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesSent"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression)."
+    "value" : "0"
+},
+{
+    "name" : "packetsSentRate"
+    "type" : "Gauge"
+    "description" : "The current number of packets sent across all channels per second."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "packetsSent"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels."
+    "value" : "0"
+},
+{
+    "name" : "decompressPercentage"
+    "type" : "Gauge"
+    "description" : "The current incoming data decompression percentage over the last one second period."
+    "min_value" : "0"
+    "max_value" : "100"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesReceivedRate"
+    "type" : "Gauge"
+    "description" : "The total number of bytes received on the wire across all channels per second (before decompression)."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesReceived"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression)."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceivedRate"
+    "type" : "Gauge"
+    "description" : "The total number of packets received across all channels per second."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "packetsReceived"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels."
+    "value" : "0"
+},
+{
+    "name" : "connectionType"
+    "type" : "Numeric"
+    "description" : "RSSL connection type (0 = socket, 1 = encrypted)."
+    "value" : "0"
+},
+{
+    "name" : "forceCompression"
+    "type" : "Boolean"
+    "description" : "Whether server forces compression."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "zlibCompressionLevel"
+    "type" : "Numeric"
+    "description" : "The supported configured zlib data compression level."
+    "value" : "0"
+},
+{
+    "name" : "compressionType"
+    "type" : "Numeric"
+    "description" : "The supported configured data compression type."
+    "value" : "0"
+},
+{
+    "name" : "tcpRecvBufSize"
+    "type" : "Numeric"
+    "description" : "TCP socket receive buffer (SO_RCVBUF) size in bytes."
+    "value" : "-1"
+},
+{
+    "name" : "tcpSendBufSize"
+    "type" : "Numeric"
+    "description" : "TCP socket send buffer (SO_SNDBUF) size in bytes."
+    "value" : "-1"
+},
+{
+    "name" : "tcpNoDelay"
+    "type" : "Boolean"
+    "description" : "Is TCP_NODELAY (disabling Nagle) socket option set."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "serverToClientPings"
+    "type" : "Boolean"
+    "description" : "Should the server send pings to the client application."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "clientToServerPings"
+    "type" : "Boolean"
+    "description" : "Should the client application send pings to the server."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "minPingTimeout"
+    "type" : "Numeric"
+    "description" : "The minimum supported ping timeout value (in seconds)."
+    "value" : "6"
+},
+{
+    "name" : "pingTimeout"
+    "type" : "Numeric"
+    "description" : "The maximum supported ping timeout value (in seconds)."
+    "value" : "30"
+},
+{
+    "name" : "removeAllSessions"
+    "type" : "Boolean"
+    "description" : "Disconnect all sessions?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enablePort"
+    "type" : "Boolean"
+    "description" : "Enable the well known port?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "connectionsEnabled"
+    "type" : "Boolean"
+    "description" : "Is the well known port ready to receive connections?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "connectionsUsed"
+    "type" : "Gauge"
+    "description" : "The current number of connections in use."
+    "min_value" : "0"
+    "max_value" : "512"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "connectionsAvailable"
+    "type" : "Gauge"
+    "description" : "The current number of connections available."
+    "min_value" : "0"
+    "max_value" : "512"
+    "low_water_mark" : "0"
+    "high_water_mark" : "512"
+},
+{
+    "name" : "fileDescriptor"
+    "type" : "Numeric"
+    "description" : "The file descriptor of the well known port."
+    "value" : "-1"
+},
+{
+    "name" : "interfaceName"
+    "type" : "String"
+    "description" : "The interface that the listening port is bound on."
+    "value" : "INADDR_ANY"
+},
+{
+    "name" : "portNumber"
+    "type" : "Numeric"
+    "description" : "The portName resolves into this port number."
+    "value" : "-1"
+},
+{
+    "name" : "portName"
+    "type" : "String"
+    "description" : "The service name of the well known port."
+    "value" : "distribution_ws_sink"
+},
+{
+    "name" : "initTimeouts"
+    "type" : "Counter"
+    "description" : "Number of channel initialization timeouts."
+    "value" : "0"
+},
+{
+    "name" : "acceptFailures"
+    "type" : "Counter"
+    "description" : "Number of accept failures."
+    "value" : "0"
+},
+{
+    "name" : "mountNaks"
+    "type" : "Counter"
+    "description" : "Number of mount requests rejected due to maxMounts."
+    "value" : "0"
+},
+{
+    "name" : "clientDisconnects"
+    "type" : "Counter"
+    "description" : "Number of channel disconnects initiated from client or Max Mounts Per User exceeded."
+    "value" : "0"
+},
+{
+    "name" : "serverDisconnects"
+    "type" : "Counter"
+    "description" : "Number of channel disconnects initiated from server."
+    "value" : "0"
+},
+{
+    "name" : "lastDisconnectTime"
+    "type" : "String"
+    "description" : "The date/time of the last client disconnection."
+    "value" : ""
+},
+{
+    "name" : "lastConnectTime"
+    "type" : "String"
+    "description" : "The date/time of the last client connection."
+    "value" : ""
+},
+{
+    "name" : "reusePort"
+    "type" : "Boolean"
+    "description" : "Is SO_REUSEPORT socket option set."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "flushInterval"
+    "type" : "Numeric"
+    "description" : "Maximum interval, in milliseconds, before flushing the channels."
+    "value" : "20"
+},
+{
+    "name" : "timedWrites"
+    "type" : "Boolean"
+    "description" : "Use timers to write data (instead of I/O events)."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "readBias"
+    "type" : "Numeric"
+    "description" : "Maximum number of messages to dispatch before releasing control."
+    "value" : "10"
+},
+{
+    "name" : "outputThresholdOK"
+    "type" : "Numeric"
+    "description" : "Output threshold low water level."
+    "value" : "75"
+},
+{
+    "name" : "outputThresholdBreach"
+    "type" : "Numeric"
+    "description" : "Output threshold high water limit."
+    "value" : "96"
+},
+{
+    "name" : "numInputBuffers"
+    "type" : "Numeric"
+    "description" : "The number of input buffers per session."
+    "value" : "100"
+},
+{
+    "name" : "maxOutputBuffers"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of output buffers per session."
+    "active_value" : "6500"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "400"
+    "factory_default" : "400"
+},
+{
+    "name" : "guaranteedOutputBuffers"
+    "type" : "Numeric"
+    "description" : "The number of guaranteed output buffers per session."
+    "value" : "5500"
+},
+{
+    "name" : "maxFragmentSize"
+    "type" : "Numeric"
+    "description" : "The maximum message fragment size."
+    "value" : "6144"
+},
+{
+    "name" : "poolSizePeakUsed"
+    "type" : "Numeric"
+    "description" : "The max number of pool size currently used"
+    "value" : "0"
+},
+{
+    "name" : "poolSizeUsed"
+    "type" : "Numeric"
+    "description" : "The number of pool size currently used"
+    "value" : "0"
+},
+{
+    "name" : "poolSize"
+    "type" : "Numeric"
+    "description" : "The number of buffers to put in the shared pool."
+    "value" : "22400"
+},
+{
+    "name" : "maxMounts"
+    "type" : "NumericConfig"
+    "description" : "The total number of channels to support."
+    "active_value" : "512"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "256"
+    "factory_default" : "256"
+},
+{
+    "name" : "dumpOutgoing"
+    "type" : "Boolean"
+    "description" : "Dump outgoing messages for all channels"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpIncoming"
+    "type" : "Boolean"
+    "description" : "Dump incoming messages for all channels"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "errors"
+    "type" : "Counter"
+    "description" : "The number of times an error has occured on a channel."
+    "value" : "0"
+},
+{
+    "name" : "overflows"
+    "type" : "Counter"
+    "description" : "The number of times a channel has overflown."
+    "value" : "0"
+},
+{
+    "name" : "compressPercentage"
+    "type" : "Gauge"
+    "description" : "The current outgoing data compression percentage over the last one second period."
+    "min_value" : "0"
+    "max_value" : "100"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesSentRate"
+    "type" : "Gauge"
+    "description" : "The current number of bytes sent on the wire across all channels per second (after compression)."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesSent"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression)."
+    "value" : "0"
+},
+{
+    "name" : "packetsSentRate"
+    "type" : "Gauge"
+    "description" : "The current number of packets sent across all channels per second."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "packetsSent"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels."
+    "value" : "0"
+},
+{
+    "name" : "decompressPercentage"
+    "type" : "Gauge"
+    "description" : "The current incoming data decompression percentage over the last one second period."
+    "min_value" : "0"
+    "max_value" : "100"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesReceivedRate"
+    "type" : "Gauge"
+    "description" : "The total number of bytes received on the wire across all channels per second (before decompression)."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "bytesReceived"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression)."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceivedRate"
+    "type" : "Gauge"
+    "description" : "The total number of packets received across all channels per second."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "packetsReceived"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels."
+    "value" : "0"
+},
+{
+    "name" : "connectionType"
+    "type" : "Numeric"
+    "description" : "RSSL connection type (0 = socket, 1 = encrypted)."
+    "value" : "0"
+},
+{
+    "name" : "forceCompression"
+    "type" : "Boolean"
+    "description" : "Whether server forces compression."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "zlibCompressionLevel"
+    "type" : "Numeric"
+    "description" : "The supported configured zlib data compression level."
+    "value" : "0"
+},
+{
+    "name" : "compressionType"
+    "type" : "Numeric"
+    "description" : "The supported configured data compression type."
+    "value" : "0"
+},
+{
+    "name" : "tcpRecvBufSize"
+    "type" : "Numeric"
+    "description" : "TCP socket receive buffer (SO_RCVBUF) size in bytes."
+    "value" : "-1"
+},
+{
+    "name" : "tcpSendBufSize"
+    "type" : "Numeric"
+    "description" : "TCP socket send buffer (SO_SNDBUF) size in bytes."
+    "value" : "-1"
+},
+{
+    "name" : "tcpNoDelay"
+    "type" : "Boolean"
+    "description" : "Is TCP_NODELAY (disabling Nagle) socket option set."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "serverToClientPings"
+    "type" : "Boolean"
+    "description" : "Should the server send pings to the client application."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "clientToServerPings"
+    "type" : "Boolean"
+    "description" : "Should the client application send pings to the server."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "minPingTimeout"
+    "type" : "Numeric"
+    "description" : "The minimum supported ping timeout value (in seconds)."
+    "value" : "6"
+},
+{
+    "name" : "pingTimeout"
+    "type" : "Numeric"
+    "description" : "The maximum supported ping timeout value (in seconds)."
+    "value" : "30"
+},
+{
+    "name" : "removeAllSessions"
+    "type" : "Boolean"
+    "description" : "Disconnect all sessions?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enablePort"
+    "type" : "Boolean"
+    "description" : "Enable the well known port?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "connectionsEnabled"
+    "type" : "Boolean"
+    "description" : "Is the well known port ready to receive connections?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "connectionsUsed"
+    "type" : "Gauge"
+    "description" : "The current number of connections in use."
+    "min_value" : "0"
+    "max_value" : "512"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "connectionsAvailable"
+    "type" : "Gauge"
+    "description" : "The current number of connections available."
+    "min_value" : "0"
+    "max_value" : "512"
+    "low_water_mark" : "0"
+    "high_water_mark" : "512"
+},
+{
+    "name" : "fileDescriptor"
+    "type" : "Numeric"
+    "description" : "The file descriptor of the well known port."
+    "value" : "-1"
+},
+{
+    "name" : "interfaceName"
+    "type" : "String"
+    "description" : "The interface that the listening port is bound on."
+    "value" : "INADDR_ANY"
+},
+{
+    "name" : "portNumber"
+    "type" : "Numeric"
+    "description" : "The portName resolves into this port number."
+    "value" : "-1"
+},
+{
+    "name" : "portName"
+    "type" : "String"
+    "description" : "The service name of the well known port."
+    "value" : "distribution_rssl_sink"
+},
+{
+    "name" : "initTimeouts"
+    "type" : "Counter"
+    "description" : "Number of channel initialization timeouts."
+    "value" : "0"
+},
+{
+    "name" : "acceptFailures"
+    "type" : "Counter"
+    "description" : "Number of accept failures."
+    "value" : "0"
+},
+{
+    "name" : "mountNaks"
+    "type" : "Counter"
+    "description" : "Number of mount requests rejected due to maxMounts."
+    "value" : "0"
+},
+{
+    "name" : "clientDisconnects"
+    "type" : "Counter"
+    "description" : "Number of channel disconnects initiated from client or Max Mounts Per User exceeded."
+    "value" : "0"
+},
+{
+    "name" : "serverDisconnects"
+    "type" : "Counter"
+    "description" : "Number of channel disconnects initiated from server."
+    "value" : "0"
+},
+{
+    "name" : "lastDisconnectTime"
+    "type" : "String"
+    "description" : "The date/time of the last client disconnection."
+    "value" : ""
+},
+{
+    "name" : "lastConnectTime"
+    "type" : "String"
+    "description" : "The date/time of the last client connection."
+    "value" : ""
+},
+{
+    "name" : "uncompBytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "processId"
+    "type" : "Numeric"
+    "description" : "The process id of the writer thread."
+    "value" : "13898"
+},
+{
+    "name" : "freeMsgCount"
+    "type" : "Numeric"
+    "description" : "The number of available main thread message buffers for outbound writes."
+    "value" : "1000"
+},
+{
+    "name" : "totalInsertAckLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all insertAck messages"
+    "value" : "0"
+},
+{
+    "name" : "totalInsertLength"
+    "type" : "Counter"
+    "description" : "Cumulative length (bytes) of all insert and post messages received."
+    "value" : "0"
+},
+{
+    "name" : "totalUpdateLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all update messages"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Positive Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "The total number of inserts received."
+    "value" : "0"
+},
+{
+    "name" : "srcMsgLoopsPerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of read msg loops per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgProcTime"
+    "type" : "Numeric"
+    "description" : "Source Msgs processing time per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgPausePerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of pause calls per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCntPerIter"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per loop"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCnt"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per thread of execution"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadStrategy"
+    "type" : "NumericConfig"
+    "description" : "Src Msg Read Strategy"
+    "active_value" : "1"
+    "min_value" : "0"
+    "max_value" : "1"
+    "store_value" : "1"
+    "factory_default" : "1"
+},
+{
+    "name" : "streamNotOpen"
+    "type" : "Counter"
+    "description" : "Number of messages received for an item which exists but is not open."
+    "value" : "0"
+},
+{
+    "name" : "streamNotFound"
+    "type" : "Counter"
+    "description" : "Number of messages received for an unknown stream ID (does not exist on writer thread hash table)."
+    "value" : "0"
+},
+{
+    "name" : "enableMFTCounter"
+    "type" : "BooleanConfig"
+    "description" : "Enable microsecond flush timer counter."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "microFlushCounter"
+    "type" : "Numeric"
+    "description" : "The number of times the microsecond flush timer has been called."
+    "value" : "0"
+},
+{
+    "name" : "microFlushInterval"
+    "type" : "NumericConfig"
+    "description" : "The microsecond interval to flush thread"
+    "active_value" : "0"
+    "min_value" : "100"
+    "max_value" : "100000"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadBias"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msgs to read per thread of execution"
+    "active_value" : "120"
+    "min_value" : "0"
+    "max_value" : "10000"
+    "store_value" : "120"
+    "factory_default" : "120"
+},
+{
+    "name" : "srcMsgReadLoops"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msg read loops per thread of execution"
+    "active_value" : "20"
+    "min_value" : "0"
+    "max_value" : "1000000"
+    "store_value" : "20"
+    "factory_default" : "20"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "The number of updates sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "updatesSent"
+    "type" : "Counter"
+    "description" : "The number of updates sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "imageRate"
+    "type" : "Numeric"
+    "description" : "The number of images sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "imagesSent"
+    "type" : "Counter"
+    "description" : "The number of images sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "userStreamCount"
+    "type" : "Numeric"
+    "description" : "The number of open users streams in this thread."
+    "value" : "0"
+},
+{
+    "name" : "insertItemCount"
+    "type" : "Numeric"
+    "description" : "The number of insert items in this thread."
+    "value" : "0"
+},
+{
+    "name" : "itemCount"
+    "type" : "Numeric"
+    "description" : "The number of items being watched in this thread."
+    "value" : "0"
+},
+{
+    "name" : "sessionCount"
+    "type" : "Numeric"
+    "description" : "The total number of sessions allocated to this thread."
+    "value" : "0"
+},
+{
+    "name" : "hipcRequestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the session thread has been signalled new requests are ready."
+    "value" : "0"
+},
+{
+    "name" : "requestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the main thread has been signalled new requests are ready."
+    "value" : "4"
+},
+{
+    "name" : "hipcRequestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times hipc requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "requestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "flushBiasExceeded"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been flushed due to flush bias being exceeded"
+    "value" : "0"
+},
+{
+    "name" : "sessionBlocks"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been blocked due to slow thread writing performance."
+    "value" : "0"
+},
+{
+    "name" : "bufferRetrievals"
+    "type" : "Numeric"
+    "description" : "The total number of data buffers that have been retrieved by this thread"
+    "value" : "4"
+},
+{
+    "name" : "messagesProcessed"
+    "type" : "Numeric"
+    "description" : "The total number of messages that have been processed by this thread."
+    "value" : "0"
+},
+{
+    "name" : "reflushNeeded"
+    "type" : "Counter"
+    "description" : "The number of times a user remains on the flush list due to messages being queued for this user while in the middle of processing."
+    "value" : "0"
+},
+{
+    "name" : "batchedMessageCount"
+    "type" : "Numeric"
+    "description" : "The number of messages that are currently batched within this thread"
+    "value" : "0"
+},
+{
+    "name" : "flushBias"
+    "type" : "NumericConfig"
+    "description" : "The number of messages that must accumulate on a thread to force a flush"
+    "active_value" : "2000"
+    "min_value" : "0"
+    "max_value" : "100000"
+    "store_value" : "2000"
+    "factory_default" : "2000"
+},
+{
+    "name" : "lastMessageCount"
+    "type" : "Numeric"
+    "description" : "The last recorded number of messages queued before the write thread was flushed"
+    "value" : "1"
+},
+{
+    "name" : "threadFlushes"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread is checked to see if a flush is needed."
+    "value" : "4"
+},
+{
+    "name" : "threadWaitsPostponed"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has postponed due to additional messages queued after it started processing messages"
+    "value" : "0"
+},
+{
+    "name" : "threadSignals"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has been signaled."
+    "value" : "4"
+},
+{
+    "name" : "protocol"
+    "type" : "String"
+    "description" : "Consumer application protocol which this writer thread supports (all, SSL, RWF, JSON2)."
+    "value" : "all"
+},
+{
+    "name" : "freeInsertItems"
+    "type" : "Gauge"
+    "description" : "The number of free insert items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeUserItems"
+    "type" : "Gauge"
+    "description" : "The number of free user items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "freeItems"
+    "type" : "Gauge"
+    "description" : "The number of free items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "uncompBytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "processId"
+    "type" : "Numeric"
+    "description" : "The process id of the writer thread."
+    "value" : "13897"
+},
+{
+    "name" : "freeMsgCount"
+    "type" : "Numeric"
+    "description" : "The number of available main thread message buffers for outbound writes."
+    "value" : "1000"
+},
+{
+    "name" : "totalInsertAckLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all insertAck messages"
+    "value" : "0"
+},
+{
+    "name" : "totalInsertLength"
+    "type" : "Counter"
+    "description" : "Cumulative length (bytes) of all insert and post messages received."
+    "value" : "0"
+},
+{
+    "name" : "totalUpdateLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all update messages"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Positive Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "The total number of inserts received."
+    "value" : "0"
+},
+{
+    "name" : "srcMsgLoopsPerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of read msg loops per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgProcTime"
+    "type" : "Numeric"
+    "description" : "Source Msgs processing time per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgPausePerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of pause calls per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCntPerIter"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per loop"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCnt"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per thread of execution"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadStrategy"
+    "type" : "NumericConfig"
+    "description" : "Src Msg Read Strategy"
+    "active_value" : "1"
+    "min_value" : "0"
+    "max_value" : "1"
+    "store_value" : "1"
+    "factory_default" : "1"
+},
+{
+    "name" : "streamNotOpen"
+    "type" : "Counter"
+    "description" : "Number of messages received for an item which exists but is not open."
+    "value" : "0"
+},
+{
+    "name" : "streamNotFound"
+    "type" : "Counter"
+    "description" : "Number of messages received for an unknown stream ID (does not exist on writer thread hash table)."
+    "value" : "0"
+},
+{
+    "name" : "enableMFTCounter"
+    "type" : "BooleanConfig"
+    "description" : "Enable microsecond flush timer counter."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "microFlushCounter"
+    "type" : "Numeric"
+    "description" : "The number of times the microsecond flush timer has been called."
+    "value" : "0"
+},
+{
+    "name" : "microFlushInterval"
+    "type" : "NumericConfig"
+    "description" : "The microsecond interval to flush thread"
+    "active_value" : "0"
+    "min_value" : "100"
+    "max_value" : "100000"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadBias"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msgs to read per thread of execution"
+    "active_value" : "120"
+    "min_value" : "0"
+    "max_value" : "10000"
+    "store_value" : "120"
+    "factory_default" : "120"
+},
+{
+    "name" : "srcMsgReadLoops"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msg read loops per thread of execution"
+    "active_value" : "20"
+    "min_value" : "0"
+    "max_value" : "1000000"
+    "store_value" : "20"
+    "factory_default" : "20"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "The number of updates sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "updatesSent"
+    "type" : "Counter"
+    "description" : "The number of updates sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "imageRate"
+    "type" : "Numeric"
+    "description" : "The number of images sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "imagesSent"
+    "type" : "Counter"
+    "description" : "The number of images sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "userStreamCount"
+    "type" : "Numeric"
+    "description" : "The number of open users streams in this thread."
+    "value" : "0"
+},
+{
+    "name" : "insertItemCount"
+    "type" : "Numeric"
+    "description" : "The number of insert items in this thread."
+    "value" : "0"
+},
+{
+    "name" : "itemCount"
+    "type" : "Numeric"
+    "description" : "The number of items being watched in this thread."
+    "value" : "0"
+},
+{
+    "name" : "sessionCount"
+    "type" : "Numeric"
+    "description" : "The total number of sessions allocated to this thread."
+    "value" : "0"
+},
+{
+    "name" : "hipcRequestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the session thread has been signalled new requests are ready."
+    "value" : "0"
+},
+{
+    "name" : "requestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the main thread has been signalled new requests are ready."
+    "value" : "4"
+},
+{
+    "name" : "hipcRequestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times hipc requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "requestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "flushBiasExceeded"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been flushed due to flush bias being exceeded"
+    "value" : "0"
+},
+{
+    "name" : "sessionBlocks"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been blocked due to slow thread writing performance."
+    "value" : "0"
+},
+{
+    "name" : "bufferRetrievals"
+    "type" : "Numeric"
+    "description" : "The total number of data buffers that have been retrieved by this thread"
+    "value" : "4"
+},
+{
+    "name" : "messagesProcessed"
+    "type" : "Numeric"
+    "description" : "The total number of messages that have been processed by this thread."
+    "value" : "0"
+},
+{
+    "name" : "reflushNeeded"
+    "type" : "Counter"
+    "description" : "The number of times a user remains on the flush list due to messages being queued for this user while in the middle of processing."
+    "value" : "0"
+},
+{
+    "name" : "batchedMessageCount"
+    "type" : "Numeric"
+    "description" : "The number of messages that are currently batched within this thread"
+    "value" : "0"
+},
+{
+    "name" : "flushBias"
+    "type" : "NumericConfig"
+    "description" : "The number of messages that must accumulate on a thread to force a flush"
+    "active_value" : "2000"
+    "min_value" : "0"
+    "max_value" : "100000"
+    "store_value" : "2000"
+    "factory_default" : "2000"
+},
+{
+    "name" : "lastMessageCount"
+    "type" : "Numeric"
+    "description" : "The last recorded number of messages queued before the write thread was flushed"
+    "value" : "1"
+},
+{
+    "name" : "threadFlushes"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread is checked to see if a flush is needed."
+    "value" : "4"
+},
+{
+    "name" : "threadWaitsPostponed"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has postponed due to additional messages queued after it started processing messages"
+    "value" : "0"
+},
+{
+    "name" : "threadSignals"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has been signaled."
+    "value" : "4"
+},
+{
+    "name" : "protocol"
+    "type" : "String"
+    "description" : "Consumer application protocol which this writer thread supports (all, SSL, RWF, JSON2)."
+    "value" : "all"
+},
+{
+    "name" : "freeInsertItems"
+    "type" : "Gauge"
+    "description" : "The number of free insert items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeUserItems"
+    "type" : "Gauge"
+    "description" : "The number of free user items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "freeItems"
+    "type" : "Gauge"
+    "description" : "The number of free items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "uncompBytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "processId"
+    "type" : "Numeric"
+    "description" : "The process id of the writer thread."
+    "value" : "13896"
+},
+{
+    "name" : "freeMsgCount"
+    "type" : "Numeric"
+    "description" : "The number of available main thread message buffers for outbound writes."
+    "value" : "1000"
+},
+{
+    "name" : "totalInsertAckLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all insertAck messages"
+    "value" : "0"
+},
+{
+    "name" : "totalInsertLength"
+    "type" : "Counter"
+    "description" : "Cumulative length (bytes) of all insert and post messages received."
+    "value" : "0"
+},
+{
+    "name" : "totalUpdateLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all update messages"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Positive Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "The total number of inserts received."
+    "value" : "0"
+},
+{
+    "name" : "srcMsgLoopsPerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of read msg loops per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgProcTime"
+    "type" : "Numeric"
+    "description" : "Source Msgs processing time per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgPausePerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of pause calls per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCntPerIter"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per loop"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCnt"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per thread of execution"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadStrategy"
+    "type" : "NumericConfig"
+    "description" : "Src Msg Read Strategy"
+    "active_value" : "1"
+    "min_value" : "0"
+    "max_value" : "1"
+    "store_value" : "1"
+    "factory_default" : "1"
+},
+{
+    "name" : "streamNotOpen"
+    "type" : "Counter"
+    "description" : "Number of messages received for an item which exists but is not open."
+    "value" : "0"
+},
+{
+    "name" : "streamNotFound"
+    "type" : "Counter"
+    "description" : "Number of messages received for an unknown stream ID (does not exist on writer thread hash table)."
+    "value" : "0"
+},
+{
+    "name" : "enableMFTCounter"
+    "type" : "BooleanConfig"
+    "description" : "Enable microsecond flush timer counter."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "microFlushCounter"
+    "type" : "Numeric"
+    "description" : "The number of times the microsecond flush timer has been called."
+    "value" : "0"
+},
+{
+    "name" : "microFlushInterval"
+    "type" : "NumericConfig"
+    "description" : "The microsecond interval to flush thread"
+    "active_value" : "0"
+    "min_value" : "100"
+    "max_value" : "100000"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadBias"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msgs to read per thread of execution"
+    "active_value" : "120"
+    "min_value" : "0"
+    "max_value" : "10000"
+    "store_value" : "120"
+    "factory_default" : "120"
+},
+{
+    "name" : "srcMsgReadLoops"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msg read loops per thread of execution"
+    "active_value" : "20"
+    "min_value" : "0"
+    "max_value" : "1000000"
+    "store_value" : "20"
+    "factory_default" : "20"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "The number of updates sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "updatesSent"
+    "type" : "Counter"
+    "description" : "The number of updates sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "imageRate"
+    "type" : "Numeric"
+    "description" : "The number of images sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "imagesSent"
+    "type" : "Counter"
+    "description" : "The number of images sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "userStreamCount"
+    "type" : "Numeric"
+    "description" : "The number of open users streams in this thread."
+    "value" : "0"
+},
+{
+    "name" : "insertItemCount"
+    "type" : "Numeric"
+    "description" : "The number of insert items in this thread."
+    "value" : "0"
+},
+{
+    "name" : "itemCount"
+    "type" : "Numeric"
+    "description" : "The number of items being watched in this thread."
+    "value" : "0"
+},
+{
+    "name" : "sessionCount"
+    "type" : "Numeric"
+    "description" : "The total number of sessions allocated to this thread."
+    "value" : "0"
+},
+{
+    "name" : "hipcRequestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the session thread has been signalled new requests are ready."
+    "value" : "0"
+},
+{
+    "name" : "requestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the main thread has been signalled new requests are ready."
+    "value" : "4"
+},
+{
+    "name" : "hipcRequestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times hipc requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "requestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "flushBiasExceeded"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been flushed due to flush bias being exceeded"
+    "value" : "0"
+},
+{
+    "name" : "sessionBlocks"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been blocked due to slow thread writing performance."
+    "value" : "0"
+},
+{
+    "name" : "bufferRetrievals"
+    "type" : "Numeric"
+    "description" : "The total number of data buffers that have been retrieved by this thread"
+    "value" : "4"
+},
+{
+    "name" : "messagesProcessed"
+    "type" : "Numeric"
+    "description" : "The total number of messages that have been processed by this thread."
+    "value" : "0"
+},
+{
+    "name" : "reflushNeeded"
+    "type" : "Counter"
+    "description" : "The number of times a user remains on the flush list due to messages being queued for this user while in the middle of processing."
+    "value" : "0"
+},
+{
+    "name" : "batchedMessageCount"
+    "type" : "Numeric"
+    "description" : "The number of messages that are currently batched within this thread"
+    "value" : "0"
+},
+{
+    "name" : "flushBias"
+    "type" : "NumericConfig"
+    "description" : "The number of messages that must accumulate on a thread to force a flush"
+    "active_value" : "2000"
+    "min_value" : "0"
+    "max_value" : "100000"
+    "store_value" : "2000"
+    "factory_default" : "2000"
+},
+{
+    "name" : "lastMessageCount"
+    "type" : "Numeric"
+    "description" : "The last recorded number of messages queued before the write thread was flushed"
+    "value" : "1"
+},
+{
+    "name" : "threadFlushes"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread is checked to see if a flush is needed."
+    "value" : "4"
+},
+{
+    "name" : "threadWaitsPostponed"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has postponed due to additional messages queued after it started processing messages"
+    "value" : "0"
+},
+{
+    "name" : "threadSignals"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has been signaled."
+    "value" : "4"
+},
+{
+    "name" : "protocol"
+    "type" : "String"
+    "description" : "Consumer application protocol which this writer thread supports (all, SSL, RWF, JSON2)."
+    "value" : "all"
+},
+{
+    "name" : "freeInsertItems"
+    "type" : "Gauge"
+    "description" : "The number of free insert items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeUserItems"
+    "type" : "Gauge"
+    "description" : "The number of free user items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "freeItems"
+    "type" : "Gauge"
+    "description" : "The number of free items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "uncompBytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the writer thread."
+    "value" : "0"
+},
+{
+    "name" : "processId"
+    "type" : "Numeric"
+    "description" : "The process id of the writer thread."
+    "value" : "13895"
+},
+{
+    "name" : "freeMsgCount"
+    "type" : "Numeric"
+    "description" : "The number of available main thread message buffers for outbound writes."
+    "value" : "1000"
+},
+{
+    "name" : "totalInsertAckLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all insertAck messages"
+    "value" : "0"
+},
+{
+    "name" : "totalInsertLength"
+    "type" : "Counter"
+    "description" : "Cumulative length (bytes) of all insert and post messages received."
+    "value" : "0"
+},
+{
+    "name" : "totalUpdateLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all update messages"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Positive Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "The total number of inserts received."
+    "value" : "0"
+},
+{
+    "name" : "srcMsgLoopsPerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of read msg loops per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgProcTime"
+    "type" : "Numeric"
+    "description" : "Source Msgs processing time per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgPausePerInv"
+    "type" : "Numeric"
+    "description" : "Actual number of pause calls per invocation"
+    "value" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCntPerIter"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per loop"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadPauseCnt"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of pause calls per thread of execution"
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadStrategy"
+    "type" : "NumericConfig"
+    "description" : "Src Msg Read Strategy"
+    "active_value" : "1"
+    "min_value" : "0"
+    "max_value" : "1"
+    "store_value" : "1"
+    "factory_default" : "1"
+},
+{
+    "name" : "streamNotOpen"
+    "type" : "Counter"
+    "description" : "Number of messages received for an item which exists but is not open."
+    "value" : "0"
+},
+{
+    "name" : "streamNotFound"
+    "type" : "Counter"
+    "description" : "Number of messages received for an unknown stream ID (does not exist on writer thread hash table)."
+    "value" : "0"
+},
+{
+    "name" : "enableMFTCounter"
+    "type" : "BooleanConfig"
+    "description" : "Enable microsecond flush timer counter."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "microFlushCounter"
+    "type" : "Numeric"
+    "description" : "The number of times the microsecond flush timer has been called."
+    "value" : "0"
+},
+{
+    "name" : "microFlushInterval"
+    "type" : "NumericConfig"
+    "description" : "The microsecond interval to flush thread"
+    "active_value" : "0"
+    "min_value" : "100"
+    "max_value" : "100000"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "srcMsgReadBias"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msgs to read per thread of execution"
+    "active_value" : "120"
+    "min_value" : "0"
+    "max_value" : "10000"
+    "store_value" : "120"
+    "factory_default" : "120"
+},
+{
+    "name" : "srcMsgReadLoops"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of src msg read loops per thread of execution"
+    "active_value" : "20"
+    "min_value" : "0"
+    "max_value" : "1000000"
+    "store_value" : "20"
+    "factory_default" : "20"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "The number of updates sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "updatesSent"
+    "type" : "Counter"
+    "description" : "The number of updates sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "imageRate"
+    "type" : "Numeric"
+    "description" : "The number of images sent from this thread during the last second."
+    "value" : "0"
+},
+{
+    "name" : "imagesSent"
+    "type" : "Counter"
+    "description" : "The number of images sent from this thread."
+    "value" : "0"
+},
+{
+    "name" : "userStreamCount"
+    "type" : "Numeric"
+    "description" : "The number of open users streams in this thread."
+    "value" : "0"
+},
+{
+    "name" : "insertItemCount"
+    "type" : "Numeric"
+    "description" : "The number of insert items in this thread."
+    "value" : "0"
+},
+{
+    "name" : "itemCount"
+    "type" : "Numeric"
+    "description" : "The number of items being watched in this thread."
+    "value" : "0"
+},
+{
+    "name" : "sessionCount"
+    "type" : "Numeric"
+    "description" : "The total number of sessions allocated to this thread."
+    "value" : "0"
+},
+{
+    "name" : "hipcRequestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the session thread has been signalled new requests are ready."
+    "value" : "0"
+},
+{
+    "name" : "requestSignals"
+    "type" : "Numeric"
+    "description" : "The amount of times the main thread has been signalled new requests are ready."
+    "value" : "4"
+},
+{
+    "name" : "hipcRequestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times hipc requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "requestFlushes"
+    "type" : "Numeric"
+    "description" : "The amount of times requests have been flushed."
+    "value" : "0"
+},
+{
+    "name" : "flushBiasExceeded"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been flushed due to flush bias being exceeded"
+    "value" : "0"
+},
+{
+    "name" : "sessionBlocks"
+    "type" : "Numeric"
+    "description" : "The total number of times this thread has been blocked due to slow thread writing performance."
+    "value" : "0"
+},
+{
+    "name" : "bufferRetrievals"
+    "type" : "Numeric"
+    "description" : "The total number of data buffers that have been retrieved by this thread"
+    "value" : "4"
+},
+{
+    "name" : "messagesProcessed"
+    "type" : "Numeric"
+    "description" : "The total number of messages that have been processed by this thread."
+    "value" : "0"
+},
+{
+    "name" : "reflushNeeded"
+    "type" : "Counter"
+    "description" : "The number of times a user remains on the flush list due to messages being queued for this user while in the middle of processing."
+    "value" : "0"
+},
+{
+    "name" : "batchedMessageCount"
+    "type" : "Numeric"
+    "description" : "The number of messages that are currently batched within this thread"
+    "value" : "0"
+},
+{
+    "name" : "flushBias"
+    "type" : "NumericConfig"
+    "description" : "The number of messages that must accumulate on a thread to force a flush"
+    "active_value" : "2000"
+    "min_value" : "0"
+    "max_value" : "100000"
+    "store_value" : "2000"
+    "factory_default" : "2000"
+},
+{
+    "name" : "lastMessageCount"
+    "type" : "Numeric"
+    "description" : "The last recorded number of messages queued before the write thread was flushed"
+    "value" : "1"
+},
+{
+    "name" : "threadFlushes"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread is checked to see if a flush is needed."
+    "value" : "4"
+},
+{
+    "name" : "threadWaitsPostponed"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has postponed due to additional messages queued after it started processing messages"
+    "value" : "0"
+},
+{
+    "name" : "threadSignals"
+    "type" : "Numeric"
+    "description" : "The number of times the write thread has been signaled."
+    "value" : "4"
+},
+{
+    "name" : "protocol"
+    "type" : "String"
+    "description" : "Consumer application protocol which this writer thread supports (all, SSL, RWF, JSON2)."
+    "value" : "all"
+},
+{
+    "name" : "freeInsertItems"
+    "type" : "Gauge"
+    "description" : "The number of free insert items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeUserItems"
+    "type" : "Gauge"
+    "description" : "The number of free user items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "freeItems"
+    "type" : "Gauge"
+    "description" : "The number of free items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "uncompBytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.15000"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire if compression is disabled, or the number of bytes before compression if compression is enabled within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent on the wire across all channels (after compression) within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets sent across all channels within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "uncompBytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received after decompression within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of bytes received on the wire across all channels (before decompression) within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived.14002"
+    "type" : "Counter"
+    "description" : "The total number of packets received across all channels within the main thread."
+    "value" : "0"
+},
+{
+    "name" : "hipcReadThreadEnabled"
+    "type" : "BooleanConfig"
+    "description" : "Is hipc read thread enabled?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "sessionThreadEnabled"
+    "type" : "BooleanConfig"
+    "description" : "Are session threads enabled?"
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "httpTunnelling"
+    "type" : "BooleanConfig"
+    "description" : "Is Http Tunelling enabled?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "interfaceName"
+    "type" : "StringConfig"
+    "description" : "The system interface that the well known port is bound to."
+    "active_value" : ""
+    "store_value" : ""
+    "factory_default" : ""
+},
+{
+    "name" : "reservedFileDescriptors"
+    "type" : "NumericConfig"
+    "description" : "File descriptors reserved for non-IPC use."
+    "active_value" : "20"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "20"
+    "factory_default" : "20"
+},
+{
+    "name" : "solarisFDWorkaround"
+    "type" : "BooleanConfig"
+    "description" : "Workaround the Solaris File Descriptor bug"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "flushInterval"
+    "type" : "NumericConfig"
+    "description" : "Maximum interval, in milliseconds, before flushing the channels."
+    "active_value" : "20"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "20"
+    "factory_default" : "-1"
+},
+{
+    "name" : "timedWrites"
+    "type" : "BooleanConfig"
+    "description" : "Use timers to write data (instead of I/O events)."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "readBias"
+    "type" : "NumericConfig"
+    "description" : "Maximum number of messages to dispatch before releasing control."
+    "active_value" : "60"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "60"
+    "factory_default" : "10"
+},
+{
+    "name" : "outputThresholdOK"
+    "type" : "NumericConfig"
+    "description" : "Output threshold low water level."
+    "active_value" : "75"
+    "min_value" : "0"
+    "max_value" : "100"
+    "store_value" : "75"
+    "factory_default" : "40"
+},
+{
+    "name" : "outputThresholdBreach"
+    "type" : "NumericConfig"
+    "description" : "Output threshold high water limit."
+    "active_value" : "96"
+    "min_value" : "0"
+    "max_value" : "100"
+    "store_value" : "96"
+    "factory_default" : "80"
+},
+{
+    "name" : "maxOutputBuffers"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of output buffers per session."
+    "active_value" : "6500"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "6500"
+    "factory_default" : "48"
+},
+{
+    "name" : "guaranteedOutputBuffers"
+    "type" : "NumericConfig"
+    "description" : "The number of guaranteed output buffers per session."
+    "active_value" : "5500"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "5500"
+    "factory_default" : "24"
+},
+{
+    "name" : "numInputBuffers"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of input buffers per session."
+    "active_value" : "2"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "2"
+    "factory_default" : "2"
+},
+{
+    "name" : "maxMsgSize"
+    "type" : "NumericConfig"
+    "description" : "The maximum message size."
+    "active_value" : "3300"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "3300"
+    "factory_default" : "3072"
+},
+{
+    "name" : "poolSizePeakUsed"
+    "type" : "Numeric"
+    "description" : "The maximum number of buffers used in the overflow pool."
+    "value" : "0"
+},
+{
+    "name" : "poolSizeUsed"
+    "type" : "Numeric"
+    "description" : "The number of buffers currently used in the overflow pool."
+    "value" : "0"
+},
+{
+    "name" : "poolSize"
+    "type" : "NumericConfig"
+    "description" : "The number of buffers to put in the overflow pool."
+    "active_value" : "22400"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "22400"
+    "factory_default" : "0"
+},
+{
+    "name" : "maxMounts"
+    "type" : "NumericConfig"
+    "description" : "The total number of channels to support."
+    "active_value" : "512"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "512"
+    "factory_default" : "64"
+},
+{
+    "name" : "dumpOutgoing"
+    "type" : "BooleanConfig"
+    "description" : "Dump outgoing messages of all channels?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "dumpIncoming"
+    "type" : "BooleanConfig"
+    "description" : "Dump incoming messages of all channels?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "errors"
+    "type" : "Counter"
+    "description" : "The number of times an error has occured on a channel."
+    "value" : "0"
+},
+{
+    "name" : "overflows"
+    "type" : "Counter"
+    "description" : "The number of times a channel has overflown."
+    "value" : "0"
+},
+{
+    "name" : "compressPercentage"
+    "type" : "Numeric"
+    "description" : "The current data compression percentage over the last one second period."
+    "value" : "0"
+},
+{
+    "name" : "bytesSentRate"
+    "type" : "Numeric"
+    "description" : "The current number of bytes sent to all channels per second."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent to all channels."
+    "value" : "0"
+},
+{
+    "name" : "packetsSentRate"
+    "type" : "Numeric"
+    "description" : "The current number of packets sent to all channels per second."
+    "value" : "0"
+},
+{
+    "name" : "packetsSent"
+    "type" : "Counter"
+    "description" : "The total number of packets sent to all channels."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived"
+    "type" : "Counter"
+    "description" : "The total number of bytes received from all channels."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived"
+    "type" : "Counter"
+    "description" : "The total number of packets received from all channels."
+    "value" : "0"
+},
+{
+    "name" : "zlibCompressionLevel"
+    "type" : "Numeric"
+    "description" : "The supported configured zlib data compression level."
+    "value" : "3"
+},
+{
+    "name" : "compressionType"
+    "type" : "Numeric"
+    "description" : "The supported configured data compression type."
+    "value" : "0"
+},
+{
+    "name" : "reusePort"
+    "type" : "Boolean"
+    "description" : "Is SO_REUSEPORT socket option set."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "tcpRecvBufSize"
+    "type" : "Numeric"
+    "description" : "TCP socket receive (SO_RCVBUF) buffer size in bytes."
+    "value" : "-1"
+},
+{
+    "name" : "tcpSendBufSize"
+    "type" : "Numeric"
+    "description" : "TCP socket send (SO_SNDBUF) buffer size in bytes."
+    "value" : "-1"
+},
+{
+    "name" : "tcpNoDelay"
+    "type" : "Boolean"
+    "description" : "Is TCP_NODELAY (disabling Nagle) socket option set?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "removeAllSessions"
+    "type" : "Boolean"
+    "description" : "Disconnect all sessions?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enablePort"
+    "type" : "Boolean"
+    "description" : "Enable the well known port?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "connectionsEnabled"
+    "type" : "Boolean"
+    "description" : "Is the well known port ready to receive connections?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "connectionsUsed"
+    "type" : "Gauge"
+    "description" : "The current number of connections in use."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "connectionsAvailable"
+    "type" : "Gauge"
+    "description" : "The current number of connections available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "fileDescriptor"
+    "type" : "Numeric"
+    "description" : "The file descriptor of the well known port."
+    "value" : "-1"
+},
+{
+    "name" : "portNumber"
+    "type" : "Numeric"
+    "description" : "The portName resolves into this port number."
+    "value" : "8101"
+},
+{
+    "name" : "portName"
+    "type" : "String"
+    "description" : "The service name of the well known port."
+    "value" : "distribution_ssl_sink"
+},
+{
+    "name" : "initTimeouts"
+    "type" : "Counter"
+    "description" : "Number of channel initialization timeouts."
+    "value" : "0"
+},
+{
+    "name" : "acceptFailures"
+    "type" : "Counter"
+    "description" : "Number of accept failures."
+    "value" : "0"
+},
+{
+    "name" : "mountNaks"
+    "type" : "Counter"
+    "description" : "Number of mount requests rejected due to maxMounts."
+    "value" : "0"
+},
+{
+    "name" : "clientDisconnects"
+    "type" : "Counter"
+    "description" : "Number of channel disconnects initiated from client."
+    "value" : "0"
+},
+{
+    "name" : "serverDisconnects"
+    "type" : "Counter"
+    "description" : "Number of channel disconnects initiated from server."
+    "value" : "0"
+},
+{
+    "name" : "lastDisconnectTime"
+    "type" : "String"
+    "description" : "The date/time of the last client disconnection."
+    "value" : ""
+},
+{
+    "name" : "lastConnectTime"
+    "type" : "String"
+    "description" : "The date/time of the last client connection."
+    "value" : ""
+},
+{
+    "name" : "userTrace"
+    "type" : "Boolean"
+    "description" : "Should we start tracing user requests?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "persistenceRecoveryTime"
+    "type" : "NumericConfig"
+    "description" : "The amount of time (seconds) a persistent or recoverable channel will remain after it has been disconnected."
+    "active_value" : "600"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "600"
+    "factory_default" : "600"
+},
+{
+    "name" : "thresholdBreachNotificationPeriod"
+    "type" : "NumericConfig"
+    "description" : "The amount of time in seconds logging is suppressed for a mount following an output threshold breach event."
+    "active_value" : "60"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "60"
+    "factory_default" : "60"
+},
+{
+    "name" : "maxAllowableUpdateDelay"
+    "type" : "NumericConfig"
+    "description" : "The maximum amount of time in seconds an update for a user can be delayed."
+    "active_value" : "120"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "120"
+    "factory_default" : "120"
+},
+{
+    "name" : "closePace"
+    "type" : "NumericConfig"
+    "description" : "The closes per second sent to the producer side."
+    "active_value" : "10000"
+    "min_value" : "20"
+    "max_value" : "9223372036854775807"
+    "store_value" : "10000"
+    "factory_default" : "10000"
+},
+{
+    "name" : "minimumMountsAvailable"
+    "type" : "NumericConfig"
+    "description" : "Minimum maintainable recoverable/persistent sessions to keep around."
+    "active_value" : "5"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "5"
+    "factory_default" : "5"
+},
+{
+    "name" : "logTrafficManagement"
+    "type" : "Boolean"
+    "description" : "Should we log traffic management events?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "userTraceRouteInfo"
+    "type" : "Boolean"
+    "description" : "Should we start tracing routeInfo?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logMountRequests"
+    "type" : "Boolean"
+    "description" : "Should we log mount connections/disconnections?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "adminRemoveHosts"
+    "type" : "Numeric"
+    "description" : "Number of admin-initiated hosts removed."
+    "value" : "0"
+},
+{
+    "name" : "removeHosts"
+    "type" : "String"
+    "description" : "Remove all users connected from one or more hosts. (comma-separated list)"
+    "value" : ""
+},
+{
+    "name" : "removeAll"
+    "type" : "Boolean"
+    "description" : "Remove all users?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "ajaxSupportForStringKeys"
+    "type" : "BooleanConfig"
+    "description" : "Send AJAX messages keys in Double Quotes."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "wsMsgPacking"
+    "type" : "BooleanConfig"
+    "description" : "Enable message packing on web socket channel."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "ajaxMsgPacking"
+    "type" : "BooleanConfig"
+    "description" : "Enable AJAX message packing on ajax channel."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "rsslMsgPacking"
+    "type" : "BooleanConfig"
+    "description" : "Enable RSSL message packing on rssl channel."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "sslMsgPacking"
+    "type" : "BooleanConfig"
+    "description" : "Enable SSL message packing on supported channels."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "disableServiceGroupAppIds"
+    "type" : "StringConfig"
+    "description" : "Application IDs that will not receive service group when serviceGroups feature is enable ."
+    "active_value" : ""
+    "store_value" : ""
+    "factory_default" : ""
+},
+{
+    "name" : "wantDQABroadcastAppIds"
+    "type" : "StringConfig"
+    "description" : "Application IDs that will receive DQA Broadcast when fanoutDQAAsGroups is enabled."
+    "active_value" : "12 174"
+    "store_value" : "12 174"
+    "factory_default" : ""
+},
+{
+    "name" : "fanoutDQAAsGroups"
+    "type" : "BooleanConfig"
+    "description" : "Is the conversion from DQA alert to Group Status Message enabled?"
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "prioritizeOverflowImageRetrieval"
+    "type" : "BooleanConfig"
+    "description" : "Priorize image retrieval over updates when calling from the overflow queue."
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "mapPreemptedToStaleAppIds"
+    "type" : "StringConfig"
+    "description" : "Applications IDs that will have non-recov preempted statuses mapped to stale"
+    "active_value" : ""
+    "store_value" : ""
+    "factory_default" : ""
+},
+{
+    "name" : "convertGenericToInsertAppIds"
+    "type" : "StringConfig"
+    "description" : "Application IDs that will have generic contribution support."
+    "active_value" : "12 174"
+    "store_value" : "12 174"
+    "factory_default" : ""
+},
+{
+    "name" : "disableSingleOpenAppIds"
+    "type" : "StringConfig"
+    "description" : "Application IDs that will have single open disabled."
+    "active_value" : "12"
+    "store_value" : "12"
+    "factory_default" : ""
+},
+{
+    "name" : "mapSolicitedInfoAppIds"
+    "type" : "StringConfig"
+    "description" : "Application IDs that will have solicited status's mapped to OK statuses."
+    "active_value" : "37 38 39 40 256"
+    "store_value" : "37 38 39 40 256"
+    "factory_default" : ""
+},
+{
+    "name" : "disconnectStaleServiceAppIds"
+    "type" : "StringConfig"
+    "description" : "AppId's that force a disconnect when a stale service info is sent."
+    "active_value" : "37 38 39 40 256"
+    "store_value" : "37 38 39 40 256"
+    "factory_default" : "37 38 39 40 256"
+},
+{
+    "name" : "dumpOutput"
+    "type" : "StringConfig"
+    "description" : "Dump output file name."
+    "active_value" : "user.dmp"
+    "store_value" : "user.dmp"
+    "factory_default" : "user.dmp"
+},
+{
+    "name" : "printOutput"
+    "type" : "StringConfig"
+    "description" : "Print output file name."
+    "active_value" : "user.out"
+    "store_value" : "user.out"
+    "factory_default" : "user.out"
+},
+{
+    "name" : "dumpDB"
+    "type" : "Boolean"
+    "description" : "Should we dump the user database?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "maxWSMounts"
+    "type" : "Numeric"
+    "description" : "The maximum number of web socket physical connections."
+    "value" : "512"
+},
+{
+    "name" : "percentWSMountsUsed"
+    "type" : "Numeric"
+    "description" : "The percentage of web socket active mounts that are in use."
+    "value" : "0"
+},
+{
+    "name" : "availableWSMounts"
+    "type" : "Numeric"
+    "description" : "The current number of web socket physical connections available."
+    "value" : "512"
+},
+{
+    "name" : "activeWSMounts"
+    "type" : "Numeric"
+    "description" : "The current number of web socket physical active connections."
+    "value" : "0"
+},
+{
+    "name" : "maxHttpMounts"
+    "type" : "Numeric"
+    "description" : "The maximum number of HTTP physical connections."
+    "value" : "0"
+},
+{
+    "name" : "percentHttpMountsUsed"
+    "type" : "Numeric"
+    "description" : "The percentage of HTTP active mounts that are in use."
+    "value" : "0"
+},
+{
+    "name" : "availableHttpMounts"
+    "type" : "Numeric"
+    "description" : "The current number of HTTP physical connections available."
+    "value" : "0"
+},
+{
+    "name" : "activeHttpMounts"
+    "type" : "Numeric"
+    "description" : "The current number of HTTP physical active connections."
+    "value" : "0"
+},
+{
+    "name" : "maxRsslMounts"
+    "type" : "Numeric"
+    "description" : "The maximum number of RSSL physical connections."
+    "value" : "512"
+},
+{
+    "name" : "percentRsslMountsUsed"
+    "type" : "Numeric"
+    "description" : "The percentage of RSSL mounts available that are in use."
+    "value" : "0"
+},
+{
+    "name" : "availableRsslMounts"
+    "type" : "Numeric"
+    "description" : "The current number of RSSL physical connections available."
+    "value" : "512"
+},
+{
+    "name" : "activeRsslMounts"
+    "type" : "Numeric"
+    "description" : "The current number of RSSL physical connections active."
+    "value" : "0"
+},
+{
+    "name" : "maxSslMounts"
+    "type" : "Numeric"
+    "description" : "The maximum number of SSL physical connections."
+    "value" : "512"
+},
+{
+    "name" : "percentSslMountsUsed"
+    "type" : "Numeric"
+    "description" : "The percentage of SSL active mounts that are in use."
+    "value" : "0"
+},
+{
+    "name" : "availableSslMounts"
+    "type" : "Numeric"
+    "description" : "The current number of SSL physical connections available."
+    "value" : "512"
+},
+{
+    "name" : "activeSslMounts"
+    "type" : "Numeric"
+    "description" : "The current number of SSL physical active connections."
+    "value" : "0"
+},
+{
+    "name" : "activeUsers"
+    "type" : "Numeric"
+    "description" : "The current number of market data users."
+    "value" : "0"
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "remove"
+    "type" : "Boolean"
+    "description" : "Should all this user and all it's sessions be removed?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enforceOpenWindowOnReRequests"
+    "type" : "Boolean"
+    "description" : "Should the minimumOpenWindow be enforced on re-requests for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "pauseItemLimitPerMount"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed for this mount to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "pauseItemLimit"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "channels"
+    "type" : "Gauge"
+    "description" : "The number of sessions active for this user."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1"
+},
+{
+    "name" : "pausePercentLimit"
+    "type" : "NumericConfig"
+    "description" : "Percentage of maxItems value that can be paused for this user."
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "100"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "itemLimitPerMount"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this mount."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "aggregateItemLimit"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this user."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "maxPriorityClass"
+    "type" : "NumericConfig"
+    "description" : "The maximum priority level allowed for this user."
+    "active_value" : "10"
+    "min_value" : "1"
+    "max_value" : "10"
+    "store_value" : "10"
+    "factory_default" : "10"
+},
+{
+    "name" : "dacsDomain"
+    "type" : "String"
+    "description" : "DACS sitename the user is logged into"
+    "value" : ""
+},
+{
+    "name" : "name"
+    "type" : "String"
+    "description" : "Login name of this user."
+    "value" : "writerThread.4"
+},
+{
+    "name" : "pendingMessages"
+    "type" : "Numeric"
+    "description" : "The number of messages pending on the session thread for this user"
+    "value" : "0"
+},
+{
+    "name" : "forceLogout"
+    "type" : "Boolean"
+    "description" : "Should this user be forcefully logged out?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "suspendDelivery"
+    "type" : "Boolean"
+    "description" : "Should data delivery be suspended for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "remove"
+    "type" : "Boolean"
+    "description" : "Should all this user and all it's sessions be removed?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enforceOpenWindowOnReRequests"
+    "type" : "Boolean"
+    "description" : "Should the minimumOpenWindow be enforced on re-requests for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "pauseItemLimitPerMount"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed for this mount to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "pauseItemLimit"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "channels"
+    "type" : "Gauge"
+    "description" : "The number of sessions active for this user."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1"
+},
+{
+    "name" : "pausePercentLimit"
+    "type" : "NumericConfig"
+    "description" : "Percentage of maxItems value that can be paused for this user."
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "100"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "itemLimitPerMount"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this mount."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "aggregateItemLimit"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this user."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "maxPriorityClass"
+    "type" : "NumericConfig"
+    "description" : "The maximum priority level allowed for this user."
+    "active_value" : "10"
+    "min_value" : "1"
+    "max_value" : "10"
+    "store_value" : "10"
+    "factory_default" : "10"
+},
+{
+    "name" : "dacsDomain"
+    "type" : "String"
+    "description" : "DACS sitename the user is logged into"
+    "value" : ""
+},
+{
+    "name" : "name"
+    "type" : "String"
+    "description" : "Login name of this user."
+    "value" : "writerThread.3"
+},
+{
+    "name" : "pendingMessages"
+    "type" : "Numeric"
+    "description" : "The number of messages pending on the session thread for this user"
+    "value" : "0"
+},
+{
+    "name" : "forceLogout"
+    "type" : "Boolean"
+    "description" : "Should this user be forcefully logged out?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "suspendDelivery"
+    "type" : "Boolean"
+    "description" : "Should data delivery be suspended for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "remove"
+    "type" : "Boolean"
+    "description" : "Should all this user and all it's sessions be removed?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enforceOpenWindowOnReRequests"
+    "type" : "Boolean"
+    "description" : "Should the minimumOpenWindow be enforced on re-requests for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "pauseItemLimitPerMount"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed for this mount to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "pauseItemLimit"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "channels"
+    "type" : "Gauge"
+    "description" : "The number of sessions active for this user."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1"
+},
+{
+    "name" : "pausePercentLimit"
+    "type" : "NumericConfig"
+    "description" : "Percentage of maxItems value that can be paused for this user."
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "100"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "itemLimitPerMount"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this mount."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "aggregateItemLimit"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this user."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "maxPriorityClass"
+    "type" : "NumericConfig"
+    "description" : "The maximum priority level allowed for this user."
+    "active_value" : "10"
+    "min_value" : "1"
+    "max_value" : "10"
+    "store_value" : "10"
+    "factory_default" : "10"
+},
+{
+    "name" : "dacsDomain"
+    "type" : "String"
+    "description" : "DACS sitename the user is logged into"
+    "value" : ""
+},
+{
+    "name" : "name"
+    "type" : "String"
+    "description" : "Login name of this user."
+    "value" : "writerThread.2"
+},
+{
+    "name" : "pendingMessages"
+    "type" : "Numeric"
+    "description" : "The number of messages pending on the session thread for this user"
+    "value" : "0"
+},
+{
+    "name" : "forceLogout"
+    "type" : "Boolean"
+    "description" : "Should this user be forcefully logged out?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "suspendDelivery"
+    "type" : "Boolean"
+    "description" : "Should data delivery be suspended for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "remove"
+    "type" : "Boolean"
+    "description" : "Should all this user and all it's sessions be removed?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enforceOpenWindowOnReRequests"
+    "type" : "Boolean"
+    "description" : "Should the minimumOpenWindow be enforced on re-requests for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "pauseItemLimitPerMount"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed for this mount to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "pauseItemLimit"
+    "type" : "Numeric"
+    "description" : "Maximum number of unique items allowed to be paused based on percentage defined."
+    "value" : "0"
+},
+{
+    "name" : "channels"
+    "type" : "Gauge"
+    "description" : "The number of sessions active for this user."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1"
+},
+{
+    "name" : "pausePercentLimit"
+    "type" : "NumericConfig"
+    "description" : "Percentage of maxItems value that can be paused for this user."
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "100"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "itemLimitPerMount"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this mount."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "aggregateItemLimit"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of unique items allowed for this user."
+    "active_value" : "2400"
+    "min_value" : "0"
+    "max_value" : "2147483647"
+    "store_value" : "2400"
+    "factory_default" : "2400"
+},
+{
+    "name" : "maxPriorityClass"
+    "type" : "NumericConfig"
+    "description" : "The maximum priority level allowed for this user."
+    "active_value" : "10"
+    "min_value" : "1"
+    "max_value" : "10"
+    "store_value" : "10"
+    "factory_default" : "10"
+},
+{
+    "name" : "dacsDomain"
+    "type" : "String"
+    "description" : "DACS sitename the user is logged into"
+    "value" : ""
+},
+{
+    "name" : "name"
+    "type" : "String"
+    "description" : "Login name of this user."
+    "value" : "writerThread.1"
+},
+{
+    "name" : "pendingMessages"
+    "type" : "Numeric"
+    "description" : "The number of messages pending on the session thread for this user"
+    "value" : "0"
+},
+{
+    "name" : "forceLogout"
+    "type" : "Boolean"
+    "description" : "Should this user be forcefully logged out?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "suspendDelivery"
+    "type" : "Boolean"
+    "description" : "Should data delivery be suspended for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "logNonRecoverableOpens"
+    "type" : "Boolean"
+    "description" : "Should non-recoverable opens be logged for this user?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "refreshItem"
+    "type" : "String"
+    "description" : "Recall an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "dropItem"
+    "type" : "String"
+    "description" : "Drop an item? Format is serviceName;itemName [D:<domain>]"
+    "value" : ""
+},
+{
+    "name" : "insertByteRate"
+    "type" : "Numeric"
+    "description" : "Number of insert and post message bytes received during the last second."
+    "value" : "0"
+},
+{
+    "name" : "insertRate"
+    "type" : "Numeric"
+    "description" : "Number of insert and post messages received during the last second."
+    "value" : "0"
+},
+{
+    "name" : "totalInsertLength"
+    "type" : "Counter"
+    "description" : "Cumulative length (bytes) of all insert and post messages received."
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total number of messages"
+    "value" : "0"
+},
+{
+    "name" : "appendixAReq"
+    "type" : "Counter"
+    "description" : "Total number of appendixA download requests"
+    "value" : "0"
+},
+{
+    "name" : "symbolList"
+    "type" : "Counter"
+    "description" : "Symbol List Open"
+    "value" : "0"
+},
+{
+    "name" : "criteriaClose"
+    "type" : "Counter"
+    "description" : "Criteria Close"
+    "value" : "0"
+},
+{
+    "name" : "criteriaOpen"
+    "type" : "Counter"
+    "description" : "Criteria Open"
+    "value" : "0"
+},
+{
+    "name" : "disconnect"
+    "type" : "Counter"
+    "description" : "Disconnect"
+    "value" : "0"
+},
+{
+    "name" : "connect"
+    "type" : "Counter"
+    "description" : "Connect"
+    "value" : "0"
+},
+{
+    "name" : "dictionary"
+    "type" : "Counter"
+    "description" : "Dictionary"
+    "value" : "0"
+},
+{
+    "name" : "srcTable"
+    "type" : "Counter"
+    "description" : "Src Table"
+    "value" : "0"
+},
+{
+    "name" : "ping"
+    "type" : "Counter"
+    "description" : "Ping"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "Insert"
+    "value" : "0"
+},
+{
+    "name" : "genericDropped"
+    "type" : "Counter"
+    "description" : "Generic Messages that are dropped"
+    "value" : "0"
+},
+{
+    "name" : "generic"
+    "type" : "Counter"
+    "description" : "Generic Message"
+    "value" : "0"
+},
+{
+    "name" : "priority"
+    "type" : "Counter"
+    "description" : "Priority"
+    "value" : "0"
+},
+{
+    "name" : "close"
+    "type" : "Counter"
+    "description" : "Close"
+    "value" : "0"
+},
+{
+    "name" : "standby"
+    "type" : "Counter"
+    "description" : "Standby"
+    "value" : "0"
+},
+{
+    "name" : "resume"
+    "type" : "Counter"
+    "description" : "Resume"
+    "value" : "0"
+},
+{
+    "name" : "pause"
+    "type" : "Counter"
+    "description" : "Pause"
+    "value" : "0"
+},
+{
+    "name" : "open"
+    "type" : "Numeric"
+    "description" : "Open"
+    "value" : "0"
+},
+{
+    "name" : "repermissionEvents"
+    "type" : "Counter"
+    "description" : "The total number of repermission events received."
+    "value" : "0"
+},
+{
+    "name" : "outgoingSeqRecv"
+    "type" : "Numeric"
+    "description" : "The last outgoing sequence number that was ACK'ed."
+    "value" : "0"
+},
+{
+    "name" : "outgoingSeqSent"
+    "type" : "Numeric"
+    "description" : "The last outgoing sequence number that was sent."
+    "value" : "0"
+},
+{
+    "name" : "incomingSeqSent"
+    "type" : "Numeric"
+    "description" : "The last incoming sequence number that was ACK'ed"
+    "value" : "0"
+},
+{
+    "name" : "incomingSeqRecv"
+    "type" : "Numeric"
+    "description" : "The last incoming sequence number received."
+    "value" : "0"
+},
+{
+    "name" : "outgoingUnconfirmed"
+    "type" : "Numeric"
+    "description" : "The maximum number of outgoing messages that can be unconfirmed. (i.e. ACKed)"
+    "value" : "0"
+},
+{
+    "name" : "incomingUnconfirmed"
+    "type" : "Numeric"
+    "description" : "The maximum number of incoming messages that can be unconfirmed. (i.e. ACKed)"
+    "value" : "0"
+},
+{
+    "name" : "sessionRecoveryTime"
+    "type" : "Numeric"
+    "description" : "The time limit to reconnect this consumer."
+    "value" : "30"
+},
+{
+    "name" : "sessionKey"
+    "type" : "Numeric"
+    "description" : "The session key that identifies this consumer."
+    "value" : "0"
+},
+{
+    "name" : "updateTypeFilter"
+    "type" : "Numeric"
+    "description" : "Update type filter (positive bitmap filter - 0 is disabled)."
+    "value" : "0"
+},
+{
+    "name" : "remove"
+    "type" : "Boolean"
+    "description" : "Should we remove this consumer?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "disconnectStaleService"
+    "type" : "Boolean"
+    "description" : "Will this consumer disconnect when a stale service message is sent. (i.e. SERVICE_DOWN)"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "pingKillInterval"
+    "type" : "GaugeConfig"
+    "description" : "The countdown timer until a consumer is removed."
+    "min_store_value" : "0"
+    "min_factory_default" : "0"
+    "max_store_value" : "9223372036854775807"
+    "max_factore_default" : "9223372036854775807"
+},
+{
+    "name" : "pingInterval"
+    "type" : "GaugeConfig"
+    "description" : "The countdown timer until a heartbeat message is sent to the consumer."
+    "min_store_value" : "0"
+    "min_factory_default" : "0"
+    "max_store_value" : "9223372036854775807"
+    "max_factore_default" : "9223372036854775807"
+},
+{
+    "name" : "ipcFlushLimit"
+    "type" : "Numeric"
+    "description" : "The number of pending bytes out before the user open window is dropped."
+    "value" : "6100"
+},
+{
+    "name" : "openWindow"
+    "type" : "Numeric"
+    "description" : "The number of items that are allowed to be pending outstanding."
+    "value" : "0"
+},
+{
+    "name" : "itemsInAggregation"
+    "type" : "Gauge"
+    "description" : "The number of items that are currently under Traffic Management."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "itemOverflowEvents"
+    "type" : "Numeric"
+    "description" : "The total number of image overflow events due to pacing or channel overflow."
+    "value" : "0"
+},
+{
+    "name" : "itemsInOverflow"
+    "type" : "Gauge"
+    "description" : "The number of items that need to be recovered due to pacing or channel overflow."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "disconnectTime"
+    "type" : "String"
+    "description" : "The date/time the consumer was disconnected."
+    "value" : ""
+},
+{
+    "name" : "sessionType"
+    "type" : "String"
+    "description" : "The session type this consumer is using."
+    "value" : "Normal"
+},
+{
+    "name" : "version"
+    "type" : "String"
+    "description" : "Application component version."
+    "value" : ""
+},
+{
+    "name" : "protocol"
+    "type" : "Numeric"
+    "description" : "The SSL protocol that this consumer is using."
+    "value" : "8"
+},
+{
+    "name" : "mountTime"
+    "type" : "String"
+    "description" : "The date/time the consumer connected to us."
+    "value" : ""
+},
+{
+    "name" : "hostname"
+    "type" : "String"
+    "description" : "The host name that this consumer is on"
+    "value" : ""
+},
+{
+    "name" : "applicationName"
+    "type" : "String"
+    "description" : "The name of the application that this consumer is using."
+    "value" : ""
+},
+{
+    "name" : "applicationKey"
+    "type" : "String"
+    "description" : "The application key value supplied by the consumer."
+    "value" : "256"
+},
+{
+    "name" : "position"
+    "type" : "String"
+    "description" : "The permissioning position value supplied by the consumer."
+    "value" : ""
+},
+{
+    "name" : "loginName"
+    "type" : "String"
+    "description" : "The name used to login."
+    "value" : "writerThread.1"
+},
+{
+    "name" : "DatafeedLogin"
+    "type" : "String"
+    "description" : "The DatafeedLogin associated with this user."
+    "value" : ""
+},
+{
+    "name" : "ILA"
+    "type" : "String"
+    "description" : "The ILA associated with this user."
+    "value" : ""
+},
+{
+    "name" : "name"
+    "type" : "String"
+    "description" : "The name that was supplied by the consumer."
+    "value" : "writerThread.1"
+},
+{
+    "name" : "reversePing"
+    "type" : "Boolean"
+    "description" : "Should reverse heartbeat messages be sent to the consumer?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "mfeedConversion"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to convert RWF Field List to Marketfeed (RSSL only)?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dataConversion"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to enable data conversion (RSSL only)?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "suspectData"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to stale data?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "singleOpen"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to use the single open feature?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "recallRename"
+    "type" : "Boolean"
+    "description" : "Does the consumer want us to recall the renamed items?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "wantDQABroadcast"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to receive DQA Broadcast from DQA alert?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "groupInfo"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to receive group information?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "permissionInfo"
+    "type" : "Boolean"
+    "description" : "Does the consumer want to receive permission information?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "threadId"
+    "type" : "Numeric"
+    "description" : "Client writer thread servicing the consumer."
+    "value" : "0"
+},
+{
+    "name" : "identifier"
+    "type" : "Numeric"
+    "description" : "Key used to identify the consumer."
+    "value" : "0"
+},
+{
+    "name" : "channel"
+    "type" : "Numeric"
+    "description" : "Channel that this consumer is communicating on."
+    "value" : "0"
+},
+{
+    "name" : "updateLatency"
+    "type" : "Numeric"
+    "description" : "Average update latency (microseconds) during last second."
+    "value" : "0"
+},
+{
+    "name" : "imageLatency"
+    "type" : "Numeric"
+    "description" : "Average image latency (microseconds) during last second."
+    "value" : "0"
+},
+{
+    "name" : "insertNakRate"
+    "type" : "Numeric"
+    "description" : "Number of insert naks sent during last second."
+    "value" : "0"
+},
+{
+    "name" : "insertAckRate"
+    "type" : "Numeric"
+    "description" : "Number of insert acks sent during last second."
+    "value" : "0"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "Number of updates sent during last second."
+    "value" : "0"
+},
+{
+    "name" : "imageRate"
+    "type" : "Numeric"
+    "description" : "Number of images sent during last second."
+    "value" : "0"
+},
+{
+    "name" : "packingRate"
+    "type" : "Numeric"
+    "description" : "Average number of messages per packet during the last second."
+    "value" : "0"
+},
+{
+    "name" : "writeRate"
+    "type" : "Numeric"
+    "description" : "Number of session writes during the last second."
+    "value" : "0"
+},
+{
+    "name" : "compressPercentage"
+    "type" : "Numeric"
+    "description" : "The current data compression percentage over the last one second period."
+    "value" : "0"
+},
+{
+    "name" : "bytesSentRate"
+    "type" : "Numeric"
+    "description" : "Total bytes sent during the last second (after compression)."
+    "value" : "0"
+},
+{
+    "name" : "totalInsertNakLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all insertNak messages"
+    "value" : "0"
+},
+{
+    "name" : "totalInsertAckLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all insertAck messages"
+    "value" : "0"
+},
+{
+    "name" : "totalUpdateLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all update messages"
+    "value" : "0"
+},
+{
+    "name" : "totalImageLength"
+    "type" : "Counter"
+    "description" : "Cumulative length of all image messages"
+    "value" : "0"
+},
+{
+    "name" : "bytesSent"
+    "type" : "Counter"
+    "description" : "Cumulative length of all messages sent (after compression)"
+    "value" : "0"
+},
+{
+    "name" : "reject"
+    "type" : "Counter"
+    "description" : "Connection Rejected"
+    "value" : "0"
+},
+{
+    "name" : "overflows"
+    "type" : "Counter"
+    "description" : "Overflow Disconnect"
+    "value" : "0"
+},
+{
+    "name" : "lostPing"
+    "type" : "Counter"
+    "description" : "No Ping Disconnect"
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total"
+    "value" : "0"
+},
+{
+    "name" : "criteriaDeleteItems"
+    "type" : "Counter"
+    "description" : "Criteria Delete Items"
+    "value" : "0"
+},
+{
+    "name" : "criteriaAddItems"
+    "type" : "Counter"
+    "description" : "Criteria Add Items"
+    "value" : "0"
+},
+{
+    "name" : "criteriaInfo"
+    "type" : "Counter"
+    "description" : "Criteria Info"
+    "value" : "0"
+},
+{
+    "name" : "criteriaClose"
+    "type" : "Counter"
+    "description" : "Criteria Close"
+    "value" : "0"
+},
+{
+    "name" : "criteriaNak"
+    "type" : "Counter"
+    "description" : "Criteria Nak"
+    "value" : "0"
+},
+{
+    "name" : "criteriaAck"
+    "type" : "Counter"
+    "description" : "Criteria Ack"
+    "value" : "0"
+},
+{
+    "name" : "ping"
+    "type" : "Counter"
+    "description" : "Ping"
+    "value" : "0"
+},
+{
+    "name" : "priorityNak"
+    "type" : "Counter"
+    "description" : "Priority Nak"
+    "value" : "0"
+},
+{
+    "name" : "closeNak"
+    "type" : "Counter"
+    "description" : "Close Nak"
+    "value" : "0"
+},
+{
+    "name" : "openNak"
+    "type" : "Counter"
+    "description" : "Open Nak"
+    "value" : "0"
+},
+{
+    "name" : "dictionary"
+    "type" : "Counter"
+    "description" : "Dictionary"
+    "value" : "0"
+},
+{
+    "name" : "srcTable"
+    "type" : "Counter"
+    "description" : "Src Table"
+    "value" : "0"
+},
+{
+    "name" : "load"
+    "type" : "Counter"
+    "description" : "Load"
+    "value" : "0"
+},
+{
+    "name" : "insertNak"
+    "type" : "Counter"
+    "description" : "Insert Nak"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Insert Ack"
+    "value" : "0"
+},
+{
+    "name" : "genericDropped"
+    "type" : "Counter"
+    "description" : "Generic Messages that are dropped"
+    "value" : "0"
+},
+{
+    "name" : "generic"
+    "type" : "Counter"
+    "description" : "Generic Message"
+    "value" : "0"
+},
+{
+    "name" : "groupMerge"
+    "type" : "Counter"
+    "description" : "Group Merge"
+    "value" : "0"
+},
+{
+    "name" : "groupChange"
+    "type" : "Counter"
+    "description" : "Group Changed"
+    "value" : "0"
+},
+{
+    "name" : "groupStatus"
+    "type" : "Counter"
+    "description" : "Group Status"
+    "value" : "0"
+},
+{
+    "name" : "serviceDown"
+    "type" : "Counter"
+    "description" : "Service Down"
+    "value" : "0"
+},
+{
+    "name" : "serviceUp"
+    "type" : "Counter"
+    "description" : "Service Up"
+    "value" : "0"
+},
+{
+    "name" : "broadcast"
+    "type" : "Counter"
+    "description" : "Broadcast"
+    "value" : "0"
+},
+{
+    "name" : "permissionInfo"
+    "type" : "Counter"
+    "description" : "Permission Info"
+    "value" : "0"
+},
+{
+    "name" : "rename"
+    "type" : "Counter"
+    "description" : "Rename"
+    "value" : "0"
+},
+{
+    "name" : "status"
+    "type" : "Counter"
+    "description" : "Status"
+    "value" : "0"
+},
+{
+    "name" : "update"
+    "type" : "Counter"
+    "description" : "Update"
+    "value" : "0"
+},
+{
+    "name" : "image"
+    "type" : "Counter"
+    "description" : "Image"
+    "value" : "0"
+},
+{
+    "name" : "insertByteRate"
+    "type" : "Numeric"
+    "description" : "Number of insert and post message bytes received during the last second."
+    "value" : "0"
+},
+{
+    "name" : "insertRate"
+    "type" : "Numeric"
+    "description" : "Number of insert and post messages received during the last second."
+    "value" : "0"
+},
+{
+    "name" : "totalInsertLength"
+    "type" : "Counter"
+    "description" : "Cumulative length (bytes) of all insert and post messages received."
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total number of messages"
+    "value" : "0"
+},
+{
+    "name" : "appendixAReq"
+    "type" : "Counter"
+    "description" : "Total number of appendixA download requests"
+    "value" : "0"
+},
+{
+    "name" : "symbolList"
+    "type" : "Counter"
+    "description" : "Symbol List Open"
+    "value" : "0"
+},
+{
+    "name" : "criteriaClose"
+    "type" : "Counter"
+    "description" : "Criteria Close"
+    "value" : "0"
+},
+{
+    "name" : "criteriaOpen"
+    "type" : "Counter"
+    "description" : "Criteria Open"
+    "value" : "0"
+},
+{
+    "name" : "disconnect"
+    "type" : "Counter"
+    "description" : "Disconnect"
+    "value" : "0"
+},
+{
+    "name" : "connect"
+    "type" : "Counter"
+    "description" : "Connect"
+    "value" : "0"
+},
+{
+    "name" : "dictionary"
+    "type" : "Counter"
+    "description" : "Dictionary"
+    "value" : "0"
+},
+{
+    "name" : "srcTable"
+    "type" : "Counter"
+    "description" : "Src Table"
+    "value" : "0"
+},
+{
+    "name" : "ping"
+    "type" : "Counter"
+    "description" : "Ping"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "Insert"
+    "value" : "0"
+},
+{
+    "name" : "genericDropped"
+    "type" : "Counter"
+    "description" : "Generic Messages that are dropped"
+    "value" : "0"
+},
+{
+    "name" : "generic"
+    "type" : "Counter"
+    "description" : "Generic Message"
+    "value" : "0"
+},
+{
+    "name" : "priority"
+    "type" : "Counter"
+    "description" : "Priority"
+    "value" : "0"
+},
+{
+    "name" : "close"
+    "type" : "Counter"
+    "description" : "Close"
+    "value" : "0"
+},
+{
+    "name" : "standby"
+    "type" : "Counter"
+    "description" : "Standby"
+    "value" : "0"
+},
+{
+    "name" : "resume"
+    "type" : "Counter"
+    "description" : "Resume"
+    "value" : "0"
+},
+{
+    "name" : "pause"
+    "type" : "Counter"
+    "description" : "Pause"
+    "value" : "0"
+},
+{
+    "name" : "open"
+    "type" : "Numeric"
+    "description" : "Open"
+    "value" : "0"
+},
+{
+    "name" : "failed"
+    "type" : "Counter"
+    "description" : "The total number of inserts resulting in a failure."
+    "value" : "0"
+},
+{
+    "name" : "acknowledged"
+    "type" : "Counter"
+    "description" : "The total number of inserts resulting in a positive acknowledgement."
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "The total number of inserts handled."
+    "value" : "0"
+},
+{
+    "name" : "pendingOut"
+    "type" : "Gauge"
+    "description" : "The total number of inserts waiting for a response."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "pending"
+    "type" : "Gauge"
+    "description" : "The total number of inserts waiting to be sent."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "maxUpdateDelay"
+    "type" : "Numeric"
+    "description" : "The maximum number of milliseconds an update has been in the overflow queue."
+    "value" : "0"
+},
+{
+    "name" : "preemption"
+    "type" : "Numeric"
+    "description" : "The total number of items currently in preemption recovery."
+    "value" : "0"
+},
+{
+    "name" : "recovery"
+    "type" : "Numeric"
+    "description" : "The total number of items currently being recovered."
+    "value" : "0"
+},
+{
+    "name" : "pendingOut"
+    "type" : "Numeric"
+    "description" : "The total number of items waiting for a response."
+    "value" : "0"
+},
+{
+    "name" : "pending"
+    "type" : "Numeric"
+    "description" : "The total number of items waiting to make a request."
+    "value" : "0"
+},
+{
+    "name" : "privateStale"
+    "type" : "Numeric"
+    "description" : "The total number of stale private streams."
+    "value" : "0"
+},
+{
+    "name" : "private"
+    "type" : "Numeric"
+    "description" : "The total number of active private streams."
+    "value" : "0"
+},
+{
+    "name" : "paused"
+    "type" : "Numeric"
+    "description" : "The total number of paused items."
+    "value" : "0"
+},
+{
+    "name" : "stale"
+    "type" : "Numeric"
+    "description" : "The total number of stale items (including private)."
+    "value" : "0"
+},
+{
+    "name" : "active"
+    "type" : "Numeric"
+    "description" : "The total number of active items (including private)."
+    "value" : "0"
+},
+{
+    "name" : "cached"
+    "type" : "Numeric"
+    "description" : "The total number of cached items."
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Numeric"
+    "description" : "Total number of opened items."
+    "value" : "0"
+},
+{
+    "name" : "appendixAReq"
+    "type" : "Counter"
+    "description" : "The number of appendixA requests made."
+    "value" : "0"
+},
+{
+    "name" : "streamIdMismatch"
+    "type" : "Counter"
+    "description" : "The number of reopens received for an item containing a different stream ID (RSSL-only)."
+    "value" : "0"
+},
+{
+    "name" : "thresholdOverflowTime"
+    "type" : "Numeric"
+    "description" : "The amount of time in the threshold overflow state."
+    "value" : "0"
+},
+{
+    "name" : "opensFromOverflowQueue"
+    "type" : "Counter"
+    "description" : "The number of open events forwarded upstream from the overflow queue"
+    "value" : "0"
+},
+{
+    "name" : "updatesFiltered"
+    "type" : "Counter"
+    "description" : "The number of updates filtered due to update type filtering."
+    "value" : "0"
+},
+{
+    "name" : "updatesExtracted"
+    "type" : "Counter"
+    "description" : "The number of update events due to extraction from cache after being placed on the overflow queue."
+    "value" : "0"
+},
+{
+    "name" : "updatesMerged"
+    "type" : "Counter"
+    "description" : "The number of updates merged into a single update event due to buffer saturation"
+    "value" : "0"
+},
+{
+    "name" : "updatesDelayed"
+    "type" : "Counter"
+    "description" : "The number of updates delayed due to buffer saturation"
+    "value" : "0"
+},
+{
+    "name" : "preemptionCloses"
+    "type" : "Counter"
+    "description" : "The total number of items that were closed due to a preemption."
+    "value" : "0"
+},
+{
+    "name" : "nonRecoverableCloses"
+    "type" : "Counter"
+    "description" : "The total number of items that were closed due to a non-recoverable reason."
+    "value" : "0"
+},
+{
+    "name" : "recoverableCloses"
+    "type" : "Counter"
+    "description" : "The total number of items that were closed due to a recoverable reason."
+    "value" : "0"
+},
+{
+    "name" : "mapEntryPermDenials"
+    "type" : "Counter"
+    "description" : "The total number of map entries that were denied due to permissioning."
+    "value" : "0"
+},
+{
+    "name" : "updatePermDenials"
+    "type" : "Counter"
+    "description" : "The total number of updates that were denied due to permissioning."
+    "value" : "0"
+},
+{
+    "name" : "permissionDenials"
+    "type" : "Counter"
+    "description" : "The total number of items that were denied due to permissioning."
+    "value" : "0"
+},
+{
+    "name" : "nonRecoverableOpens"
+    "type" : "Counter"
+    "description" : "The total number of open requests that resulted in non-recoverable status messages."
+    "value" : "0"
+},
+{
+    "name" : "recoverableOpens"
+    "type" : "Counter"
+    "description" : "The total number of open requests that resulted in a recoverable status messages."
+    "value" : "0"
+},
+{
+    "name" : "snapshotOpens"
+    "type" : "Counter"
+    "description" : "The total number of snapshot open requests made."
+    "value" : "0"
+},
+{
+    "name" : "normalOpens"
+    "type" : "Counter"
+    "description" : "The total number of normal open requests made."
+    "value" : "0"
+},
+{
+    "name" : "opens"
+    "type" : "Numeric"
+    "description" : "The total number of open requests made."
+    "value" : "0"
+},
+{
+    "name" : "globalPausedItems"
+    "type" : "Numeric"
+    "description" : "The total number of outbound items currently paused globally"
+    "value" : "0"
+},
+{
+    "name" : "globalOpenItems"
+    "type" : "Numeric"
+    "description" : "The total number of outbound items currently open globally"
+    "value" : "0"
+},
+{
+    "name" : "enableNewsFiltering"
+    "type" : "BooleanConfig"
+    "description" : "Do we allow to process news filtering?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "maxGlobalBytesPerIteration"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of bytes sent across all channels per iteration when replaying data"
+    "active_value" : "100000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "100000"
+    "factory_default" : "100000"
+},
+{
+    "name" : "maxBytesPerIteration"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of bytes sent per channel per iteration when replaying data"
+    "active_value" : "10000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "10000"
+    "factory_default" : "10000"
+},
+{
+    "name" : "initialAllocation"
+    "type" : "NumericConfig"
+    "description" : "The % of the defautlItems to allocate upon startup."
+    "active_value" : "100"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "100"
+    "factory_default" : "100"
+},
+{
+    "name" : "cfreeItems"
+    "type" : "NumericConfig"
+    "description" : "freeItems"
+    "active_value" : "2000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "2000"
+    "factory_default" : "2000"
+},
+{
+    "name" : "hashTableSize"
+    "type" : "NumericConfig"
+    "description" : "The number of buckets in the item hash table."
+    "active_value" : "300000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "300000"
+    "factory_default" : "300000"
+},
+{
+    "name" : "defaultItems"
+    "type" : "NumericConfig"
+    "description" : "The number of items to allocate per allocation."
+    "active_value" : "2000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "2000"
+    "factory_default" : "2000"
+},
+{
+    "name" : "newsFilteringTrace"
+    "type" : "BooleanConfig"
+    "description" : "Trace the news filtering?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "dumpHeadlineData"
+    "type" : "BooleanConfig"
+    "description" : "Dump headline data when a user failes to get access to a headline"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "headlinePermLogging"
+    "type" : "BooleanConfig"
+    "description" : "Enable logging of headline permission failures"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "disconnectHostDown"
+    "type" : "BooleanConfig"
+    "description" : "Should we disconnect all users upon host down detection?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "disconnectSrcDown"
+    "type" : "BooleanConfig"
+    "description" : "Should we disconnect all users when all services go down?"
+    "active_value" : "RTRTRUE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "disconnectSingleSrcDown"
+    "type" : "BooleanConfig"
+    "description" : "Should we disconnect all users when any or one service go down?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "freeInsertItems"
+    "type" : "Gauge"
+    "description" : "The number of free insert items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeUserItems"
+    "type" : "Gauge"
+    "description" : "The number of free user items available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "freeItems"
+    "type" : "Gauge"
+    "description" : "The number of free item structures available."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "activeItemRefCount"
+    "type" : "Gauge"
+    "description" : "The total number of active item references."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "knownItems"
+    "type" : "Gauge"
+    "description" : "The total number of known items."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "traceRICStatsDB"
+    "type" : "Boolean"
+    "description" : "Trace RIC Stats DB to dbg files?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "emptyRICStatsDB"
+    "type" : "Boolean"
+    "description" : "Remove all entries from RIC Stats DB?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "maxFreeRICStatsDB"
+    "type" : "NumericConfig"
+    "description" : "Maximum Free Entries for RIC Stats DB"
+    "active_value" : "100"
+    "min_value" : "0"
+    "max_value" : "1000"
+    "store_value" : "100"
+    "factory_default" : "100"
+},
+{
+    "name" : "maxRICStatsDB"
+    "type" : "NumericConfig"
+    "description" : "Maximum Entries to track in RIC Stats DB"
+    "active_value" : "10000"
+    "min_value" : "10"
+    "max_value" : "100000"
+    "store_value" : "10000"
+    "factory_default" : "10000"
+},
+{
+    "name" : "ageOutTimeRICStatsDB"
+    "type" : "NumericConfig"
+    "description" : "RICStats DB Age Out Time in minutes."
+    "active_value" : "43200"
+    "min_value" : "0"
+    "max_value" : "1209600"
+    "store_value" : "43200"
+    "factory_default" : "43200"
+},
+{
+    "name" : "preemptRICStatsDBCtr"
+    "type" : "Numeric"
+    "description" : "Number of entries preempted from RICStatsDB"
+    "value" : "0"
+},
+{
+    "name" : "lastPendOutTimedOutRIC"
+    "type" : "String"
+    "description" : "Last RIC that timed out the pendout queue"
+    "value" : "     "
+},
+{
+    "name" : "numPendOutTimedOutRICs"
+    "type" : "Numeric"
+    "description" : "Number of RICs within RIC Stats DB that timed out the pendout queue."
+    "value" : "0"
+},
+{
+    "name" : "enabledRICStatsDB"
+    "type" : "BooleanConfig"
+    "description" : "RICStats DB Enabled"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "reorderMsgRate"
+    "type" : "Numeric"
+    "description" : "Rate of reordered messages."
+    "value" : "0"
+},
+{
+    "name" : "reorderMsgCount"
+    "type" : "Numeric"
+    "description" : "Total count of reordered messages."
+    "value" : "0"
+},
+{
+    "name" : "reorderDecodeErrors"
+    "type" : "Counter"
+    "description" : "Number of reordered update messages which were unable to be decoded."
+    "value" : "0"
+},
+{
+    "name" : "reorderUpdatesSent"
+    "type" : "Counter"
+    "description" : "Number of updates buffered and sent due to p2p/mc reordering."
+    "value" : "0"
+},
+{
+    "name" : "reorderUpdatesSent"
+    "type" : "Counter"
+    "description" : "Number of updates buffered and sent due to p2p/mc reordering."
+    "value" : "0"
+},
+{
+    "name" : "poolReorderBufExhausted"
+    "type" : "Counter"
+    "description" : "Number of times the entire reorder buf pool was exhausted."
+    "value" : "0"
+},
+{
+    "name" : "itemReorderBufExhausted"
+    "type" : "Counter"
+    "description" : "Number of times reorder bufs were exhausted due to individual item limit being reached."
+    "value" : "0"
+},
+{
+    "name" : "sassServiceQueueTimerMilliseconds"
+    "type" : "Numeric"
+    "description" : "Frequency at which item request queues are processed for SASS services."
+    "value" : "10"
+},
+{
+    "name" : "dumpDispatcherTables"
+    "type" : "Boolean"
+    "description" : "Dump the RRMP dispatcher tables."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "rsslStatusDispatchFailed"
+    "type" : "Counter"
+    "description" : "Rssl Status message dispatch failed due to improper server registration"
+    "value" : "0"
+},
+{
+    "name" : "updateDispatchFailed"
+    "type" : "Counter"
+    "description" : "Update event dispatch failed due to improper server registration"
+    "value" : "0"
+},
+{
+    "name" : "freeReorderInfoPoolCount"
+    "type" : "Gauge"
+    "description" : "The number of free reorder info in reorder pool."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1000"
+},
+{
+    "name" : "currentReorderInfoPoolSize"
+    "type" : "Gauge"
+    "description" : "The total number of allocated info in reorder pool."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1000"
+},
+{
+    "name" : "freeReorderPoolCount"
+    "type" : "Gauge"
+    "description" : "The number of free reorder buffers in reorder pool."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1000"
+},
+{
+    "name" : "currentReorderPoolSize"
+    "type" : "Gauge"
+    "description" : "The total number of allocated buffers in reorder pool."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1000"
+},
+{
+    "name" : "enableServiceAggregation"
+    "type" : "BooleanConfig"
+    "description" : "Aggregate multiple services as a single service"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "suspend"
+    "type" : "BooleanConfig"
+    "description" : "Should requesting from this service be suspended?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "initialAllocation"
+    "type" : "NumericConfig"
+    "description" : "The % of freeItems to allocate at startup."
+    "active_value" : "2000"
+    "min_value" : "1"
+    "max_value" : "100"
+    "store_value" : "2000"
+    "factory_default" : "100"
+},
+{
+    "name" : "reorderQueueLimitPerItem"
+    "type" : "NumericConfig"
+    "description" : "The upper limit on reorder queue size per item"
+    "active_value" : "25000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "25000"
+    "factory_default" : "25000"
+},
+{
+    "name" : "subjectTableSize"
+    "type" : "NumericConfig"
+    "description" : "The number of buckets in the subject mapping table."
+    "active_value" : "100000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "100000"
+    "factory_default" : "100000"
+},
+{
+    "name" : "hashTableSize"
+    "type" : "NumericConfig"
+    "description" : "The number of buckets in the producer item hash table."
+    "active_value" : "300000"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "300000"
+    "factory_default" : "100000"
+},
+{
+    "name" : "auditFailures"
+    "type" : "Counter"
+    "description" : "The total number of items that were out of sync as a result of the audit."
+    "value" : "0"
+},
+{
+    "name" : "auditReqs"
+    "type" : "Counter"
+    "description" : "The total number of items that were audited by this service."
+    "value" : "0"
+},
+{
+    "name" : "permissionDenial"
+    "type" : "Counter"
+    "description" : "The total number of items that were denied due to permissioning."
+    "value" : "0"
+},
+{
+    "name" : "preemptionClose"
+    "type" : "Counter"
+    "description" : "The number of items that were closed due to preemption."
+    "value" : "0"
+},
+{
+    "name" : "nonRecoverableClose"
+    "type" : "Counter"
+    "description" : "The number of items that were closed due to a non-recoverable reason."
+    "value" : "0"
+},
+{
+    "name" : "recoverableClose"
+    "type" : "Counter"
+    "description" : "The number of items that were closed due to recoverable reason."
+    "value" : "0"
+},
+{
+    "name" : "nonRecoverableOpens"
+    "type" : "Counter"
+    "description" : "The number of open requests that ended in a non-recoverable failure."
+    "value" : "0"
+},
+{
+    "name" : "recoverableOpens"
+    "type" : "Counter"
+    "description" : "The number of open requests that ended in a recoverable failure."
+    "value" : "0"
+},
+{
+    "name" : "opens"
+    "type" : "Counter"
+    "description" : "The number of open requests made."
+    "value" : "0"
+},
+{
+    "name" : "pendingOutTimeouts"
+    "type" : "Counter"
+    "description" : "Total number of pending out items which have timed out."
+    "value" : "0"
+},
+{
+    "name" : "pendingOut"
+    "type" : "Gauge"
+    "description" : "The number of items that are waiting for a response."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "pending"
+    "type" : "Gauge"
+    "description" : "The number of items waiting for a request to be sent."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "privateStale"
+    "type" : "Gauge"
+    "description" : "The number of private Streams currently active and stale on this server."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "private"
+    "type" : "Gauge"
+    "description" : "The number of private Streams currently active on this server."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "stale"
+    "type" : "Gauge"
+    "description" : "The number of items (including private) currently stale on this server."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "active"
+    "type" : "Gauge"
+    "description" : "The number of items (including private) currently active on this server."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeServerInsert"
+    "type" : "Gauge"
+    "description" : "The number of server insert items on the free list."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "freeServiceInsert"
+    "type" : "Gauge"
+    "description" : "The number of service insert items on the free list."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "free"
+    "type" : "Gauge"
+    "description" : "The number of items on the free list."
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2000"
+},
+{
+    "name" : "symbolListOpen"
+    "type" : "Counter"
+    "description" : "Symbol List Request Open"
+    "value" : "0"
+},
+{
+    "name" : "symbolListClose"
+    "type" : "Counter"
+    "description" : "Symbol List Request Close"
+    "value" : "0"
+},
+{
+    "name" : "generic"
+    "type" : "Counter"
+    "description" : "Generic Message"
+    "value" : "0"
+},
+{
+    "name" : "insertLatency"
+    "type" : "Numeric"
+    "description" : "Average insert latency (microseconds) during last second."
+    "value" : "0"
+},
+{
+    "name" : "insertRate"
+    "type" : "Numeric"
+    "description" : "Insert Rate"
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total"
+    "value" : "0"
+},
+{
+    "name" : "cbrAck"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Ack"
+    "value" : "0"
+},
+{
+    "name" : "cbrClose"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Close"
+    "value" : "0"
+},
+{
+    "name" : "cbrOpen"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Open"
+    "value" : "0"
+},
+{
+    "name" : "insert"
+    "type" : "Counter"
+    "description" : "Insert"
+    "value" : "0"
+},
+{
+    "name" : "priority"
+    "type" : "Counter"
+    "description" : "Sink Priority"
+    "value" : "0"
+},
+{
+    "name" : "close"
+    "type" : "Counter"
+    "description" : "Sink Close"
+    "value" : "0"
+},
+{
+    "name" : "request"
+    "type" : "Counter"
+    "description" : "Sink Open"
+    "value" : "0"
+},
+{
+    "name" : "generic"
+    "type" : "Counter"
+    "description" : "Generic Message"
+    "value" : "0"
+},
+{
+    "name" : "refreshHdr"
+    "type" : "Counter"
+    "description" : "Rssl Refresh Header"
+    "value" : "0"
+},
+{
+    "name" : "refreshData"
+    "type" : "Counter"
+    "description" : "Rssl Refresh Data"
+    "value" : "0"
+},
+{
+    "name" : "refreshRate"
+    "type" : "Numeric"
+    "description" : "Number of refresh msgs sent during last second"
+    "value" : "0"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "Number of updates sent during last second"
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total"
+    "value" : "0"
+},
+{
+    "name" : "dropSink"
+    "type" : "Counter"
+    "description" : "Drop Sinks"
+    "value" : "0"
+},
+{
+    "name" : "nodeIDChange"
+    "type" : "Counter"
+    "description" : "Node Id Change"
+    "value" : "0"
+},
+{
+    "name" : "cbrStatus"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Status"
+    "value" : "0"
+},
+{
+    "name" : "cbrInfo"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Info"
+    "value" : "0"
+},
+{
+    "name" : "insertNak"
+    "type" : "Counter"
+    "description" : "Negative Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Positive Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "permissionInfo"
+    "type" : "Counter"
+    "description" : "Lock"
+    "value" : "0"
+},
+{
+    "name" : "broadcast"
+    "type" : "Counter"
+    "description" : "Broadcast"
+    "value" : "0"
+},
+{
+    "name" : "groupMerge"
+    "type" : "Counter"
+    "description" : "Group Merge"
+    "value" : "0"
+},
+{
+    "name" : "cacheDrop"
+    "type" : "Counter"
+    "description" : "Cache Drop"
+    "value" : "0"
+},
+{
+    "name" : "setGroup"
+    "type" : "Counter"
+    "description" : "Set Grouping"
+    "value" : "0"
+},
+{
+    "name" : "groupStatus"
+    "type" : "Counter"
+    "description" : "Group Status"
+    "value" : "0"
+},
+{
+    "name" : "rename"
+    "type" : "Counter"
+    "description" : "Rename"
+    "value" : "0"
+},
+{
+    "name" : "status"
+    "type" : "Counter"
+    "description" : "Status"
+    "value" : "0"
+},
+{
+    "name" : "update"
+    "type" : "Counter"
+    "description" : "Update"
+    "value" : "0"
+},
+{
+    "name" : "changeRequestID"
+    "type" : "Counter"
+    "description" : "Change Request Id"
+    "value" : "0"
+},
+{
+    "name" : "generic"
+    "type" : "Counter"
+    "description" : "Generic Message"
+    "value" : "0"
+},
+{
+    "name" : "refreshHdr"
+    "type" : "Counter"
+    "description" : "Rssl Refresh Header"
+    "value" : "0"
+},
+{
+    "name" : "refreshData"
+    "type" : "Counter"
+    "description" : "Rssl Refresh Data"
+    "value" : "0"
+},
+{
+    "name" : "refreshRate"
+    "type" : "Numeric"
+    "description" : "Number of refresh msgs sent during last second"
+    "value" : "0"
+},
+{
+    "name" : "updateRate"
+    "type" : "Numeric"
+    "description" : "Number of updates sent during last second"
+    "value" : "0"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total"
+    "value" : "0"
+},
+{
+    "name" : "dropSink"
+    "type" : "Counter"
+    "description" : "Drop Sinks"
+    "value" : "0"
+},
+{
+    "name" : "nodeIDChange"
+    "type" : "Counter"
+    "description" : "Node Id Change"
+    "value" : "0"
+},
+{
+    "name" : "cbrStatus"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Status"
+    "value" : "0"
+},
+{
+    "name" : "cbrInfo"
+    "type" : "Counter"
+    "description" : "Criteria Based Request Info"
+    "value" : "0"
+},
+{
+    "name" : "insertNak"
+    "type" : "Counter"
+    "description" : "Negative Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "insertAck"
+    "type" : "Counter"
+    "description" : "Positive Insert Acknowledgement"
+    "value" : "0"
+},
+{
+    "name" : "permissionInfo"
+    "type" : "Counter"
+    "description" : "Lock"
+    "value" : "0"
+},
+{
+    "name" : "broadcast"
+    "type" : "Counter"
+    "description" : "Broadcast"
+    "value" : "0"
+},
+{
+    "name" : "groupMerge"
+    "type" : "Counter"
+    "description" : "Group Merge"
+    "value" : "0"
+},
+{
+    "name" : "cacheDrop"
+    "type" : "Counter"
+    "description" : "Cache Drop"
+    "value" : "0"
+},
+{
+    "name" : "setGroup"
+    "type" : "Counter"
+    "description" : "Set Grouping"
+    "value" : "0"
+},
+{
+    "name" : "groupStatus"
+    "type" : "Counter"
+    "description" : "Group Status"
+    "value" : "0"
+},
+{
+    "name" : "rename"
+    "type" : "Counter"
+    "description" : "Rename"
+    "value" : "0"
+},
+{
+    "name" : "status"
+    "type" : "Counter"
+    "description" : "Status"
+    "value" : "0"
+},
+{
+    "name" : "update"
+    "type" : "Counter"
+    "description" : "Update"
+    "value" : "0"
+},
+{
+    "name" : "changeRequestID"
+    "type" : "Counter"
+    "description" : "Change Request Id"
+    "value" : "0"
+},
+{
+    "name" : "num6UnknownOpcodes"
+    "type" : "Counter"
+    "description" : "The number of unknown RRMP 6 message opcodes."
+    "value" : "0"
+},
+{
+    "name" : "num6ParsingErrors"
+    "type" : "Counter"
+    "description" : "The number of errors parsing RRMP 6 packets."
+    "value" : "0"
+},
+{
+    "name" : "logUnknownOpcodes"
+    "type" : "BooleanConfig"
+    "description" : "Log any RRMP messages received with unknown opcodes to the log file."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "logParsingErrors"
+    "type" : "BooleanConfig"
+    "description" : "Log any RRMP parsing errors to the log file."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "enableLoopPrevention"
+    "type" : "Boolean"
+    "description" : "Whether to ignore looped cascading source servers."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "blockedServersList"
+    "type" : "String"
+    "description" : "Servers to ignore."
+    "value" : ""
+},
+{
+    "name" : "permittedServiceList"
+    "type" : "String"
+    "description" : "Services to see."
+    "value" : ""
+},
+{
+    "name" : "blockedServiceList"
+    "type" : "String"
+    "description" : "Services to ignore."
+    "value" : ""
+},
+{
+    "name" : "networkTrace"
+    "type" : "Boolean"
+    "description" : "Trace the network recognition layer?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "recognitionTime"
+    "type" : "Numeric"
+    "description" : "Time to wait while recognizing services."
+    "value" : "10"
+},
+{
+    "name" : "restartOnTransportError"
+    "type" : "Boolean"
+    "description" : "Should we restart services when a transport error occurs?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "suspendRequests"
+    "type" : "Boolean"
+    "description" : "Suspended open, priority, and close requests."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "crash"
+    "type" : "Counter"
+    "description" : "The number of times a node was shutdown due to a keepAlive timeout."
+    "value" : "0"
+},
+{
+    "name" : "keepAliveInterval"
+    "type" : "NumericConfig"
+    "description" : "The time interval to send keepAlive messages."
+    "active_value" : "30"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "30"
+    "factory_default" : "30"
+},
+{
+    "name" : "networkDelay"
+    "type" : "NumericConfig"
+    "description" : "The network delay used when calculating the timeout."
+    "active_value" : "140"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "140"
+    "factory_default" : "5"
+},
+{
+    "name" : "total"
+    "type" : "Counter"
+    "description" : "Total"
+    "value" : "12755"
+},
+{
+    "name" : "state"
+    "type" : "Counter"
+    "description" : "Sink State"
+    "value" : "12754"
+},
+{
+    "name" : "response"
+    "type" : "Counter"
+    "description" : "Sink Response"
+    "value" : "0"
+},
+{
+    "name" : "request"
+    "type" : "Counter"
+    "description" : "Sink Request"
+    "value" : "0"
+},
+{
+    "name" : "changeState"
+    "type" : "Counter"
+    "description" : "Sink Change State"
+    "value" : "0"
+},
+{
+    "name" : "exists"
+    "type" : "Counter"
+    "description" : "Sink Exists"
+    "value" : "0"
+},
+{
+    "name" : "start"
+    "type" : "Counter"
+    "description" : "Sink Start"
+    "value" : "1"
+},
+{
+    "name" : "bytesReceived"
+    "type" : "Counter"
+    "description" : "The number of bytes received."
+    "value" : "0"
+},
+{
+    "name" : "messagesReceived"
+    "type" : "Counter"
+    "description" : "The number of messages received."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent"
+    "type" : "Counter"
+    "description" : "The total number of bytes sent."
+    "value" : "153060"
+},
+{
+    "name" : "messagesSent"
+    "type" : "Counter"
+    "description" : "The number of messages sent."
+    "value" : "12755"
+},
+{
+    "name" : "logBadPackets"
+    "type" : "BooleanConfig"
+    "description" : "Log an event when a bad packet has been detected."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "badPackets"
+    "type" : "Counter"
+    "description" : "Number of unparsable packets received."
+    "value" : "0"
+},
+{
+    "name" : "dumpOutgoingMsgs"
+    "type" : "Boolean"
+    "description" : "Dump Outgoing Msgs"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "dumpIncomingMsgs"
+    "type" : "Boolean"
+    "description" : "Dump Incoming Msgs"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "multicastBitmapWrites"
+    "type" : "Counter"
+    "description" : "The number of multicast bitmap messages that have been written."
+    "value" : "0"
+},
+{
+    "name" : "multicastWrites"
+    "type" : "Counter"
+    "description" : "The number of multicast messages that have been written."
+    "value" : "12755"
+},
+{
+    "name" : "pointToPointMulticastWrites"
+    "type" : "Counter"
+    "description" : "The number of point-to-point multicast messages that have been written."
+    "value" : "0"
+},
+{
+    "name" : "pointToPointWrites"
+    "type" : "Counter"
+    "description" : "The number of point-to-point messages that have been written."
+    "value" : "0"
+},
+{
+    "name" : "fragmentList"
+    "type" : "Numeric"
+    "description" : "The current size of the fragment list."
+    "value" : "0"
+},
+{
+    "name" : "protocol"
+    "type" : "String"
+    "description" : "The protocol type and version of this bus."
+    "value" : "72:1"
+},
+{
+    "name" : "readInterval"
+    "type" : "NumericConfig"
+    "description" : "The rate in which to read the inbound messages. N/A on Solaris."
+    "active_value" : "0"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "0"
+    "factory_default" : "0"
+},
+{
+    "name" : "rrcpReadFailures"
+    "type" : "Counter"
+    "description" : "The number of failures when reading messages from the daemon."
+    "value" : "0"
+},
+{
+    "name" : "rrcpWriteFailures"
+    "type" : "Counter"
+    "description" : "The number of failures when writing messages to the daemon."
+    "value" : "0"
+},
+{
+    "name" : "okThreshold"
+    "type" : "NumericRange"
+    "description" : "The percent of the packetsPending needed for a OK level."
+    "min_value" : "1"
+    "max_value" : "100"
+},
+{
+    "name" : "highThreshold"
+    "type" : "NumericRange"
+    "description" : "The percent of the packetsPending needed for a high level breach."
+    "min_value" : "1"
+    "max_value" : "100"
+},
+{
+    "name" : "highThresholdHits"
+    "type" : "Counter"
+    "description" : "The number of times the high water level was reached."
+    "value" : "0"
+},
+{
+    "name" : "reads"
+    "type" : "Counter"
+    "description" : "The number of system read calls made."
+    "value" : "1"
+},
+{
+    "name" : "inputQueueOverflow"
+    "type" : "Counter"
+    "description" : "The number of times the input buffer has overflowed."
+    "value" : "0"
+},
+{
+    "name" : "freePackets"
+    "type" : "Numeric"
+    "description" : "The number of packets available for receiving messages."
+    "value" : "3199"
+},
+{
+    "name" : "bytesPending"
+    "type" : "Gauge"
+    "description" : "The number of bytes currently waiting to be handled."
+    "min_value" : "0"
+    "max_value" : "9830400"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "packetsPending"
+    "type" : "Gauge"
+    "description" : "The number of packets currently waiting to be handled."
+    "min_value" : "0"
+    "max_value" : "3200"
+    "low_water_mark" : "0"
+    "high_water_mark" : "0"
+},
+{
+    "name" : "driverName"
+    "type" : "StringConfig"
+    "description" : "The name of the device to open."
+    "active_value" : "sink,1"
+    "store_value" : "sink,1"
+    "factory_default" : ""
+},
+{
+    "name" : "useMultiPartRRCPLock"
+    "type" : "BooleanConfig"
+    "description" : "User Mult-part RRCP Lock"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "fragmentWrites"
+    "type" : "Counter"
+    "description" : "The number of fragmented messages that have been written."
+    "value" : "0"
+},
+{
+    "name" : "rrcpBCMissedMsgs"
+    "type" : "Counter"
+    "description" : "The number of RRCP Missed Broadcast Message error occurrences."
+    "value" : "0"
+},
+{
+    "name" : "congestionEnd"
+    "type" : "Counter"
+    "description" : "The number of times Congestion ends."
+    "value" : "0"
+},
+{
+    "name" : "congestionBegin"
+    "type" : "Counter"
+    "description" : "The number of times possible congestion sets in."
+    "value" : "0"
+},
+{
+    "name" : "hostUnreachable"
+    "type" : "Counter"
+    "description" : "The number of times no address for PP nodeId."
+    "value" : "0"
+},
+{
+    "name" : "rrcpResync"
+    "type" : "Counter"
+    "description" : "The number of packets lossed."
+    "value" : "0"
+},
+{
+    "name" : "ppTimeout"
+    "type" : "Counter"
+    "description" : "The number of times PP retx timeout."
+    "value" : "0"
+},
+{
+    "name" : "discardSent"
+    "type" : "Counter"
+    "description" : "The number of times we can't honor remote's RXMTREQ."
+    "value" : "0"
+},
+{
+    "name" : "discardRcvd"
+    "type" : "Counter"
+    "description" : "The number of times our RXMTREQ was denied."
+    "value" : "0"
+},
+{
+    "name" : "incompleteMsg"
+    "type" : "Counter"
+    "description" : "The number of incomplete messages."
+    "value" : "0"
+},
+{
+    "name" : "inboundOverflow"
+    "type" : "Counter"
+    "description" : "The number of inbound queue overflows."
+    "value" : "0"
+},
+{
+    "name" : "badPacket"
+    "type" : "Counter"
+    "description" : "The number of bad packets."
+    "value" : "0"
+},
+{
+    "name" : "remoteReboot"
+    "type" : "Counter"
+    "description" : "The number of remote reboots."
+    "value" : "0"
+},
+{
+    "name" : "bytesReceived"
+    "type" : "Counter"
+    "description" : "The number of bytes received from the network."
+    "value" : "0"
+},
+{
+    "name" : "packetsReceived"
+    "type" : "Counter"
+    "description" : "The number of packets received from the network."
+    "value" : "0"
+},
+{
+    "name" : "bytesSent"
+    "type" : "Counter"
+    "description" : "The number of bytes sent to the network."
+    "value" : "548465"
+},
+{
+    "name" : "packetsSent"
+    "type" : "Counter"
+    "description" : "The number of packets sent to the network."
+    "value" : "12755"
+},
+{
+    "name" : "maximumNumRetries"
+    "type" : "NumericConfig"
+    "description" : "The number of times to attempt an errored write/read operation."
+    "active_value" : "2"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "2"
+    "factory_default" : "2"
+},
+{
+    "name" : "maximumPacketsPending"
+    "type" : "NumericConfig"
+    "description" : "The maximum number of packets to to be pending."
+    "active_value" : "3200"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "3200"
+    "factory_default" : "10000"
+},
+{
+    "name" : "inputBias"
+    "type" : "NumericConfig"
+    "description" : "The number of messages to dispatch before releasing process control."
+    "active_value" : "7"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "7"
+    "factory_default" : "7"
+},
+{
+    "name" : "bufferSize"
+    "type" : "NumericConfig"
+    "description" : "Size of the buffers to read into."
+    "active_value" : "3072"
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "store_value" : "3072"
+    "factory_default" : "3072"
+},
+{
+    "name" : "open"
+    "type" : "String"
+    "description" : "Is the driver initialized."
+    "value" : "Yes"
+},
+{
+    "name" : "SNAP_AND_DYNAMIC_VIEW"
+    "type" : "Boolean"
+    "description" : "Is SNAP_AND_DYNAMIC_VIEW enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "ADS_PREMIUM"
+    "type" : "Boolean"
+    "description" : "Is ADS_PREMIUM enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "VISIBLE_PUBLISHER_IDENTIFIER"
+    "type" : "Boolean"
+    "description" : "Is VISIBLE_PUBLISHER_IDENTIFIER enabled?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "DELAY"
+    "type" : "Boolean"
+    "description" : "Is DELAY enabled?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "PRIVATE_STREAM"
+    "type" : "Boolean"
+    "description" : "Is PRIVATE_STREAM enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "CASCADING"
+    "type" : "Boolean"
+    "description" : "Is CASCADING enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "CONFLATION"
+    "type" : "Boolean"
+    "description" : "Is CONFLATION enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "productVersion"
+    "type" : "String"
+    "description" : "Product version."
+    "value" : "3.6"
+},
+{
+    "name" : "productName"
+    "type" : "String"
+    "description" : "Product name."
+    "value" : "ADS"
+},
+{
+    "name" : "daysBeforeExpired"
+    "type" : "Numeric"
+    "description" : "Days before license expiration."
+    "value" : "7978"
+},
+{
+    "name" : "licenseExpired"
+    "type" : "Boolean"
+    "description" : "Is license expired?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "reloadLicenseFile"
+    "type" : "String"
+    "description" : "Reload the license file."
+    "value" : ""
+},
+{
+    "name" : "licenseStatus"
+    "type" : "String"
+    "description" : "License status."
+    "value" : "SUCCESS"
+},
+{
+    "name" : "licenseType"
+    "type" : "String"
+    "description" : "License type."
+    "value" : "Expiration"
+},
+{
+    "name" : "licenseFile"
+    "type" : "String"
+    "description" : "License file path."
+    "value" : "/opt/refinitiv/SOFTWARE/globalconfig/licensefile_STATE_STREET.txt"
+},
+{
+    "name" : "mountRatesEnabled"
+    "type" : "Boolean"
+    "description" : "Is mount-based rate calculation enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "serverRatesEnabled"
+    "type" : "Boolean"
+    "description" : "Is server-based rate calculation enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "latencyCalcMountBased"
+    "type" : "Boolean"
+    "description" : "Is mount-based latency monitoring enabled?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "latencyCalcServerBased"
+    "type" : "Boolean"
+    "description" : "Is server-based latency monitoring enabled?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "numLatencySamples"
+    "type" : "NumericConfig"
+    "description" : "Number of latency samples per second."
+    "active_value" : "150"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "150"
+    "factory_default" : "150"
+},
+{
+    "name" : "latencyCalcEnabled"
+    "type" : "Boolean"
+    "description" : "Is latency monitoring enabled?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "reloadCount"
+    "type" : "Counter"
+    "description" : "The total number of times the dictionaries have successfully been reloaded."
+    "value" : "0"
+},
+{
+    "name" : "preloadTemplateFile"
+    "type" : "StringConfig"
+    "description" : "The filename of the master template file."
+    "active_value" : ""
+    "store_value" : ""
+    "factory_default" : ""
+},
+{
+    "name" : "enumDictVersion"
+    "type" : "StringConfig"
+    "description" : "The enum dictionary version."
+    "active_value" : "22.71"
+    "store_value" : "22.71"
+    "factory_default" : "0"
+},
+{
+    "name" : "enumDictId"
+    "type" : "Numeric"
+    "description" : "The enum dictionary identifier."
+    "value" : "1"
+},
+{
+    "name" : "enumDictType"
+    "type" : "Numeric"
+    "description" : "The enum dictionary type."
+    "value" : "2"
+},
+{
+    "name" : "enumDictName"
+    "type" : "String"
+    "description" : "The name of the field dictionary."
+    "value" : "RWFEnum"
+},
+{
+    "name" : "enumTypeFile"
+    "type" : "StringConfig"
+    "description" : "The filename of the enumerated type definitions file."
+    "active_value" : "/opt/refinitiv/SOFTWARE/globalconfig/enumtype.def"
+    "store_value" : "/opt/refinitiv/SOFTWARE/globalconfig/enumtype.def"
+    "factory_default" : ""
+},
+{
+    "name" : "fieldDictVersion"
+    "type" : "StringConfig"
+    "description" : "The field dictionary version."
+    "active_value" : "4.20.54"
+    "store_value" : "4.20.54"
+    "factory_default" : ""
+},
+{
+    "name" : "fieldDictId"
+    "type" : "Numeric"
+    "description" : "The field dictionary identifier."
+    "value" : "1"
+},
+{
+    "name" : "fieldDictType"
+    "type" : "Numeric"
+    "description" : "The field dictionary type."
+    "value" : "1"
+},
+{
+    "name" : "fieldDictName"
+    "type" : "String"
+    "description" : "The name of the field dictionary."
+    "value" : "RWFFld"
+},
+{
+    "name" : "fieldDictFile"
+    "type" : "StringConfig"
+    "description" : "The filename of the field dictionary file."
+    "active_value" : "/opt/refinitiv/SOFTWARE/globalconfig/RDMFieldDictionary"
+    "store_value" : "/opt/refinitiv/SOFTWARE/globalconfig/RDMFieldDictionary"
+    "factory_default" : ""
+},
+{
+    "name" : "flushBuffer"
+    "type" : "Boolean"
+    "description" : "Flush the current buffer"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "numFiles"
+    "type" : "NumericConfig"
+    "description" : "The number of files to use."
+    "active_value" : "10"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "10"
+    "factory_default" : "10"
+},
+{
+    "name" : "fileSize"
+    "type" : "NumericConfig"
+    "description" : "Maximum size of each file."
+    "active_value" : "1000000"
+    "min_value" : "1"
+    "max_value" : "9223372036854775807"
+    "store_value" : "1000000"
+    "factory_default" : "1000000"
+},
+{
+    "name" : "appendToFile"
+    "type" : "BooleanConfig"
+    "description" : "Append to the existing file."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRTRUE"
+    "factory_default" : "RTRTRUE"
+},
+{
+    "name" : "flushAfterWrite"
+    "type" : "BooleanConfig"
+    "description" : "Flush the stream after every write?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "filename"
+    "type" : "StringConfig"
+    "description" : "The file name for debug logging."
+    "active_value" : "ads.dbg"
+    "store_value" : "ads.dbg"
+    "factory_default" : "ads.dbg"
+},
+{
+    "name" : "sendCloseRecovOnTimeout"
+    "type" : "Boolean"
+    "description" : "Send CLOSED_RECOVER streamState on DACS timeout?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enableMetering"
+    "type" : "Boolean"
+    "description" : "Is software metering enabled?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "softwareUsageWithoutInit"
+    "type" : "Boolean"
+    "description" : "SOFTWARE_USAGE_WITHOUT_INIT_ENABLE"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "softwareUsageFileDirectory"
+    "type" : "String"
+    "description" : "Directory for software usage statistics file."
+    "value" : "./"
+},
+{
+    "name" : "softwareUsageFileSize"
+    "type" : "Numeric"
+    "description" : "Maximum size for software usage statistics file."
+    "value" : "100"
+},
+{
+    "name" : "includePositionUsage"
+    "type" : "Boolean"
+    "description" : "Include login position within COMPNNT_AUTHVER usage."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "publisherContinueWatchExecs"
+    "type" : "Counter"
+    "description" : "Number of times the publisher continue watch process has successfully executed."
+    "value" : "0"
+},
+{
+    "name" : "publisherContinueWatchTime"
+    "type" : "String"
+    "description" : "Next time for publisher continue watch timer process."
+    "value" : ""
+},
+{
+    "name" : "dumpPublisherContinueWatch"
+    "type" : "Boolean"
+    "description" : "Dump publisher continue watch usage information."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "continueWatchExecs"
+    "type" : "Counter"
+    "description" : "Number of times the continue watch process has successfully executed."
+    "value" : "0"
+},
+{
+    "name" : "watchTimerOpenHours"
+    "type" : "NumericConfig"
+    "description" : "Number of hours user items must be open (start watch) to have continue watch logged."
+    "active_value" : "24"
+    "min_value" : "0"
+    "max_value" : "65535"
+    "store_value" : "24"
+    "factory_default" : "24"
+},
+{
+    "name" : "maxStaggerMinutes"
+    "type" : "Numeric"
+    "description" : "Random range in minutes to stagger continue watch timer."
+    "value" : "1"
+},
+{
+    "name" : "continueWatchTime"
+    "type" : "String"
+    "description" : "Next time for continue watch timer process."
+    "value" : ""
+},
+{
+    "name" : "dumpContinueWatch"
+    "type" : "Boolean"
+    "description" : "Dump user item continue watch usage information."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enableDacsPermTest"
+    "type" : "Boolean"
+    "description" : "Is the DacsPermTest server enabled?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "enableFirewall"
+    "type" : "Boolean"
+    "description" : "Should we have a firewall?"
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "refuseConnectionsDacsDown"
+    "type" : "Boolean"
+    "description" : "Prevent all users from connecting when DACS is down?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "disconnectDacsDown"
+    "type" : "Boolean"
+    "description" : "Disconnect all users when DACS is down?"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "doMultiConnect"
+    "type" : "Boolean"
+    "description" : "Is DACS multi-connect enabled?."
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "domainList"
+    "type" : "String"
+    "description" : "List of DACS domains for multi connect mode."
+    "value" : ""
+},
+{
+    "name" : "dacsRole"
+    "type" : "String"
+    "description" : "Whether publisher or consumer."
+    "value" : "Consumer"
+},
+{
+    "name" : "iauth2Enabled"
+    "type" : "BooleanConfig"
+    "description" : "Is iauth2 authentication enabled?"
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "enabled"
+    "type" : "BooleanConfig"
+    "description" : "Enable/disable DACS proxies."
+    "active_value" : "RTRFALSE"
+    "store_value" : "RTRFALSE"
+    "factory_default" : "RTRFALSE"
+},
+{
+    "name" : "writeThreadCpu.4"
+    "type" : "String"
+    "description" : "The logical cpu ids that Writer Thread (ads.WT.4) is bound to."
+    "value" : ""
+},
+{
+    "name" : "writeThreadCpu.3"
+    "type" : "String"
+    "description" : "The logical cpu ids that Writer Thread (ads.WT.3) is bound to."
+    "value" : ""
+},
+{
+    "name" : "writeThreadCpu.2"
+    "type" : "String"
+    "description" : "The logical cpu ids that Writer Thread (ads.WT.2) is bound to."
+    "value" : ""
+},
+{
+    "name" : "writeThreadCpu.1"
+    "type" : "String"
+    "description" : "The logical cpu ids that Writer Thread (ads.WT.1) is bound to."
+    "value" : ""
+},
+{
+    "name" : "dnsThreadCpu"
+    "type" : "String"
+    "description" : "The logical cpu ids that the DNS thread is bound to."
+    "value" : ""
+},
+{
+    "name" : "rrcpSnkReadCpu.0"
+    "type" : "String"
+    "description" : "The logical cpu ids that RRCP Read Thread (ads.DMT.snk.0) is bound to."
+    "value" : ""
+},
+{
+    "name" : "mainThreadCpu"
+    "type" : "String"
+    "description" : "The logical cpu ids that Main Thread (ads) is bound to."
+    "value" : ""
+},
+{
+    "name" : "primeTopology"
+    "type" : "Boolean"
+    "description" : "Whether to load CPU topology information (required for programmatic binding)."
+    "value" : "RTRTRUE"
+},
+{
+    "name" : "# var descs"
+    "type" : "Numeric"
+    "description" : ""
+    "value" : "750"
+},
+{
+    "name" : "# class descs"
+    "type" : "Numeric"
+    "description" : ""
+    "value" : "35"
+},
+{
+    "name" : "# managed vars"
+    "type" : "Gauge"
+    "description" : ""
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "1676"
+},
+{
+    "name" : "# managed objs"
+    "type" : "Gauge"
+    "description" : ""
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "68"
+},
+{
+    "name" : "alc dynamic mem"
+    "type" : "Gauge"
+    "description" : ""
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "98240"
+},
+{
+    "name" : "alc static mem"
+    "type" : "Numeric"
+    "description" : ""
+    "value" : "76384"
+},
+{
+    "name" : "alc overhead mem"
+    "type" : "Numeric"
+    "description" : ""
+    "value" : "584"
+},
+{
+    "name" : "items activity"
+    "type" : "Gauge"
+    "description" : ""
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2533"
+},
+{
+    "name" : "items managed"
+    "type" : "Gauge"
+    "description" : ""
+    "min_value" : "0"
+    "max_value" : "9223372036854775807"
+    "low_water_mark" : "0"
+    "high_water_mark" : "2531"
+},
+{
+    "name" : "elements freed"
+    "type" : "Numeric"
+    "description" : ""
+    "value" : "0"
+},
+{
+    "name" : "elements in use"
+    "type" : "Numeric"
+    "description" : ""
+    "value" : "0"
+},
+{
+    "name" : "partitionUsed"
+    "type" : "Numeric"
+    "description" : "Partition Used"
+    "value" : "175224"
+},
+{
+    "name" : "partitionAvail"
+    "type" : "Numeric"
+    "description" : "Partition Available"
+    "value" : "5824776"
+},
+{
+    "name" : "partitionSize"
+    "type" : "Numeric"
+    "description" : "Partition Size"
+    "value" : "6000000"
+},
+{
+    "name" : "outOfSharedMemory"
+    "type" : "Boolean"
+    "description" : "Out Of shared Memory"
+    "value" : "RTRFALSE"
+},
+{
+    "name" : "maxClients"
+    "type" : "Numeric"
+    "description" : "Max Clients"
+    "value" : "5"
+},
+{
+    "name" : "numClients"
+    "type" : "Numeric"
+    "description" : "Number of Clients"
+    "value" : "4"
+},
+{
+    "name" : "time"
+    "type" : "Numeric"
+    "description" : "Start Time"
+    "value" : "1684601904"
+},
+{
+    "name" : "semaphoreId"
+    "type" : "Numeric"
+    "description" : "Semaphore Id"
+    "value" : "0"
+},
+{
+    "name" : "semaphoreKey"
+    "type" : "String"
+    "description" : "Semaphore Key"
+    "value" : "82"
+},
+{
+    "name" : "heartbeat"
+    "type" : "Numeric"
+    "description" : "heartbeat intvl"
+    "value" : "5"
+},
+{
+    "name" : "pid"
+    "type" : "Numeric"
+    "description" : "server PID"
+    "value" : "13884"
+},
+pmv event: Update
+new value of items activity (with instance Id jabdlpc0042.1.ads.admin.MemoryStats) is 3
+pmv event: Update
+new value of time (with instance Id jabdlpc0042.1.ads.admin.MemoryStats) is 1684601909

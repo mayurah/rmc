@@ -1,0 +1,15 @@
+
+<jabdlpc0042.1.Publisher: Info: Tue May 16  06:55:54 2023>
+Initialization started.
+<END>
+
+<jabdlpc0042.1.Publisher: Info: Tue May 16  06:55:54 2023>
+Using config file: ../../config/distribution.cnf
+<END>
+
+<ServerSharedMemory: Notice: Tue May 16  06:55:54 2023>
+Expecting to support 2 clients.
+Existing memory segment supports 5 clients.
+Must support at least that many
+Cannot reattach.
+<END>
