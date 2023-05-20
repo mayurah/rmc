@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "*.download": "bat",
+        "userList.C": "cpp",
+        "user.C": "cpp",
+        "sysinfo.C": "cpp",
+        "pmo.h": "c",
+        "mainRoots.C": "cpp",
+        "pmosp.h": "c",
+        "smpvalar.C": "cpp",
+        "main.C": "cpp",
+        "monitorRoots.C": "cpp",
+        "dlinkl.C": "cpp",
+        "rtwolist.C": "cpp",
+        "dir.C": "cpp",
+        "rtllist.C": "cpp",
+        "ostream": "cpp",
+        "envvar.C": "cpp"
+    }
+}
