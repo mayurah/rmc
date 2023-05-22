@@ -39,9 +39,9 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Usage: %s [memoryId] [className1,className2,className3..]\n", argv[0]);
 		return 0;
 	}
-	cout << argc << endl;
-	cout << szServerId << endl;
-	cout << szClassList << endl;
+	cout << "argc" << argc << endl;
+	cout << "arg1" << szServerId << endl;
+	cout << "arg2" << szClassList << endl;
 
 	// Create a base instance identifier
 

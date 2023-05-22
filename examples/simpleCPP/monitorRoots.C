@@ -101,7 +101,6 @@ void Monitor::processObjectServerSync(
 
 		//now clone the current Proxy Managed Object
 		RTRProxyManagedObjectPtr pmoPtr = pmos.object(pmosIterator.item());
-
 		doLoopObjectList(pmoPtr);
 			
 
@@ -192,12 +191,11 @@ bool Monitor::isCheckListEmpty()
 
 bool Monitor::isInFilterList(RTRString objName)
 {
-	if ( !_pmoClassList.empty() )
+	if ( !_pmoFilterList.empty() )
 	{
-		for ( _pmoClassList.start(); !_pmoClassList.off(); _pmoClassList.forth() )
+		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
 		{
-			RTRString objItem = *(_pmoClassList.item());
-			
+			RTRString objItem = *(_pmoFilterList.item());
 			if (objName.isEqual(objItem) && !objName.isEmpty() && !objItem.isEmpty())
 			{
 				return true;
@@ -215,8 +213,21 @@ void Monitor::addToFilterList(char *szClass)
 		RTRString string = szClass;
 		RTRString *nPtr =  new RTRString;
 		*nPtr = string;
-		_pmoClassList.start();
-		_pmoClassList.addRight( nPtr );
+		_pmoFilterList.start();
+		_pmoFilterList.addRight( nPtr );
+	}
+}
+
+void Monitor::showFilterList()
+{
+	if ( !_pmoFilterList.empty() )
+	{
+		cout << "### printing filter list" << endl;
+		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
+		{
+			RTRString objItem = *(_pmoFilterList.item());
+			cout << "\"" << objItem << "\", " << endl;
+		}
 	}
 }
 
@@ -333,9 +344,9 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 	while (hasAnyChildInObjectList() && !_isObjectLoopFinished)
 	{
 		cout << "//////////////////////////////////////////" << endl;
-		cout << "///// start new check session" << endl;
-		printObjectListInfo();
+		cout << "///// start new check session" << endl;		
 		registerChilds();
+		checkLoopEnd();
 		cout << "///// Terminating session" << endl;
 		cout << "//////////////////////////////////////////" << endl;
 		cout << endl;
@@ -343,15 +354,19 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 		cout << endl;
 	}
 
+	printObjectListInfo();
+
 	if (_isApplyFilter)
 	{
 		cout << "//////////////////////////////////////////" << endl;
 		cout << "///// Start output data (Apply filter)" << endl;
+		showFilterList();
+		cout << endl;
 	}
 	else
 	{
 		cout << "//////////////////////////////////////////" << endl;
-		cout << "///// Start output data (no filter)" << endl;
+		cout << "///// Start output data (no filter, print all instances)" << endl;
 	}
 
 	
@@ -363,8 +378,10 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 			objPtr = *(_pmoList.item());
 			if (_isApplyFilter)
 			{
-				if (isInFilterList(objPtr->classId().string()))
+				if (isInFilterList(objPtr->instanceId().string()))
 				{
+					cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+					cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;
 					objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
 					/* If the Object is already inSync() then I will not receive
 					* the 'Sync' event, so I need to check it here.
@@ -393,7 +410,7 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 	}
 }
 
-void Monitor::printObjectListInfo()
+void Monitor::checkLoopEnd()
 {
 	RTRProxyManagedObjectPtr objPtr;
 	if ( !_pmoList.empty() )
@@ -401,19 +418,52 @@ void Monitor::printObjectListInfo()
 		if (_lastClassCount != _pmoList.count())
 		{
 			_lastClassCount = _pmoList.count();
-			cout << "### " << _lastClassCount << " classes in list: ";
-			for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-			{
-				objPtr = *(_pmoList.item());			
-				cout << objPtr->name() << " ";
-			}
 			cout << endl;			
 		}
 		else
 		{
-			cout << "### class count is not increasing... " << endl;
+			cout << "### No more child " << endl;
 			_isObjectLoopFinished = true;
 		}
+	}
+}
+#define PRINT_SEPERATE 0
+void Monitor::printObjectListInfo()
+{
+	RTRProxyManagedObjectPtr objPtr;
+	if ( !_pmoList.empty() )
+	{
+		cout << "### " << _lastClassCount << " classes in list: ";
+#if PRINT_SEPERATE		
+		cout << "*** Instance Id List" << endl;
+		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+		{
+			objPtr = *(_pmoList.item());			
+			cout << "\"" << objPtr->instanceId() << "\", " << endl;
+		}
+		cout << "*** Name List" << endl;
+		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+		{
+			objPtr = *(_pmoList.item());			
+			cout << "\"" << objPtr->name() << "\", " << endl;
+		}
+		cout << "*** Class Id List" << endl;
+		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+		{
+			objPtr = *(_pmoList.item());			
+			cout << "\"" << objPtr->classId() << "\", " << endl;
+		}
+#else
+		cout << "*** Instance List" << endl;
+		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+		{
+			objPtr = *(_pmoList.item());			
+			cout << "\"" << objPtr->instanceId() << "\", ";
+			cout << "\"" << objPtr->name() << "\", ";
+			cout << "\"" << objPtr->classId() << "\", " << endl;
+		}
+#endif
+		cout << endl;			
 	}
 }
 
@@ -495,6 +545,7 @@ void Monitor::processProxyManagedObjectSync(
 		 if ( pmvPtr->inSync() == RTRTRUE )
 		 {
 			// cout << "pmvPtr is inSync" << endl;
+			// processProxyManagedVariableSync(pmo.instanceId().string(), *pmvPtr);
 			processProxyManagedVariableSync(*pmvPtr);
 		 }
 		 else
@@ -588,6 +639,10 @@ void Monitor::processProxyManagedVariableError(
 	cout << "pmv event: Error  @" << pmv.text() << endl;
 }
 
+// void Monitor::processProxyManagedVariableSync(
+// 		RTRString parentName, 
+// 		RTRProxyManagedVariable& pmv
+// 		)
 void Monitor::processProxyManagedVariableSync(
 		RTRProxyManagedVariable& pmv
 		)
@@ -598,9 +653,10 @@ void Monitor::processProxyManagedVariableSync(
 	// cout << "                         description = " << pmv.description() << endl;
 
 	cout << "{" << endl;
-	cout << "    \"name\" : " << "\"" << pmv.name() << "\"" << endl;
-	cout << "    \"type\" : " << "\"" << pmv.typeString() << "\"" << endl;
-	cout << "    \"description\" : " << "\"" << pmv.description() << "\"" << endl;	
+	// cout << "    \"instanceId\" : " << "\"" << parentName << "\"," << endl;
+	cout << "    \"name\" : " << "\"" << pmv.name() << "\"," << endl;
+	cout << "    \"type\" : " << "\"" << pmv.typeString() << "\"," << endl;
+	cout << "    \"description\" : " << "\"" << pmv.description() << "\"," << endl;	
 
 	//show variable specific values
 	showPMVdata(pmv);
@@ -692,9 +748,9 @@ void Monitor::showBoolean_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedBoolean& pmb = (RTRProxyManagedBoolean&)pmv;
 	if ( pmb.value() == RTRTRUE )
-		cout << "    \"value\" : \"RTRTRUE\"" << endl;
+		cout << "    \"value\" : \"RTRTRUE\"," << endl;
 	else
-		cout <<	"    \"value\" : \"RTRFALSE\"" << endl;
+		cout <<	"    \"value\" : \"RTRFALSE\"," << endl;
 
 }
 
@@ -702,30 +758,30 @@ void Monitor::showBooleanConfig_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedBooleanConfig& pmbc = (RTRProxyManagedBooleanConfig&)pmv;
 	if ( pmbc.activeValue() == RTRTRUE )
-		cout << "    \"active_value\" : \"RTRTRUE\"" << endl;
+		cout << "    \"active_value\" : \"RTRTRUE\"," << endl;
 	else
-		cout << "    \"active_value\" : \"RTRFALSE\"" << endl;
+		cout << "    \"active_value\" : \"RTRFALSE\"," << endl;
 	if ( pmbc.storeValue() == RTRTRUE )
-		cout << "    \"store_value\" : \"RTRTRUE\"" << endl;
+		cout << "    \"store_value\" : \"RTRTRUE\"," << endl;
 	else
-		cout << "    \"store_value\" : \"RTRFALSE\"" << endl;
+		cout << "    \"store_value\" : \"RTRFALSE\"," << endl;
 	if ( pmbc.factoryDefault() == RTRTRUE )
-		cout << "    \"factory_default\" : \"RTRTRUE\"" << endl;
+		cout << "    \"factory_default\" : \"RTRTRUE\"," << endl;
 	else
-		cout << "    \"factory_default\" : \"RTRFALSE\"" << endl;
+		cout << "    \"factory_default\" : \"RTRFALSE\"," << endl;
 }
 
 void Monitor::showCounter_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedCounter& pmc = (RTRProxyManagedCounter&)pmv;
 	unsigned long cnt = pmc.value();
-	cout << "    \"value\" : \"" << cnt << "\"" << endl;
+	cout << "    \"value\" : \"" << cnt << "\"," << endl;
 }
 
 void Monitor::showNumeric_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedNumeric& pmn = (RTRProxyManagedNumeric&)pmv;
-	cout << "    \"value\" : \"" << pmn.value() << "\"" << endl;
+	cout << "    \"value\" : \"" << pmn.value() << "\"," << endl;
 }
 
 void Monitor::showLargeNumeric_data(RTRProxyManagedVariable& pmv)
@@ -737,7 +793,7 @@ void Monitor::showLargeNumeric_data(RTRProxyManagedVariable& pmv)
 		sprintf(buf, "%I64d", pmln.value());
 		cout << "    \"value\" : \"" << buf << "\"" << endl;
 	#else
-		cout << "    \"value\" : \"" << pmln.value() << "\"" << endl;
+		cout << "    \"value\" : \"" << pmln.value() << "\"," << endl;
 	#endif
 
 }
@@ -745,53 +801,53 @@ void Monitor::showLargeNumeric_data(RTRProxyManagedVariable& pmv)
 void Monitor::showNumericConfig_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedNumericConfig& pmnc = (RTRProxyManagedNumericConfig&)pmv;
-	cout << "    \"active_value\" : \"" << pmnc.activeValue() << "\"" << endl;
-	cout << "    \"min_value\" : \"" << pmnc.minValue() << "\"" << endl;
-	cout << "    \"max_value\" : \"" << pmnc.maxValue() << "\"" << endl;
-	cout << "    \"store_value\" : \"" << pmnc.storeValue() << "\"" << endl;
-	cout << "    \"factory_default\" : \"" << pmnc.factoryDefault() << "\"" << endl;
+	cout << "    \"active_value\" : \"" << pmnc.activeValue() << "\"," << endl;
+	cout << "    \"min_value\" : \"" << pmnc.minValue() << "\"," << endl;
+	cout << "    \"max_value\" : \"" << pmnc.maxValue() << "\"," << endl;
+	cout << "    \"store_value\" : \"" << pmnc.storeValue() << "\"," << endl;
+	cout << "    \"factory_default\" : \"" << pmnc.factoryDefault() << "\"," << endl;
 }
 
 void Monitor::showNumericRange_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedNumericRange& pmnr = (RTRProxyManagedNumericRange&)pmv;
-	cout << "    \"min_value\" : \"" << pmnr.minValue() << "\"" << endl;
-	cout << "    \"max_value\" : \"" << pmnr.maxValue() << "\"" << endl;
+	cout << "    \"min_value\" : \"" << pmnr.minValue() << "\"," << endl;
+	cout << "    \"max_value\" : \"" << pmnr.maxValue() << "\"," << endl;
 }
 
 void Monitor::showGauge_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedGauge& pmg = (RTRProxyManagedGauge&)pmv;
-	cout << "    \"min_value\" : \"" << pmg.minValue() << "\"" << endl;
-	cout << "    \"max_value\" : \"" << pmg.maxValue() << "\"" << endl;
-	cout << "    \"low_water_mark\" : \"" << pmg.lowWaterMark() << "\"" << endl;
-	cout << "    \"high_water_mark\" : \"" << pmg.highWaterMark() << "\"" << endl;
+	cout << "    \"min_value\" : \"" << pmg.minValue() << "\"," << endl;
+	cout << "    \"max_value\" : \"" << pmg.maxValue() << "\"," << endl;
+	cout << "    \"low_water_mark\" : \"" << pmg.lowWaterMark() << "\"," << endl;
+	cout << "    \"high_water_mark\" : \"" << pmg.highWaterMark() << "\"," << endl;
 }
 
 void Monitor::showGaugeConfig_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedGaugeConfig& pmgc = (RTRProxyManagedGaugeConfig&)pmv;
-	cout << "    \"min_store_value\" : \"" << pmgc.minStoreValue() << "\"" << endl;
-	cout << "    \"min_factory_default\" : \"" << pmgc.minFactoryDefault() << "\"" << endl;
-	cout << "    \"max_store_value\" : \"" << pmgc.maxStoreValue() << "\"" << endl;
-	cout << "    \"max_factore_default\" : \"" << pmgc.maxFactoryDefault() << "\"" << endl;
+	cout << "    \"min_store_value\" : \"" << pmgc.minStoreValue() << "\"," << endl;
+	cout << "    \"min_factory_default\" : \"" << pmgc.minFactoryDefault() << "\"," << endl;
+	cout << "    \"max_store_value\" : \"" << pmgc.maxStoreValue() << "\"," << endl;
+	cout << "    \"max_factore_default\" : \"" << pmgc.maxFactoryDefault() << "\"," << endl;
 }
 
 void Monitor::showString_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedString& pms = (RTRProxyManagedString&)pmv;
-	cout << "    \"value\" : \"" << pms.value() << "\"" << endl;
+	cout << "    \"value\" : \"" << pms.value() << "\"," << endl;
 }
 
 void Monitor::showStringConfig_data(RTRProxyManagedVariable& pmv)
 {
 	RTRProxyManagedStringConfig& pmsc = (RTRProxyManagedStringConfig&)pmv;
 	RTRString active = pmsc.activeValue();
-	cout << "    \"active_value\" : \"" << pmsc.activeValue() << "\"" << endl;
+	cout << "    \"active_value\" : \"" << pmsc.activeValue() << "\"," << endl;
 	RTRString store = pmsc.storeValue();
-	cout << "    \"store_value\" : \"" << pmsc.storeValue() << "\"" << endl;
+	cout << "    \"store_value\" : \"" << pmsc.storeValue() << "\"," << endl;
 	RTRString fDflt = pmsc.factoryDefault();
-	cout << "    \"factory_default\" : \"" << pmsc.factoryDefault() << "\"" << endl;
+	cout << "    \"factory_default\" : \"" << pmsc.factoryDefault() << "\"," << endl;
 }
 
 
