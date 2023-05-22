@@ -1,35 +1,15 @@
 argc3
 arg182
-arg2jabdlpc0042.1.ads.netRecDB.rrmp6.keepAlive
-jabdlpc0042.1.ads.netRecDB.rrmp6.keepAlive
+arg2/opt/rmc-lib-sdk/examples/simpleCPP/instancelist.txt
+### setup filter from file
 pmosp event: Added a pmos  @Connected
 pmos is inSync
 pmos event: in Sync  @Connected
 //////////////////////////////////////////
 ///// start new check session
 >>> jabdlpc0042.1.ads has 22 childs
-### add sink.server.ws.transmissionBus. to list
-### add sink.server.ripc.transmissionBus to list
-### add clientSessionThread.4 to list
-### add clientSessionThread.3 to list
-### add clientSessionThread.2 to list
-### add clientSessionThread.1 to list
-### add sslConnectionManager to list
-### add sink.server.ipc.transmissionBus to list
-### add userDatabase to list
-### add itemDatabase to list
-### add serviceDB to list
-### add netRecDB to list
-### add sinkSide.rrcp6.transmissionBus to list
-### add rrcpTransport.1.sinkSide.rrcp.transmissionBus to list
-### add rrmpMarketDataAgent to list
-### add trlsManager to list
-### add latencyMonitor to list
-### add fidDatabase to list
-### add debugLogger to list
-### add dacs to list
-### add ThreadBindingStats to list
-### add admin.MemoryStats to list
+###F> add userDatabase to list
+###F> add admin.MemoryStats to list
 
 ///// Terminating session
 //////////////////////////////////////////
@@ -38,158 +18,569 @@ pmos event: in Sync  @Connected
 
 //////////////////////////////////////////
 ///// start new check session
->>> dacs has 1 childs
-### add sink to list
->>> rrmpMarketDataAgent has 1 childs
-### add DNSapi to list
->>> netRecDB has 2 childs
-### add rrmp6.keepAlive to list
-### add outgoingMessages to list
->>> serviceDB has 5 childs
-### add aggregateServiceDataStreams to list
-### add outgoing6Messages to list
-### add incoming6MessagesFiltered to list
-### add incoming6Messages to list
-### add sinkParser to list
 >>> userDatabase has 12 childs
-### add user4 to list
-### add mount4 to list
-### add user3 to list
-### add mount3 to list
-### add user2 to list
-### add mount2 to list
-### add user1 to list
-### add mount1 to list
-### add userResponses to list
-### add userRequests to list
-### add inserts to list
-### add dataStreams to list
-
-///// Terminating session
-//////////////////////////////////////////
-
-
-
-//////////////////////////////////////////
-///// start new check session
->>> mount1 has 5 childs
-$$$ get by child name (outgoingMessages) return NULL 
-### add incomingMessages to list
-$$$ get by child name (inserts) return NULL 
-$$$ get by child name (dataStreams) return NULL 
-### add attributes to list
->>> user1 has 1 childs
-$$$ get by child name (dataStreams) return NULL 
->>> mount2 has 5 childs
-$$$ get by child name (outgoingMessages) return NULL 
-$$$ get by child name (incomingMessages) return NULL 
-$$$ get by child name (inserts) return NULL 
-$$$ get by child name (dataStreams) return NULL 
-$$$ get by child name (attributes) return NULL 
->>> user2 has 1 childs
-$$$ get by child name (dataStreams) return NULL 
->>> mount3 has 5 childs
-$$$ get by child name (outgoingMessages) return NULL 
-$$$ get by child name (incomingMessages) return NULL 
-$$$ get by child name (inserts) return NULL 
-$$$ get by child name (dataStreams) return NULL 
-$$$ get by child name (attributes) return NULL 
->>> user3 has 1 childs
-$$$ get by child name (dataStreams) return NULL 
->>> mount4 has 5 childs
-$$$ get by child name (outgoingMessages) return NULL 
-$$$ get by child name (incomingMessages) return NULL 
-$$$ get by child name (inserts) return NULL 
-$$$ get by child name (dataStreams) return NULL 
-$$$ get by child name (attributes) return NULL 
->>> user4 has 1 childs
-$$$ get by child name (dataStreams) return NULL 
-
-///// Terminating session
-//////////////////////////////////////////
-
-
-
-//////////////////////////////////////////
-///// start new check session
 ### No more child 
 ///// Terminating session
 //////////////////////////////////////////
 
 
 
-### 46 classes in list: *** Instance List
+### 3 classes in list: *** Instance List
 "jabdlpc0042.1.ads", "jabdlpc0042.1.ads", "ManagedProcess.SinkDist", 
-"jabdlpc0042.1.ads.netRecDB.rrmp6.keepAlive", "rrmp6.keepAlive", "KeepAlive", 
 "jabdlpc0042.1.ads.admin.MemoryStats", "admin.MemoryStats", "ShmemMOServerStats", 
-"jabdlpc0042.1.ads.ThreadBindingStats", "ThreadBindingStats", "ThreadBindingStats", 
-"jabdlpc0042.1.ads.dacs", "dacs", "DacsConnectionMgr", 
-"jabdlpc0042.1.ads.dacs.sink", "sink", "DacsConnectionMgrClient", 
-"jabdlpc0042.1.ads.debugLogger", "debugLogger", "DebugLog", 
-"jabdlpc0042.1.ads.fidDatabase", "fidDatabase", "SSLFidDatabase", 
-"jabdlpc0042.1.ads.latencyMonitor", "latencyMonitor", "LatencyMonitor", 
-"jabdlpc0042.1.ads.trlsManager", "trlsManager", "TrlsManager", 
-"jabdlpc0042.1.ads.rrmpMarketDataAgent", "rrmpMarketDataAgent", "MarketDataAgent", 
-"jabdlpc0042.1.ads.rrmpMarketDataAgent.DNSapi", "DNSapi", "DNSapi", 
-"jabdlpc0042.1.ads.rrcpTransport.1.sinkSide.rrcp.transmissionBus", "rrcpTransport.1.sinkSide.rrcp.transmissionBus", "rrcpTransmissionBus", 
-"jabdlpc0042.1.ads.sinkSide.rrcp6.transmissionBus", "sinkSide.rrcp6.transmissionBus", "TransmissionBus", 
-"jabdlpc0042.1.ads.netRecDB", "netRecDB", "SinkNetRecSinkSvr", 
-"jabdlpc0042.1.ads.netRecDB.outgoingMessages", "outgoingMessages", "NetRecSink", 
-"jabdlpc0042.1.ads.serviceDB", "serviceDB", "StreamServiceMonitor", 
-"jabdlpc0042.1.ads.serviceDB.sinkParser", "sinkParser", "RRMPParsingError", 
-"jabdlpc0042.1.ads.serviceDB.incoming6Messages", "incoming6Messages", "DataStreamSrc6", 
-"jabdlpc0042.1.ads.serviceDB.incoming6MessagesFiltered", "incoming6MessagesFiltered", "DataStreamSrc6", 
-"jabdlpc0042.1.ads.serviceDB.outgoing6Messages", "outgoing6Messages", "DataStreamSink6", 
-"jabdlpc0042.1.ads.serviceDB.aggregateServiceDataStreams", "aggregateServiceDataStreams", "AggregateSvcDataStream.SinkDist", 
-"jabdlpc0042.1.ads.itemDatabase", "itemDatabase", "itemDatabase", 
 "jabdlpc0042.1.ads.userDatabase", "userDatabase", "ConsumerDb.SinkDist", 
-"jabdlpc0042.1.ads.userDatabase.dataStreams", "dataStreams", "ConsumerDataStream", 
-"jabdlpc0042.1.ads.userDatabase.inserts", "inserts", "ConsumerInsert", 
-"jabdlpc0042.1.ads.userDatabase.userRequests", "userRequests", "SinkAppMsgs", 
-"jabdlpc0042.1.ads.userDatabase.userResponses", "userResponses", "SinkDistMsgs", 
-"jabdlpc0042.1.ads.userDatabase.mount1", "mount1", "Consumer.UserThreadFanout.SinkDist", 
-"jabdlpc0042.1.ads.userDatabase.mount1.attributes", "attributes", "ConsumerAttributes.SinkDist", 
-"jabdlpc0042.1.ads.userDatabase.mount1.incomingMessages", "incomingMessages", "SinkAppMsgs", 
-"jabdlpc0042.1.ads.userDatabase.user1", "user1", "GlobalThreadUser", 
-"jabdlpc0042.1.ads.userDatabase.mount2", "mount2", "Consumer.UserThreadFanout.SinkDist", 
-"jabdlpc0042.1.ads.userDatabase.user2", "user2", "GlobalThreadUser", 
-"jabdlpc0042.1.ads.userDatabase.mount3", "mount3", "Consumer.UserThreadFanout.SinkDist", 
-"jabdlpc0042.1.ads.userDatabase.user3", "user3", "GlobalThreadUser", 
-"jabdlpc0042.1.ads.userDatabase.mount4", "mount4", "Consumer.UserThreadFanout.SinkDist", 
-"jabdlpc0042.1.ads.userDatabase.user4", "user4", "GlobalThreadUser", 
-"jabdlpc0042.1.ads.sink.server.ipc.transmissionBus", "sink.server.ipc.transmissionBus", "IPCServer", 
-"jabdlpc0042.1.ads.sslConnectionManager", "sslConnectionManager", "SSLConnectionManager", 
-"jabdlpc0042.1.ads.clientSessionThread.1", "clientSessionThread.1", "clientSessionThread", 
-"jabdlpc0042.1.ads.clientSessionThread.2", "clientSessionThread.2", "clientSessionThread", 
-"jabdlpc0042.1.ads.clientSessionThread.3", "clientSessionThread.3", "clientSessionThread", 
-"jabdlpc0042.1.ads.clientSessionThread.4", "clientSessionThread.4", "clientSessionThread", 
-"jabdlpc0042.1.ads.sink.server.ripc.transmissionBus", "sink.server.ripc.transmissionBus", "RIPCServer", 
-"jabdlpc0042.1.ads.sink.server.ws.transmissionBus.", "sink.server.ws.transmissionBus.", "WSOCKServer", 
 
 //////////////////////////////////////////
 ///// Start output data (Apply filter)
 ### printing filter list
-"jabdlpc0042.1.ads.netRecDB.rrmp6.keepAlive", 
+"jabdlpc0042.1.ads.userDatabase", 
+"jabdlpc0042.1.ads.admin.MemoryStats", 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!! Found jabdlpc0042.1.ads.netRecDB.rrmp6.keepAlive in filter list
+!!!!! Found jabdlpc0042.1.ads.admin.MemoryStats in filter list
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!! Found jabdlpc0042.1.ads.userDatabase in filter list
+
 {
-    "name" : "keepAliveInterval"
-    "type" : "NumericConfig"
-    "description" : "The time interval to send keepAlive messages."
-    "active_value" : "30"
-    "min_value" : "0"
-    "max_value" : "9223372036854775807"
-    "store_value" : "30"
-    "factory_default" : "30"
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "userTrace",
+    "type" : "Boolean",
+    "description" : "Should we start tracing user requests?",
+    "value" : "RTRFALSE",
 },
 {
-    "name" : "networkDelay"
-    "type" : "NumericConfig"
-    "description" : "The network delay used when calculating the timeout."
-    "active_value" : "140"
-    "min_value" : "0"
-    "max_value" : "9223372036854775807"
-    "store_value" : "140"
-    "factory_default" : "5"
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "persistenceRecoveryTime",
+    "type" : "NumericConfig",
+    "description" : "The amount of time (seconds) a persistent or recoverable channel will remain after it has been disconnected.",
+    "active_value" : "600",
+    "min_value" : "1",
+    "max_value" : "9223372036854775807",
+    "store_value" : "600",
+    "factory_default" : "600",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "thresholdBreachNotificationPeriod",
+    "type" : "NumericConfig",
+    "description" : "The amount of time in seconds logging is suppressed for a mount following an output threshold breach event.",
+    "active_value" : "60",
+    "min_value" : "1",
+    "max_value" : "9223372036854775807",
+    "store_value" : "60",
+    "factory_default" : "60",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "maxAllowableUpdateDelay",
+    "type" : "NumericConfig",
+    "description" : "The maximum amount of time in seconds an update for a user can be delayed.",
+    "active_value" : "120",
+    "min_value" : "1",
+    "max_value" : "9223372036854775807",
+    "store_value" : "120",
+    "factory_default" : "120",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "closePace",
+    "type" : "NumericConfig",
+    "description" : "The closes per second sent to the producer side.",
+    "active_value" : "10000",
+    "min_value" : "20",
+    "max_value" : "9223372036854775807",
+    "store_value" : "10000",
+    "factory_default" : "10000",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "minimumMountsAvailable",
+    "type" : "NumericConfig",
+    "description" : "Minimum maintainable recoverable/persistent sessions to keep around.",
+    "active_value" : "5",
+    "min_value" : "1",
+    "max_value" : "9223372036854775807",
+    "store_value" : "5",
+    "factory_default" : "5",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "logTrafficManagement",
+    "type" : "Boolean",
+    "description" : "Should we log traffic management events?",
+    "value" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "userTraceRouteInfo",
+    "type" : "Boolean",
+    "description" : "Should we start tracing routeInfo?",
+    "value" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "logMountRequests",
+    "type" : "Boolean",
+    "description" : "Should we log mount connections/disconnections?",
+    "value" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "adminRemoveHosts",
+    "type" : "Numeric",
+    "description" : "Number of admin-initiated hosts removed.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "removeHosts",
+    "type" : "String",
+    "description" : "Remove all users connected from one or more hosts. (comma-separated list)",
+    "value" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "removeAll",
+    "type" : "Boolean",
+    "description" : "Remove all users?",
+    "value" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "ajaxSupportForStringKeys",
+    "type" : "BooleanConfig",
+    "description" : "Send AJAX messages keys in Double Quotes.",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRTRUE",
+    "factory_default" : "RTRTRUE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "wsMsgPacking",
+    "type" : "BooleanConfig",
+    "description" : "Enable message packing on web socket channel.",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRTRUE",
+    "factory_default" : "RTRTRUE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "ajaxMsgPacking",
+    "type" : "BooleanConfig",
+    "description" : "Enable AJAX message packing on ajax channel.",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRTRUE",
+    "factory_default" : "RTRTRUE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "rsslMsgPacking",
+    "type" : "BooleanConfig",
+    "description" : "Enable RSSL message packing on rssl channel.",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRTRUE",
+    "factory_default" : "RTRTRUE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "sslMsgPacking",
+    "type" : "BooleanConfig",
+    "description" : "Enable SSL message packing on supported channels.",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRTRUE",
+    "factory_default" : "RTRTRUE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "disableServiceGroupAppIds",
+    "type" : "StringConfig",
+    "description" : "Application IDs that will not receive service group when serviceGroups feature is enable .",
+    "active_value" : "",
+    "store_value" : "",
+    "factory_default" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "wantDQABroadcastAppIds",
+    "type" : "StringConfig",
+    "description" : "Application IDs that will receive DQA Broadcast when fanoutDQAAsGroups is enabled.",
+    "active_value" : "12 174",
+    "store_value" : "12 174",
+    "factory_default" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "fanoutDQAAsGroups",
+    "type" : "BooleanConfig",
+    "description" : "Is the conversion from DQA alert to Group Status Message enabled?",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRFALSE",
+    "factory_default" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "prioritizeOverflowImageRetrieval",
+    "type" : "BooleanConfig",
+    "description" : "Priorize image retrieval over updates when calling from the overflow queue.",
+    "active_value" : "RTRTRUE",
+    "store_value" : "RTRTRUE",
+    "factory_default" : "RTRTRUE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "mapPreemptedToStaleAppIds",
+    "type" : "StringConfig",
+    "description" : "Applications IDs that will have non-recov preempted statuses mapped to stale",
+    "active_value" : "",
+    "store_value" : "",
+    "factory_default" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "convertGenericToInsertAppIds",
+    "type" : "StringConfig",
+    "description" : "Application IDs that will have generic contribution support.",
+    "active_value" : "12 174",
+    "store_value" : "12 174",
+    "factory_default" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "disableSingleOpenAppIds",
+    "type" : "StringConfig",
+    "description" : "Application IDs that will have single open disabled.",
+    "active_value" : "12",
+    "store_value" : "12",
+    "factory_default" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "mapSolicitedInfoAppIds",
+    "type" : "StringConfig",
+    "description" : "Application IDs that will have solicited status's mapped to OK statuses.",
+    "active_value" : "37 38 39 40 256",
+    "store_value" : "37 38 39 40 256",
+    "factory_default" : "",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "disconnectStaleServiceAppIds",
+    "type" : "StringConfig",
+    "description" : "AppId's that force a disconnect when a stale service info is sent.",
+    "active_value" : "37 38 39 40 256",
+    "store_value" : "37 38 39 40 256",
+    "factory_default" : "37 38 39 40 256",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "dumpOutput",
+    "type" : "StringConfig",
+    "description" : "Dump output file name.",
+    "active_value" : "user.dmp",
+    "store_value" : "user.dmp",
+    "factory_default" : "user.dmp",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "printOutput",
+    "type" : "StringConfig",
+    "description" : "Print output file name.",
+    "active_value" : "user.out",
+    "store_value" : "user.out",
+    "factory_default" : "user.out",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "dumpDB",
+    "type" : "Boolean",
+    "description" : "Should we dump the user database?",
+    "value" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "maxWSMounts",
+    "type" : "Numeric",
+    "description" : "The maximum number of web socket physical connections.",
+    "value" : "512",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "percentWSMountsUsed",
+    "type" : "Numeric",
+    "description" : "The percentage of web socket active mounts that are in use.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "availableWSMounts",
+    "type" : "Numeric",
+    "description" : "The current number of web socket physical connections available.",
+    "value" : "512",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "activeWSMounts",
+    "type" : "Numeric",
+    "description" : "The current number of web socket physical active connections.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "maxHttpMounts",
+    "type" : "Numeric",
+    "description" : "The maximum number of HTTP physical connections.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "percentHttpMountsUsed",
+    "type" : "Numeric",
+    "description" : "The percentage of HTTP active mounts that are in use.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "availableHttpMounts",
+    "type" : "Numeric",
+    "description" : "The current number of HTTP physical connections available.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "activeHttpMounts",
+    "type" : "Numeric",
+    "description" : "The current number of HTTP physical active connections.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "maxRsslMounts",
+    "type" : "Numeric",
+    "description" : "The maximum number of RSSL physical connections.",
+    "value" : "512",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "percentRsslMountsUsed",
+    "type" : "Numeric",
+    "description" : "The percentage of RSSL mounts available that are in use.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "availableRsslMounts",
+    "type" : "Numeric",
+    "description" : "The current number of RSSL physical connections available.",
+    "value" : "512",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "activeRsslMounts",
+    "type" : "Numeric",
+    "description" : "The current number of RSSL physical connections active.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "maxSslMounts",
+    "type" : "Numeric",
+    "description" : "The maximum number of SSL physical connections.",
+    "value" : "512",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "percentSslMountsUsed",
+    "type" : "Numeric",
+    "description" : "The percentage of SSL active mounts that are in use.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "availableSslMounts",
+    "type" : "Numeric",
+    "description" : "The current number of SSL physical connections available.",
+    "value" : "512",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "activeSslMounts",
+    "type" : "Numeric",
+    "description" : "The current number of SSL physical active connections.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.userDatabase",
+    "name" : "activeUsers",
+    "type" : "Numeric",
+    "description" : "The current number of market data users.",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "# var descs",
+    "type" : "Numeric",
+    "description" : "",
+    "value" : "750",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "# class descs",
+    "type" : "Numeric",
+    "description" : "",
+    "value" : "35",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "# managed vars",
+    "type" : "Gauge",
+    "description" : "",
+    "min_value" : "0",
+    "max_value" : "9223372036854775807",
+    "low_water_mark" : "0",
+    "high_water_mark" : "1676",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "# managed objs",
+    "type" : "Gauge",
+    "description" : "",
+    "min_value" : "0",
+    "max_value" : "9223372036854775807",
+    "low_water_mark" : "0",
+    "high_water_mark" : "68",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "alc dynamic mem",
+    "type" : "Gauge",
+    "description" : "",
+    "min_value" : "0",
+    "max_value" : "9223372036854775807",
+    "low_water_mark" : "0",
+    "high_water_mark" : "98240",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "alc static mem",
+    "type" : "Numeric",
+    "description" : "",
+    "value" : "76384",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "alc overhead mem",
+    "type" : "Numeric",
+    "description" : "",
+    "value" : "584",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "items activity",
+    "type" : "Gauge",
+    "description" : "",
+    "min_value" : "0",
+    "max_value" : "9223372036854775807",
+    "low_water_mark" : "0",
+    "high_water_mark" : "2533",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "items managed",
+    "type" : "Gauge",
+    "description" : "",
+    "min_value" : "0",
+    "max_value" : "9223372036854775807",
+    "low_water_mark" : "0",
+    "high_water_mark" : "2531",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "elements freed",
+    "type" : "Numeric",
+    "description" : "",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "elements in use",
+    "type" : "Numeric",
+    "description" : "",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "partitionUsed",
+    "type" : "Numeric",
+    "description" : "Partition Used",
+    "value" : "175224",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "partitionAvail",
+    "type" : "Numeric",
+    "description" : "Partition Available",
+    "value" : "5824776",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "partitionSize",
+    "type" : "Numeric",
+    "description" : "Partition Size",
+    "value" : "6000000",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "outOfSharedMemory",
+    "type" : "Boolean",
+    "description" : "Out Of shared Memory",
+    "value" : "RTRFALSE",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "maxClients",
+    "type" : "Numeric",
+    "description" : "Max Clients",
+    "value" : "5",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "numClients",
+    "type" : "Numeric",
+    "description" : "Number of Clients",
+    "value" : "3",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "time",
+    "type" : "Numeric",
+    "description" : "Start Time",
+    "value" : "1684764341",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "semaphoreId",
+    "type" : "Numeric",
+    "description" : "Semaphore Id",
+    "value" : "0",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "semaphoreKey",
+    "type" : "String",
+    "description" : "Semaphore Key",
+    "value" : "82",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "heartbeat",
+    "type" : "Numeric",
+    "description" : "heartbeat intvl",
+    "value" : "5",
+},
+{
+    "instanceId" : "jabdlpc0042.1.ads.admin.MemoryStats",
+    "name" : "pid",
+    "type" : "Numeric",
+    "description" : "server PID",
+    "value" : "13884",
 },

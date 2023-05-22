@@ -119,14 +119,16 @@ private:
 		RTRLinkedList<RTRString> _pmoFilterList;
 		void showFilterList();
 		bool isInFilterList(RTRString objName);
-		bool setupClassFilter(char *szInput);
+		bool setFilterList(char *szInput);
 		void addToFilterList(char *szString);
+
 
 		// some helper functions and vars
 		bool _isObjectLoopFinished;
 		int _lastClassCount;
 		void printObjectListInfo();
 		void checkLoopEnd();
+		void removeChar(char* str, char c);
 
 		// terminate
 		int _variableCheckedCount;

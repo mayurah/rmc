@@ -19,7 +19,7 @@ using namespace std;
 Monitor::Monitor( RTRProxyManagedObjectServerPool& p, char *szClassList )
 	: _pmosp(p)
 {
-	setupClassFilter(szClassList);
+	setFilterList(szClassList);
 	// Register with the Server Pool to receive events.
 	_pmosp.addClient(*this);
 	RTRLinkedListCursor<RTRProxyManagedObjectServer> iter = _pmosp.servers();
@@ -174,19 +174,48 @@ void Monitor::showFilterList()
 	}
 }
 
-bool Monitor::setupClassFilter(char *szInput)
+void Monitor::removeChar(char* str, char c) {
+    char *pr = str, *pw = str;
+    while (*pr) {
+        *pw = *pr++;
+        pw += (*pw != c);
+    }
+    *pw = '\0';
+}
+
+bool Monitor::setFilterList(char *szInput)
 {
 	if (strlen(szInput))
 	{
-		char delim[] = ",";
-		char *token;
-		token = strtok(szInput, delim);
-
-		while(token != NULL) 
+		FILE *f;
+		f = fopen(szInput, "r");
+		if (f)
 		{
-			cout << token << endl;
-			addToFilterList(token);
-			token = strtok(NULL, delim);
+			char line[1024];
+			cout << "### setup filter from file" << endl;			
+			while (fgets(line, sizeof(line), f)) {
+				removeChar(line, '\r');
+				removeChar(line, '\n');
+				removeChar(line, ' ');
+				removeChar(line, ',');
+				removeChar(line, '"');
+				addToFilterList(line);
+			}
+			fclose(f);
+		}
+		else
+		{
+			cout << "### setup filter from given string" << endl;
+			char delim[] = ",";
+			char *token;
+			token = strtok(szInput, delim);
+
+			while(token != NULL) 
+			{
+				cout << token << endl;
+				addToFilterList(token);
+				token = strtok(NULL, delim);
+			}
 		}
 		_isApplyFilter = true;
 	}
