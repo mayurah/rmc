@@ -1,0 +1,4 @@
+
+1. Terminate the app at the end
+2. Class identifier to json
+3. recursive childs inside the parent with condition flag from command linked
