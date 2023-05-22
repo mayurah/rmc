@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 	pool->addServer(szServerId);
 
 	// Monitor the server pool
-	Monitor mon(*pool, szClassList);	
+	Monitor mon(*pool, szClassList);
 
 	// This application uses the select() based event loop.
 	// You may choose a different implementation (e.g. Windows main loop

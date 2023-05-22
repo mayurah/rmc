@@ -93,66 +93,9 @@ void Monitor::processObjectServerSync(
 	RTRProxyManagedObjectHandleIterator pmosIterator = pmos.roots();
 	for ( pmosIterator.start(); !pmosIterator.off(); pmosIterator.forth() )
 	{
-		// pmosIterator.item() is the handle to the current mo
-		// cout << "found handle to an mo: " << endl
-		// 	<< "     instance identifier is " << pmosIterator.item().instanceId() << endl
-		// 	<< "     name is " << pmosIterator.item().name() << endl
-		// 	<< "     class identifier is " << pmosIterator.item().classId() << endl;
-
 		//now clone the current Proxy Managed Object
 		RTRProxyManagedObjectPtr pmoPtr = pmos.object(pmosIterator.item());
 		doLoopObjectList(pmoPtr);
-			
-
-		// // // Maintain a smart pointer reference to the Proxy Managed Object
-		// // // or else the object will be garbage collected.
-		// addToList(pmoPtr);
-
-		// pmoPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-		// /* If the Object is already inSync() then I will not receive
-		//  * the 'Sync' event, so I need to check it here.
-		//  */
-		// if ( pmoPtr->inSync() == RTRTRUE )
-		// {
-		// 	cout << "pmoPtr is inSync" << endl;
-		// 	processProxyManagedObjectSync(*pmoPtr);
-		// }
-		// else
-		// {
-		// 	cout << "pmoPtr is not inSync" << endl;
-		// }
-		// // find childs inside of object
-		// int iIndex = 0;
-		// RTRProxyManagedObjectHandleIterator pchildIterator = pmoPtr->childHandles();
-		// for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
-		// {
-		// 	// char strIndex[8] = {0};
-		// 	// sprintf(strIndex, "%d", iIndex);
-		// 	// cout << "***************************************** " << strIndex << endl
-		// 	// 	<< "found child handle to an root: " << endl
-		// 	// 	<< "     instance identifier is " << pchildIterator.item().instanceId() << endl
-		// 	// 	<< "     name is " << pchildIterator.item().name() << endl
-		// 	// 	<< "     class identifier is " << pchildIterator.item().classId() << endl;
-		// 	// iIndex++;
-
-		// 	// // process child object
-		// 	if (pmoPtr->hasChild(pchildIterator.item().name()))
-		// 	{
-		// 		RTRProxyManagedObjectPtr pmoPtrChild = pmoPtr->childByName(pchildIterator.item().name());
-		// 		// Maintain a smart pointer reference to the Proxy Managed Object
-		// 		// or else the object will be garbage collected.
-		// 		addToList(pmoPtrChild);
-
-		// 	// 	pmoPtrChild->addClient( (RTRProxyManagedObjectClient &) *this );
-		// 	// 	/* If the Object is already inSync() then I will not receive
-		// 	// 	* the 'Sync' event, so I need to check it here.
-		// 	// 	*/
-		// 	// 	if ( pmoPtrChild->inSync() == RTRTRUE )
-		// 	// 	{
-		// 	// 		processProxyManagedObjectSync(*pmoPtrChild);
-		// 	// 	}
-		// 	}
-		// }
 	}
 }
 
@@ -321,9 +264,19 @@ void Monitor::registerChilds()
 						RTRProxyManagedObjectPtr childPtr = parentPtr->childByName(pchildIterator.item().name());
 						if (childPtr != NULL)
 							if (!hasObjectInList(childPtr->name()))
-							{
-								cout << "### add " << pchildIterator.item().name() << " to list" << endl;
-								addToList(childPtr);
+							{								
+								if (_isApplyFilter)
+								{
+									if (isInFilterList(pchildIterator.item().instanceId().string()))
+									{
+										cout << "###F> add " << pchildIterator.item().name() << " to list" << endl;
+										addToList(childPtr);
+									}
+								}
+								else {
+									cout << "###N> add " << pchildIterator.item().name() << " to list" << endl;
+									addToList(childPtr);
+								}
 							}
 						else
 							cout << "$$$ get by child name (" << childPtr->name() << ") return NULL " << endl;
@@ -338,6 +291,7 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 {
 	_lastClassCount = 0;
 	_isObjectLoopFinished = false;
+	_variableCheckedCount = 0;
 	
 	addToList(pmoPtr);
 
@@ -383,26 +337,13 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 					cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
 					cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;
 					objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-					/* If the Object is already inSync() then I will not receive
-					* the 'Sync' event, so I need to check it here.
-					*/
-					if ( objPtr->inSync() == RTRTRUE )
-					{
-						processProxyManagedObjectSync(*objPtr);
-					}
-					return;
+					// start wait for callback funtion processProxyManagedObjectSync()
 				}
 			}
 			else
 			{
 				objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-				/* If the Object is already inSync() then I will not receive
-				* the 'Sync' event, so I need to check it here.
-				*/
-				if ( objPtr->inSync() == RTRTRUE )
-				{
-					processProxyManagedObjectSync(*objPtr);
-				}
+				// start wait for callback funtion processProxyManagedObjectSync()
 			}
 
 		}
@@ -482,19 +423,7 @@ void Monitor::processObjectServerRootAdded(
 		addToList(pmoPtr);
 
 		pmoPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-		/* If the Object is already inSync() then I will not receive
-		 * the 'Sync' event, so I need to check it here.
-		 */
-		if ( pmoPtr->inSync() == RTRTRUE )
-		{
-		  cout << "pmoPtr is inSync" << endl;
-		  processProxyManagedObjectSync(*pmoPtr);
-		}
-		else
-		{
-		  cout << "pmoPtr is not inSync" << endl;
-		}
-
+		// wait for the callback function processProxyManagedObjectSync()		
 }
 
 void Monitor::processObjectServerRootRemoved(
@@ -520,15 +449,10 @@ void Monitor::processProxyManagedObjectSync(
 	const RTRProxyManagedObject& pmo
 	)
 {
-	// cout << "pmo event: Sync" << endl;
-
 	//iterate through all Proxy Managed Variables
 	RTRProxyManagedVarHandleIterator pmvIterator = pmo.variableHandles();
 	for ( pmvIterator.start(); !pmvIterator.off(); pmvIterator.forth() )
 	{
-		// cout << "         found a variable of type   " << pmvIterator.item().typeString() << endl
-		//  	 << "                          with name " << pmvIterator.item().name() << endl;
-
 		//clone this Proxy Manged Variable
 		RTRProxyManagedVariablePtr pmvPtr = pmo.variableByName(pmvIterator.item().name());
 
@@ -539,19 +463,6 @@ void Monitor::processProxyManagedObjectSync(
 		addToList(pmvPtr);
 
 		pmvPtr->addClient(*this);
-        /* If the Variable is already inSync() then I will not receive
-		 * the 'Sync' event, so I need to check it here.
-	 	 */
-		 if ( pmvPtr->inSync() == RTRTRUE )
-		 {
-			// cout << "pmvPtr is inSync" << endl;
-			// processProxyManagedVariableSync(pmo.instanceId().string(), *pmvPtr);
-			processProxyManagedVariableSync(*pmvPtr);
-		 }
-		 else
-		 {
-			// cout << "pmvPtr is not inSync" << endl;
-	   	 }
 	}
 }
 
@@ -639,21 +550,12 @@ void Monitor::processProxyManagedVariableError(
 	cout << "pmv event: Error  @" << pmv.text() << endl;
 }
 
-// void Monitor::processProxyManagedVariableSync(
-// 		RTRString parentName, 
-// 		RTRProxyManagedVariable& pmv
-// 		)
 void Monitor::processProxyManagedVariableSync(
 		RTRProxyManagedVariable& pmv
 		)
 {
-	// cout << "pmv event: Sync" << endl;
-	// cout << "cloned mv information:   name        = " << pmv.name() << endl;
-	// cout << "                         type        = " << pmv.typeString() << endl;
-	// cout << "                         description = " << pmv.description() << endl;
-
 	cout << "{" << endl;
-	// cout << "    \"instanceId\" : " << "\"" << parentName << "\"," << endl;
+	cout << "    \"instanceId\" : " << "\"" << pmv.context().instanceId().string() << "\"," << endl;
 	cout << "    \"name\" : " << "\"" << pmv.name() << "\"," << endl;
 	cout << "    \"type\" : " << "\"" << pmv.typeString() << "\"," << endl;
 	cout << "    \"description\" : " << "\"" << pmv.description() << "\"," << endl;	
@@ -661,6 +563,14 @@ void Monitor::processProxyManagedVariableSync(
 	//show variable specific values
 	showPMVdata(pmv);
 	cout << "}," << endl;
+	
+	// check if it finished sync
+	_variableCheckedCount++;
+	if (_variableCheckedCount >= _pmvList.count())
+	{
+		exit(1);
+	}
+	// cout << "var synced count :" << _variableCheckedCount << "(" << _pmvList.count() << ")" << endl;	
 }
 
 void Monitor::processProxyManagedVariableUpdate(
