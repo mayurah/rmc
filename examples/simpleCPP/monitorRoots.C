@@ -11,6 +11,7 @@
 
 
 #include <iostream>
+#include <regex.h>
 using namespace std;
 
 #include "monitorRoots.h"
@@ -132,6 +133,20 @@ bool Monitor::isCheckListEmpty()
 	return true;
 }
 
+bool Monitor::doRegularExpression(const char *szReg, const char *szTxt)
+{
+	int rc = 0;
+	regex_t reegex;
+
+	rc = regcomp( &reegex, szReg, 0);
+	rc = regexec( &reegex, szTxt, 0, NULL, 0);
+
+	if (rc == 0)
+		return true;
+
+	return false;
+}
+
 bool Monitor::isInFilterList(RTRString objName)
 {
 	if ( !_pmoFilterList.empty() )
@@ -139,7 +154,7 @@ bool Monitor::isInFilterList(RTRString objName)
 		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
 		{
 			RTRString objItem = *(_pmoFilterList.item());
-			if (objName.isEqual(objItem) && !objName.isEmpty() && !objItem.isEmpty())
+			if (doRegularExpression(objItem.to_c(), objName.to_c()))
 			{
 				return true;
 			}
@@ -294,18 +309,8 @@ void Monitor::registerChilds()
 						if (childPtr != NULL)
 							if (!hasObjectInList(childPtr->name()))
 							{								
-								if (_isApplyFilter)
-								{
-									if (isInFilterList(pchildIterator.item().instanceId().string()))
-									{
-										cout << "###F> add " << pchildIterator.item().name() << " to list" << endl;
-										addToList(childPtr);
-									}
-								}
-								else {
-									cout << "###N> add " << pchildIterator.item().name() << " to list" << endl;
-									addToList(childPtr);
-								}
+								cout << "###N> add " << pchildIterator.item().name() << " to list" << endl;
+								addToList(childPtr);
 							}
 						else
 							cout << "$$$ get by child name (" << childPtr->name() << ") return NULL " << endl;

@@ -121,6 +121,7 @@ private:
 		bool isInFilterList(RTRString objName);
 		bool setFilterList(char *szInput);
 		void addToFilterList(char *szString);
+		bool doRegularExpression(const char *szIn, const char *szRef);
 
 
 		// some helper functions and vars
