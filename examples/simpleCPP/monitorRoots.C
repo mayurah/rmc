@@ -361,6 +361,7 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 	RTRProxyManagedObjectPtr objPtr;
 	if ( !_pmoList.empty() )
 	{
+		int iFound = 0;
 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
 		{
 			objPtr = *(_pmoList.item());
@@ -372,15 +373,18 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 					cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;
 					objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
 					// start wait for callback funtion processProxyManagedObjectSync()
+					iFound++;
 				}
 			}
 			else
 			{
 				objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-				// start wait for callback funtion processProxyManagedObjectSync()
+				// start wait for callback funtion processProxyManagedObjectSync()				
+				iFound++;
 			}
-
 		}
+		if (iFound == 0)
+			exit(1);
 		cout << endl;			
 	}
 }
