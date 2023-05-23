@@ -379,12 +379,14 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 			else
 			{
 				objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-				// start wait for callback funtion processProxyManagedObjectSync()				
+				// start wait for callback funtion processProxyManagedObjectSync()
 				iFound++;
 			}
 		}
+
 		if (iFound == 0)
 			exit(1);
+
 		cout << endl;			
 	}
 }
