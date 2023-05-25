@@ -96,7 +96,7 @@ void Monitor::processObjectServerSync(
 	{
 		//now clone the current Proxy Managed Object
 		RTRProxyManagedObjectPtr pmoPtr = pmos.object(pmosIterator.item());
-		doLoopObjectList(pmoPtr);
+		doLoopObjectList(&pmos, pmoPtr);
 	}
 }
 
@@ -154,6 +154,7 @@ bool Monitor::isInFilterList(RTRString objName)
 		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
 		{
 			RTRString objItem = *(_pmoFilterList.item());
+			cout << "[###]" << objItem << " : " << objName << endl;
 			if (doRegularExpression(objItem.to_c(), objName.to_c()))
 			{
 				return true;
@@ -286,7 +287,7 @@ bool Monitor::hasObjectInList(RTRString objName)
 	return false;
 }
 
-void Monitor::registerChilds()
+void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
 {
 	RTRLinkedList<RTRProxyManagedObjectPtr> tmpList = _pmoList;
 	if ( !tmpList.empty() )
@@ -304,16 +305,19 @@ void Monitor::registerChilds()
 				{
 					cout << ">>> " << parentPtr->name() << " has " << pchildIterator.count() << " childs" << endl;
 					for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
-					{						
-						RTRProxyManagedObjectPtr childPtr = parentPtr->childByName(pchildIterator.item().name());
+					{
+						// RTRProxyManagedObjectPtr childPtr = parentPtr->childByName(pchildIterator.item().name());
+						RTRProxyManagedObjectPtr childPtr = pmosPtr->object(pchildIterator.item());
 						if (childPtr != NULL)
-							if (!hasObjectInList(childPtr->name()))
+						{
+							if (!hasObjectInList(childPtr->instanceId().string()))
 							{								
-								cout << "###N> add " << pchildIterator.item().name() << " to list" << endl;
+								cout << "###N> add " << childPtr->instanceId() << " to list" << endl;
 								addToList(childPtr);
 							}
+						}
 						else
-							cout << "$$$ get by child name (" << childPtr->name() << ") return NULL " << endl;
+							cout << "###N> add " << childPtr->instanceId() << " return NULL" << endl;
 					}
 				}
 			}
@@ -321,7 +325,7 @@ void Monitor::registerChilds()
 	}	
 }
 
-void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
+void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos, RTRProxyManagedObjectPtr pmoPtr)
 {
 	_lastClassCount = 0;
 	_isObjectLoopFinished = false;
@@ -333,7 +337,7 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 	{
 		cout << "//////////////////////////////////////////" << endl;
 		cout << "///// start new check session" << endl;		
-		registerChilds();
+		registerChilds(pmos);
 		checkLoopEnd();
 		cout << "///// Terminating session" << endl;
 		cout << "//////////////////////////////////////////" << endl;
@@ -384,8 +388,10 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr)
 			}
 		}
 
-		if (iFound == 0)
+		if (iFound == 0) {
+			cout << "Not found any matched instanceId in filater list" << endl;
 			exit(1);
+		}
 
 		cout << endl;			
 	}

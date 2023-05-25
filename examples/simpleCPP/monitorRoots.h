@@ -103,8 +103,8 @@ private:
 // Custom added functions
 		bool _isApplyFilter;
 		// do loop in root and find all sub childs and add to instance list
-		void doLoopObjectList(RTRProxyManagedObjectPtr pmoPtr);
-		void registerChilds();
+		void doLoopObjectList(RTRProxyManagedObjectServer *pmosPtr, RTRProxyManagedObjectPtr pmoPtr);
+		void registerChilds(RTRProxyManagedObjectServer *pmosPtr);
 		bool hasAnyChildInObjectList();
 		bool hasObjectInList(RTRString name);
 
