@@ -295,10 +295,12 @@ void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
 		for ( tmpList.start(); !tmpList.off(); tmpList.forth() )
 		{
 			RTRProxyManagedObjectPtr parentPtr = *(tmpList.item());
-			if (!isInCheckList(parentPtr->name()))
+			if (!isInCheckList(parentPtr->instanceId().string()))
 			{
 				// add to check list
-				addToCheckList(parentPtr->name());
+				addToCheckList(parentPtr->instanceId().string());
+				// register parent
+				addToList(parentPtr);
 				// get all childs
 				RTRProxyManagedObjectHandleIterator pchildIterator = parentPtr->childHandles();
 				if (pchildIterator.count())
@@ -319,6 +321,10 @@ void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
 						else
 							cout << "###N> add " << childPtr->instanceId() << " return NULL" << endl;
 					}
+				}
+				else
+				{
+					cout << "<<< " << parentPtr->instanceId().string() << " has no childs" << endl;
 				}
 			}
 		}
