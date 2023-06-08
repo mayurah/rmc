@@ -15,7 +15,9 @@
 using namespace std;
 
 #include "monitorRoots.h"
+#include <unistd.h>
 
+#define DBG(x) //x
 
 Monitor::Monitor( RTRProxyManagedObjectServerPool& p, char *szClassList )
 	: _pmosp(p)
@@ -29,6 +31,8 @@ Monitor::Monitor( RTRProxyManagedObjectServerPool& p, char *szClassList )
 		processProxyManagedObjectServerAdded(_pmosp, (RTRProxyManagedObjectServer&)*iter);
 		count++;
 	}
+	this->varSyncedCnt = 0;
+	this->objSyncedCnt = 0;
 	//_pmosp.addClient(*this);
 }
 
@@ -46,16 +50,16 @@ void Monitor::processProxyManagedObjectServerAdded(
 		RTRProxyManagedObjectServer& pmos
 		)
 {
-	cout << "pmosp event: Added a pmos  @" << pmos.text() << endl;
 	// Register with each Server to receive events
+	// processObjectServerSync will be called
 	if(pmos.inSync() == RTRTRUE)
 	{
-		cout << "pmos is inSync" << endl;
+		DBG(cout << "[INFO] [SERVER] server is inSync, " << pmos.text() << endl;)
 		processObjectServerSync(pmos);
 	}
 	else
 	{
-		cout << "pmos is not inSync" << endl;
+		DBG(cout << "[INFO] [SERVER] server is not inSync " << pmos.text() << endl;)
 	}
 	pmos.addClient(*this);
 }
@@ -65,7 +69,7 @@ void Monitor::processProxyManagedObjectServerRemoved(
 		RTRProxyManagedObjectServer& pmos
 		)
 {
-	cout << "pmosp event: Removed a pmos  @" << pmos.text() << endl;
+	DBG(cout << "pmosp event: Removed a pmos  @" << pmos.text() << endl;)
 	// I know that I'm a client (since I received this event)
 	// so be sure to drop client when the Server is no longer valid.
 	pmos.dropClient(*this);
@@ -77,7 +81,7 @@ void Monitor::processObjectServerError(
 		RTRProxyManagedObjectServer& pmos
 		)
 {
-	cout << "pmos event: Error  @" << pmos.text() << endl;
+	DBG(cout << "pmos event: Error  @" << pmos.text() << endl;)
 	// Drop client since this Server is no longer valid.
 	pmos.dropClient(*this);
 }
@@ -86,8 +90,7 @@ void Monitor::processObjectServerSync(
 		RTRProxyManagedObjectServer& pmos
 		)
 {
-	cout << "pmos event: in Sync  @" << pmos.text() << endl;
-
+	DBG(cout << "[INFO] [SERVER] [CALLBACK] " << pmos.text() << endl;)
 	// Now that the Server is in Sync I can
 	// iterate through all Root Proxy Managed Objects in pmos
 	// for each root Proxy Managed Object I will become its client.
@@ -96,7 +99,9 @@ void Monitor::processObjectServerSync(
 	{
 		//now clone the current Proxy Managed Object
 		RTRProxyManagedObjectPtr pmoPtr = pmos.object(pmosIterator.item());
-		doLoopObjectList(&pmos, pmoPtr);
+		addToList(pmoPtr);
+		pmoPtr->addClient(*this);
+		// doLoopObjectList(&pmos);
 	}
 }
 
@@ -147,6 +152,28 @@ bool Monitor::doRegularExpression(const char *szReg, const char *szTxt)
 	return false;
 }
 
+bool Monitor::isParent(RTRString strChild,RTRString strParent)
+{
+	return strChild.contains(strParent);
+}
+
+bool Monitor::isParentInFilterList(RTRString objParent)
+{
+	if ( !_pmoFilterList.empty() )
+	{
+		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
+		{
+			RTRString objItem = *(_pmoFilterList.item());
+			if (objItem.contains(objParent))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
 bool Monitor::isInFilterList(RTRString objName)
 {
 	if ( !_pmoFilterList.empty() )
@@ -154,7 +181,6 @@ bool Monitor::isInFilterList(RTRString objName)
 		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
 		{
 			RTRString objItem = *(_pmoFilterList.item());
-			cout << "[###]" << objItem << " : " << objName << endl;
 			if (doRegularExpression(objItem.to_c(), objName.to_c()))
 			{
 				return true;
@@ -181,11 +207,11 @@ void Monitor::showFilterList()
 {
 	if ( !_pmoFilterList.empty() )
 	{
-		cout << "### printing filter list" << endl;
+		DBG(cout << "### printing filter list" << endl;)
 		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
 		{
 			RTRString objItem = *(_pmoFilterList.item());
-			cout << "\"" << objItem << "\", " << endl;
+			DBG(cout << "\"" << objItem << "\", " << endl;)
 		}
 	}
 }
@@ -208,7 +234,7 @@ bool Monitor::setFilterList(char *szInput)
 		if (f)
 		{
 			char line[1024];
-			cout << "### setup filter from file" << endl;			
+			DBG(cout << "### setup filter from file" << endl;)
 			while (fgets(line, sizeof(line), f)) {
 				removeChar(line, '\r');
 				removeChar(line, '\n');
@@ -221,14 +247,14 @@ bool Monitor::setFilterList(char *szInput)
 		}
 		else
 		{
-			cout << "### setup filter from given string" << endl;
+			DBG(cout << "### setup filter from given string" << endl;)
 			char delim[] = ",";
 			char *token;
 			token = strtok(szInput, delim);
 
 			while(token != NULL) 
 			{
-				cout << token << endl;
+				DBG(cout << token << endl;)
 				addToFilterList(token);
 				token = strtok(NULL, delim);
 			}
@@ -301,11 +327,19 @@ void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
 				addToCheckList(parentPtr->instanceId().string());
 				// register parent
 				addToList(parentPtr);
+				if (parentPtr->inSync() != RTRTRUE)
+				{
+					DBG(cout << "[### WARN] parent(" << parentPtr->instanceId().string() << ") is not synced" << endl;)
+				}
+				else
+				{
+					DBG(cout << "[### INFO] parent(" << parentPtr->instanceId().string() << ") is synced" << endl;)
+				}
 				// get all childs
 				RTRProxyManagedObjectHandleIterator pchildIterator = parentPtr->childHandles();
 				if (pchildIterator.count())
 				{
-					cout << ">>> " << parentPtr->name() << " has " << pchildIterator.count() << " childs" << endl;
+					DBG(cout << "[INFO] " << parentPtr->name() << " has " << pchildIterator.count() << " childs" << endl;)
 					for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
 					{
 						// RTRProxyManagedObjectPtr childPtr = parentPtr->childByName(pchildIterator.item().name());
@@ -314,57 +348,55 @@ void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
 						{
 							if (!hasObjectInList(childPtr->instanceId().string()))
 							{								
-								cout << "###N> add " << childPtr->instanceId() << " to list" << endl;
+								DBG(cout << "###N> add " << childPtr->instanceId() << " to list" << endl;)
 								addToList(childPtr);
 							}
 						}
 						else
-							cout << "###N> add " << childPtr->instanceId() << " return NULL" << endl;
+							DBG(cout << "###N> add " << childPtr->instanceId() << " return NULL" << endl);
 					}
 				}
 				else
 				{
-					cout << "<<< " << parentPtr->instanceId().string() << " has no childs" << endl;
+					DBG(cout << "<<< " << parentPtr->instanceId().string() << " has no childs" << endl);
 				}
 			}
 		}
 	}	
 }
 
-void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos, RTRProxyManagedObjectPtr pmoPtr)
+void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos)
 {
 	_lastClassCount = 0;
 	_isObjectLoopFinished = false;
-	_variableCheckedCount = 0;
-	
-	addToList(pmoPtr);
+	varSyncedCnt = 0;
 
 	while (hasAnyChildInObjectList() && !_isObjectLoopFinished)
 	{
-		cout << "//////////////////////////////////////////" << endl;
-		cout << "///// start new check session" << endl;		
+		DBG(cout << "//////////////////////////////////////////" << endl;)
+		DBG(cout << "///// start new check session" << endl;)
 		registerChilds(pmos);
 		checkLoopEnd();
-		cout << "///// Terminating session" << endl;
-		cout << "//////////////////////////////////////////" << endl;
-		cout << endl;
-		cout << endl;
-		cout << endl;
+		DBG(cout << "///// Terminating session" << endl;)
+		DBG(cout << "//////////////////////////////////////////" << endl;)
+		DBG(cout << endl;)
+		DBG(cout << endl;)
+		DBG(cout << endl;)
 	}
 
 	printObjectListInfo();
 
 	if (_isApplyFilter)
 	{
-		cout << "//////////////////////////////////////////" << endl;
-		cout << "///// Start output data (Apply filter)" << endl;
+		DBG(cout << "//////////////////////////////////////////" << endl;)
+		DBG(cout << "///// Start output data (Apply filter)" << endl;)
 		showFilterList();
-		cout << endl;
+		DBG(cout << endl;)
 	}
 	else
 	{
-		cout << "//////////////////////////////////////////" << endl;
-		cout << "///// Start output data (no filter, print all instances)" << endl;
+		DBG(cout << "//////////////////////////////////////////" << endl;)
+		DBG(cout << "///// Start output data (no filter, print all instances)" << endl;)
 	}
 
 	
@@ -379,8 +411,8 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos, RTRProxyManage
 			{
 				if (isInFilterList(objPtr->instanceId().string()))
 				{
-					cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
-					cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;
+					DBG(cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;)
+					DBG(cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;)
 					objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
 					// start wait for callback funtion processProxyManagedObjectSync()
 					iFound++;
@@ -395,11 +427,11 @@ void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos, RTRProxyManage
 		}
 
 		if (iFound == 0) {
-			cout << "Not found any matched instanceId in filater list" << endl;
+			DBG(cout << "Not found any matched instanceId in filater list" << endl;)
 			exit(1);
 		}
 
-		cout << endl;			
+		DBG(cout << endl;)
 	}
 }
 
@@ -411,11 +443,11 @@ void Monitor::checkLoopEnd()
 		if (_lastClassCount != _pmoList.count())
 		{
 			_lastClassCount = _pmoList.count();
-			cout << endl;			
+			DBG(cout << endl;)
 		}
 		else
 		{
-			cout << "### No more child " << endl;
+			DBG(cout << "### No more child " << endl;)
 			_isObjectLoopFinished = true;
 		}
 	}
@@ -426,7 +458,7 @@ void Monitor::printObjectListInfo()
 	RTRProxyManagedObjectPtr objPtr;
 	if ( !_pmoList.empty() )
 	{
-		cout << "### " << _lastClassCount << " classes in list: ";
+		DBG(cout << "### " << _lastClassCount << " classes in list: ";)
 #if PRINT_SEPERATE		
 		cout << "*** Instance Id List" << endl;
 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
@@ -447,16 +479,16 @@ void Monitor::printObjectListInfo()
 			cout << "\"" << objPtr->classId() << "\", " << endl;
 		}
 #else
-		cout << "*** Instance List" << endl;
+		DBG(cout << "*** Instance List" << endl;)
 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
 		{
 			objPtr = *(_pmoList.item());			
-			cout << "\"" << objPtr->instanceId() << "\", ";
-			cout << "\"" << objPtr->name() << "\", ";
-			cout << "\"" << objPtr->classId() << "\", " << endl;
+			DBG(cout << "\"" << objPtr->instanceId() << "\", ";)
+			DBG(cout << "\"" << objPtr->name() << "\", ";)
+			DBG(cout << "\"" << objPtr->classId() << "\", " << endl;)
 		}
 #endif
-		cout << endl;			
+		DBG(cout << endl;)
 	}
 }
 
@@ -465,17 +497,17 @@ void Monitor::processObjectServerRootAdded(
 		const RTRProxyManagedObjectHandle& pmoH
 		)
 {
-	    cout <<"pmos event: Added a root on pmos  @" << pmos.text() << endl;
+	DBG(cout <<"pmos event: Added a root on pmos  @" << pmos.text() << endl;)
 
-        //now clone the current Proxy Managed Object
-		RTRProxyManagedObjectPtr pmoPtr = pmos.object(pmoH);
+	//now clone the current Proxy Managed Object
+	RTRProxyManagedObjectPtr pmoPtr = pmos.object(pmoH);
 
-		// Maintain a smart pointer reference to the Proxy Managed Object
-		// or else the object will be garbage collected.
-		addToList(pmoPtr);
+	// Maintain a smart pointer reference to the Proxy Managed Object
+	// or else the object will be garbage collected.
+	addToList(pmoPtr);
 
-		pmoPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-		// wait for the callback function processProxyManagedObjectSync()		
+	pmoPtr->addClient( (RTRProxyManagedObjectClient &) *this );
+	// wait for the callback function processProxyManagedObjectSync()		
 }
 
 void Monitor::processObjectServerRootRemoved(
@@ -483,7 +515,7 @@ void Monitor::processObjectServerRootRemoved(
 		const RTRProxyManagedObjectHandle& pmoh
 		)
 {
-	cout <<"pmos event: Removed a root from pmos  @" << pmos.text() << endl;
+	DBG(cout <<"pmos event: Removed a root from pmos  @" << pmos.text() << endl;)
 }
 
 
@@ -494,27 +526,49 @@ void Monitor::processProxyManagedObjectError(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: Error  @" << pmo.text() << endl;
+	DBG(cout << "pmo event: Error  @" << pmo.text() << endl;)
 }
 
 void Monitor::processProxyManagedObjectSync(
 	const RTRProxyManagedObject& pmo
 	)
 {
-	//iterate through all Proxy Managed Variables
-	RTRProxyManagedVarHandleIterator pmvIterator = pmo.variableHandles();
-	for ( pmvIterator.start(); !pmvIterator.off(); pmvIterator.forth() )
+	DBG(cout << "[INFO] [OBJECT] [CALLBACK] " << pmo.instanceId().string() << " is synced" << endl;)
+	// check if the object is the parent of given class
+	// if no should not register its children, if yes register all its child but not variables
+	// if (isParentInFilterList(pmo.instanceId().string()))
 	{
-		//clone this Proxy Manged Variable
-		RTRProxyManagedVariablePtr pmvPtr = pmo.variableByName(pmvIterator.item().name());
+		DBG(cout << "[INFO] [OBJECT] [CALLBACK] object(" << pmo.instanceId().string() << ") need to be synced as parent" << endl;)
+		RTRProxyManagedObjectHandleIterator pchildIterator = pmo.childHandles();
+		if (pchildIterator.count())
+		{
+			DBG(cout << "[INFO] [OBJECT] [CALLBACK] " << pmo.instanceId().string() << " has " << pchildIterator.count() << " childs" << endl;)
+			for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
+			{
+				RTRProxyManagedObjectPtr childPtr = pmo.childByName(pchildIterator.item().name());
+				childPtr->addClient(*this);
+				addToList(childPtr);
+			}
+		}
+	}
+	
+	if (isInFilterList(pmo.instanceId().string()))
+	{
+		//iterate through all Proxy Managed Variables
+		RTRProxyManagedVarHandleIterator pmvIterator = pmo.variableHandles();
+		for ( pmvIterator.start(); !pmvIterator.off(); pmvIterator.forth() )
+		{
+			//clone this Proxy Manged Variable
+			RTRProxyManagedVariablePtr pmvPtr = pmo.variableByName(pmvIterator.item().name());
 
-		if (pmvPtr->error())
-			return;
-		
-		//add to pmvList (so there will be no garabage collection with pmvPtr)
-		addToList(pmvPtr);
+			if (pmvPtr->error())
+				return;
+			
+			//add to pmvList (so there will be no garabage collection with pmvPtr)
+			addToList(pmvPtr);			
 
-		pmvPtr->addClient(*this);
+			pmvPtr->addClient(*this);
+		}		
 	}
 }
 
@@ -522,42 +576,42 @@ void Monitor::processProxyManagedObjectDeleted(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: Deleted" << endl;
+	DBG(cout << "pmo event: Deleted" << endl;)
 }
 
 void Monitor::processProxyManagedObjectInfo(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: Info   @" << pmo.text() << endl;
+	DBG(cout << "pmo event: Info   @" << pmo.text() << endl;)
 }
 
 void Monitor::processProxyManagedObjectInService(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: InService" << endl;
+	DBG(cout << "pmo event: InService" << endl;)
 }
 
 void Monitor::processProxyManagedObjectRecovering(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: Recovering" << endl;
+	DBG(cout << "pmo event: Recovering" << endl;)
 }
 
 void Monitor::processProxyManagedObjectWaiting(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: Waiting" << endl;
+	DBG(cout << "pmo event: Waiting" << endl;)
 }
 
 void Monitor::processProxyManagedObjectDead(
 		const RTRProxyManagedObject& pmo
 		)
 {
-	cout << "pmo event: Dead" << endl;
+	DBG(cout << "pmo event: Dead" << endl;)
 }
 
 void Monitor::processProxyManagedObjectChildAdded(
@@ -565,7 +619,7 @@ void Monitor::processProxyManagedObjectChildAdded(
 		const RTRProxyManagedObjectHandle& pmoh
 		)
 {
-	cout << "pmo event: ChildAdded" << endl;
+	DBG(cout << "pmo event: ChildAdded" << endl;)
 }
 
 void Monitor::processProxyManagedObjectChildRemoved(
@@ -573,7 +627,7 @@ void Monitor::processProxyManagedObjectChildRemoved(
 		const RTRProxyManagedObjectHandle& pmoh
 		)
 {
-	cout << "pmo event: ChildRemoved" << endl;
+	DBG(cout << "pmo event: ChildRemoved" << endl;)
 }
 
 void Monitor::processProxyManagedObjectVariableAdded(
@@ -581,7 +635,7 @@ void Monitor::processProxyManagedObjectVariableAdded(
 		const RTRProxyManagedVariableHandle& pmoh
 		)
 {
-	cout << "pmo event: VariableAdded" << endl;
+	DBG(cout << "pmo event: VariableAdded" << endl;)
 }
 
 void Monitor::processProxyManagedObjectVariableRemoved(
@@ -589,7 +643,7 @@ void Monitor::processProxyManagedObjectVariableRemoved(
 		const RTRProxyManagedVariableHandle& pmoh
 		)
 {
-	cout << "pmo event: VariableRemoved" << endl;
+	DBG(cout << "pmo event: VariableRemoved" << endl;)
 }
 
 
@@ -599,7 +653,7 @@ void Monitor::processProxyManagedVariableError(
 		RTRProxyManagedVariable& pmv
 		)
 {
-	cout << "pmv event: Error  @" << pmv.text() << endl;
+	DBG(cout << "pmv event: Error  @" << pmv.text() << endl;)
 }
 
 void Monitor::processProxyManagedVariableSync(
@@ -617,30 +671,30 @@ void Monitor::processProxyManagedVariableSync(
 	cout << "}," << endl;
 	
 	// check if it finished sync
-	_variableCheckedCount++;
-	if (_variableCheckedCount >= _pmvList.count())
+	varSyncedCnt++;
+	if (varSyncedCnt >= _pmvList.count())
 	{
 		exit(1);
 	}
-	// cout << "var synced count :" << _variableCheckedCount << "(" << _pmvList.count() << ")" << endl;	
+	// cout << "var synced count :" << varSyncedCnt << "(" << _pmvList.count() << ")" << endl;	
 }
 
 void Monitor::processProxyManagedVariableUpdate(
 		RTRProxyManagedVariable& pmv
 		)
 {
-	cout << "pmv event: Update" << endl;
+	DBG(cout << "pmv event: Update" << endl;)
 
-	cout << "new value of " << pmv.name()
+	DBG(cout << "new value of " << pmv.name()
 	     << " (with instance Id " << pmv.context().instanceId() << ") is " 
-	     << pmv.toString() << endl;
+	     << pmv.toString() << endl;)
 }
 
 void Monitor::processProxyManagedVariableDeleted(
 		RTRProxyManagedVariable& pmv
 		)
 {
-	cout << "pmv event: Deleted" << endl;
+	DBG(cout << "pmv event: Deleted" << endl;)
 	pmv.dropClient(*this);
 }
 
@@ -697,11 +751,11 @@ void Monitor::showPMVdata(
 			break;
 
 		case RTRProxyManagedVariableHandle::Invalid:
-			cout << "Invalid Proxy Managed Variable" << endl;
+			DBG(cout << "Invalid Proxy Managed Variable" << endl;)
 			break;
 
 		default:
-			cout << "Unknown Proxy Managed Variable" << endl;
+			DBG(cout << "Unknown Proxy Managed Variable" << endl);
 	}
 }
 

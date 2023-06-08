@@ -103,7 +103,7 @@ private:
 // Custom added functions
 		bool _isApplyFilter;
 		// do loop in root and find all sub childs and add to instance list
-		void doLoopObjectList(RTRProxyManagedObjectServer *pmosPtr, RTRProxyManagedObjectPtr pmoPtr);
+		void doLoopObjectList(RTRProxyManagedObjectServer *pmosPtr);
 		void registerChilds(RTRProxyManagedObjectServer *pmosPtr);
 		bool hasAnyChildInObjectList();
 		bool hasObjectInList(RTRString name);
@@ -122,6 +122,8 @@ private:
 		bool setFilterList(char *szInput);
 		void addToFilterList(char *szString);
 		bool doRegularExpression(const char *szIn, const char *szRef);
+		bool isParent(RTRString strChild,RTRString strParent);
+		bool isParentInFilterList(RTRString objName);
 
 
 		// some helper functions and vars
@@ -131,8 +133,9 @@ private:
 		void checkLoopEnd();
 		void removeChar(char* str, char c);
 
-		// terminate
-		int _variableCheckedCount;
+		// for terminate
+		int objSyncedCnt;
+		int varSyncedCnt;
 		
 
 // Utilities
