@@ -546,6 +546,22 @@ void Monitor::processProxyManagedObjectSync(
 			for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
 			{
 				RTRProxyManagedObjectPtr childPtr = pmo.childByName(pchildIterator.item().name());
+				DBG(
+					char strLeft[64];
+					char strCenter[64];
+					char strRight[64];
+					sprintf(strLeft, "(%s)", pmo.instanceId().string().to_c());
+					sprintf(strCenter, "(%s)", pchildIterator.item().name().to_c());
+					sprintf(strRight, "(%s)", childPtr->instanceId().string().to_c());
+					cout.width(50);
+					cout << left << strLeft;
+					cout.width(50);
+					cout << left << strCenter;
+					cout.width(50);
+					cout << left << strRight;
+					cout << endl;
+				)
+
 				childPtr->addClient(*this);
 				addToList(childPtr);
 			}
@@ -664,7 +680,7 @@ void Monitor::processProxyManagedVariableSync(
 	cout << "    \"instanceId\" : " << "\"" << pmv.context().instanceId().string() << "\"," << endl;
 	cout << "    \"name\" : " << "\"" << pmv.name() << "\"," << endl;
 	cout << "    \"type\" : " << "\"" << pmv.typeString() << "\"," << endl;
-	cout << "    \"description\" : " << "\"" << pmv.description() << "\"," << endl;	
+	cout << "    \"description\" : " << "\"" << pmv.description() << "\"," << endl;		
 
 	//show variable specific values
 	showPMVdata(pmv);
@@ -838,6 +854,7 @@ void Monitor::showGauge_data(RTRProxyManagedVariable& pmv)
 	cout << "    \"max_value\" : \"" << pmg.maxValue() << "\"," << endl;
 	cout << "    \"low_water_mark\" : \"" << pmg.lowWaterMark() << "\"," << endl;
 	cout << "    \"high_water_mark\" : \"" << pmg.highWaterMark() << "\"," << endl;
+	cout << "    \"value\" : \"" << pmg.value() << "\"," << endl;
 }
 
 void Monitor::showGaugeConfig_data(RTRProxyManagedVariable& pmv)
