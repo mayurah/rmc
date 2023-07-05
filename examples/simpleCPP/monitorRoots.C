@@ -17,7 +17,7 @@ using namespace std;
 #include "monitorRoots.h"
 #include <unistd.h>
 
-#define DBG(x) //x
+#define DBG(x) x
 
 Monitor::Monitor( RTRProxyManagedObjectServerPool& p, char *szClassList )
 	: _pmosp(p)
@@ -105,38 +105,38 @@ void Monitor::processObjectServerSync(
 	}
 }
 
-bool Monitor::hasAnyChildInObjectList()
-{
-	RTRProxyManagedObjectPtr objPtr;
+// bool Monitor::hasAnyChildInObjectList()
+// {
+// 	RTRProxyManagedObjectPtr objPtr;
 
-	if ( !_pmoList.empty() )
-	{
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());
-			RTRProxyManagedObjectHandleIterator pchildIterator = objPtr->childHandles();
-			if (pchildIterator.count())
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
+// 	if ( !_pmoList.empty() )
+// 	{
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());
+// 			RTRProxyManagedObjectHandleIterator pchildIterator = objPtr->childHandles();
+// 			if (pchildIterator.count())
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
+// 	return false;
+// }
 
-void Monitor::clearCheckList()
-{
-	_pmoRegisteredCheckedList.deleteContents();
-}
-bool Monitor::isCheckListEmpty()
-{
-	if (_pmoRegisteredCheckedList.count())
-	{
-		return false;
-	}
+// void Monitor::clearCheckList()
+// {
+// 	_pmoRegisteredCheckedList.deleteContents();
+// }
+// bool Monitor::isCheckListEmpty()
+// {
+// 	if (_pmoRegisteredCheckedList.count())
+// 	{
+// 		return false;
+// 	}
 
-	return true;
-}
+// 	return true;
+// }
 
 bool Monitor::doRegularExpression(const char *szReg, const char *szTxt)
 {
@@ -152,27 +152,27 @@ bool Monitor::doRegularExpression(const char *szReg, const char *szTxt)
 	return false;
 }
 
-bool Monitor::isParent(RTRString strChild,RTRString strParent)
-{
-	return strChild.contains(strParent);
-}
+// bool Monitor::isParent(RTRString strChild,RTRString strParent)
+// {
+// 	return strChild.contains(strParent);
+// }
 
-bool Monitor::isParentInFilterList(RTRString objParent)
-{
-	if ( !_pmoFilterList.empty() )
-	{
-		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
-		{
-			RTRString objItem = *(_pmoFilterList.item());
-			if (objItem.contains(objParent))
-			{
-				return true;
-			}
-		}
-	}
+// bool Monitor::isParentInFilterList(RTRString objParent)
+// {
+// 	if ( !_pmoFilterList.empty() )
+// 	{
+// 		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
+// 		{
+// 			RTRString objItem = *(_pmoFilterList.item());
+// 			if (objItem.contains(objParent))
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
 
-	return false;
-}
+// 	return false;
+// }
 
 bool Monitor::isInFilterList(RTRString objName)
 {
@@ -203,18 +203,18 @@ void Monitor::addToFilterList(char *szClass)
 	}
 }
 
-void Monitor::showFilterList()
-{
-	if ( !_pmoFilterList.empty() )
-	{
-		DBG(cout << "### printing filter list" << endl;)
-		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
-		{
-			RTRString objItem = *(_pmoFilterList.item());
-			DBG(cout << "\"" << objItem << "\", " << endl;)
-		}
-	}
-}
+// void Monitor::showFilterList()
+// {
+// 	if ( !_pmoFilterList.empty() )
+// 	{
+// 		DBG(cout << "### printing filter list" << endl;)
+// 		for ( _pmoFilterList.start(); !_pmoFilterList.off(); _pmoFilterList.forth() )
+// 		{
+// 			RTRString objItem = *(_pmoFilterList.item());
+// 			DBG(cout << "\"" << objItem << "\", " << endl;)
+// 		}
+// 	}
+// }
 
 void Monitor::removeChar(char* str, char c) {
     char *pr = str, *pw = str;
@@ -267,230 +267,230 @@ bool Monitor::setFilterList(char *szInput)
 	}
 }
 
-bool Monitor::isInCheckList(RTRString objName)
-{
-	if ( !_pmoRegisteredCheckedList.empty() )
-	{
-		for ( _pmoRegisteredCheckedList.start(); !_pmoRegisteredCheckedList.off(); _pmoRegisteredCheckedList.forth() )
-		{
-			RTRString objItem = *(_pmoRegisteredCheckedList.item());
+// bool Monitor::isInCheckList(RTRString objName)
+// {
+// 	if ( !_pmoRegisteredCheckedList.empty() )
+// 	{
+// 		for ( _pmoRegisteredCheckedList.start(); !_pmoRegisteredCheckedList.off(); _pmoRegisteredCheckedList.forth() )
+// 		{
+// 			RTRString objItem = *(_pmoRegisteredCheckedList.item());
 			
-			if (objName.isEqual(objItem) && !objName.isEmpty() && !objItem.isEmpty())
-			{
-				return true;
-			}
-		}
-	}
+// 			if (objName.isEqual(objItem) && !objName.isEmpty() && !objItem.isEmpty())
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
 
-	return false;
-}
+// 	return false;
+// }
 
-void Monitor::addToCheckList(RTRString objName)
-{
-	RTRString *nPtr =  new RTRString;
-	*nPtr = objName;
+// void Monitor::addToCheckList(RTRString objName)
+// {
+// 	RTRString *nPtr =  new RTRString;
+// 	*nPtr = objName;
 
-	_pmoRegisteredCheckedList.start();
-	_pmoRegisteredCheckedList.addRight( nPtr );
-}
+// 	_pmoRegisteredCheckedList.start();
+// 	_pmoRegisteredCheckedList.addRight( nPtr );
+// }
 
-bool Monitor::hasObjectInList(RTRString objName)
-{	
-	RTRProxyManagedObjectPtr objPtr;
+// bool Monitor::hasObjectInList(RTRString objName)
+// {	
+// 	RTRProxyManagedObjectPtr objPtr;
 
-	if ( !_pmoList.empty() )
-	{
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());
-			RTRString itemName = objPtr->name();
-			if (objName.isEqual(itemName))
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
+// 	if ( !_pmoList.empty() )
+// 	{
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());
+// 			RTRString itemName = objPtr->name();
+// 			if (objName.isEqual(itemName))
+// 			{
+// 				return true;
+// 			}
+// 		}
+// 	}
+// 	return false;
+// }
 
-void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
-{
-	RTRLinkedList<RTRProxyManagedObjectPtr> tmpList = _pmoList;
-	if ( !tmpList.empty() )
-	{
-		for ( tmpList.start(); !tmpList.off(); tmpList.forth() )
-		{
-			RTRProxyManagedObjectPtr parentPtr = *(tmpList.item());
-			if (!isInCheckList(parentPtr->instanceId().string()))
-			{
-				// add to check list
-				addToCheckList(parentPtr->instanceId().string());
-				// register parent
-				addToList(parentPtr);
-				if (parentPtr->inSync() != RTRTRUE)
-				{
-					DBG(cout << "[### WARN] parent(" << parentPtr->instanceId().string() << ") is not synced" << endl;)
-				}
-				else
-				{
-					DBG(cout << "[### INFO] parent(" << parentPtr->instanceId().string() << ") is synced" << endl;)
-				}
-				// get all childs
-				RTRProxyManagedObjectHandleIterator pchildIterator = parentPtr->childHandles();
-				if (pchildIterator.count())
-				{
-					DBG(cout << "[INFO] " << parentPtr->name() << " has " << pchildIterator.count() << " childs" << endl;)
-					for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
-					{
-						// RTRProxyManagedObjectPtr childPtr = parentPtr->childByName(pchildIterator.item().name());
-						RTRProxyManagedObjectPtr childPtr = pmosPtr->object(pchildIterator.item());
-						if (childPtr != NULL)
-						{
-							if (!hasObjectInList(childPtr->instanceId().string()))
-							{								
-								DBG(cout << "###N> add " << childPtr->instanceId() << " to list" << endl;)
-								addToList(childPtr);
-							}
-						}
-						else
-							DBG(cout << "###N> add " << childPtr->instanceId() << " return NULL" << endl);
-					}
-				}
-				else
-				{
-					DBG(cout << "<<< " << parentPtr->instanceId().string() << " has no childs" << endl);
-				}
-			}
-		}
-	}	
-}
+// void Monitor::registerChilds(RTRProxyManagedObjectServer *pmosPtr)
+// {
+// 	RTRLinkedList<RTRProxyManagedObjectPtr> tmpList = _pmoList;
+// 	if ( !tmpList.empty() )
+// 	{
+// 		for ( tmpList.start(); !tmpList.off(); tmpList.forth() )
+// 		{
+// 			RTRProxyManagedObjectPtr parentPtr = *(tmpList.item());
+// 			if (!isInCheckList(parentPtr->instanceId().string()))
+// 			{
+// 				// add to check list
+// 				addToCheckList(parentPtr->instanceId().string());
+// 				// register parent
+// 				addToList(parentPtr);
+// 				if (parentPtr->inSync() != RTRTRUE)
+// 				{
+// 					DBG(cout << "[### WARN] parent(" << parentPtr->instanceId().string() << ") is not synced" << endl;)
+// 				}
+// 				else
+// 				{
+// 					DBG(cout << "[### INFO] parent(" << parentPtr->instanceId().string() << ") is synced" << endl;)
+// 				}
+// 				// get all childs
+// 				RTRProxyManagedObjectHandleIterator pchildIterator = parentPtr->childHandles();
+// 				if (pchildIterator.count())
+// 				{
+// 					DBG(cout << "[INFO] " << parentPtr->name() << " has " << pchildIterator.count() << " childs" << endl;)
+// 					for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
+// 					{
+// 						// RTRProxyManagedObjectPtr childPtr = parentPtr->childByName(pchildIterator.item().name());
+// 						RTRProxyManagedObjectPtr childPtr = pmosPtr->object(pchildIterator.item());
+// 						if (childPtr != NULL)
+// 						{
+// 							if (!hasObjectInList(childPtr->instanceId().string()))
+// 							{								
+// 								DBG(cout << "###N> add " << childPtr->instanceId() << " to list" << endl;)
+// 								addToList(childPtr);
+// 							}
+// 						}
+// 						else
+// 							DBG(cout << "###N> add " << childPtr->instanceId() << " return NULL" << endl);
+// 					}
+// 				}
+// 				else
+// 				{
+// 					DBG(cout << "<<< " << parentPtr->instanceId().string() << " has no childs" << endl);
+// 				}
+// 			}
+// 		}
+// 	}	
+// }
 
-void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos)
-{
-	_lastClassCount = 0;
-	_isObjectLoopFinished = false;
-	varSyncedCnt = 0;
+// void Monitor::doLoopObjectList(RTRProxyManagedObjectServer *pmos)
+// {
+// 	_lastClassCount = 0;
+// 	_isObjectLoopFinished = false;
+// 	varSyncedCnt = 0;
 
-	while (hasAnyChildInObjectList() && !_isObjectLoopFinished)
-	{
-		DBG(cout << "//////////////////////////////////////////" << endl;)
-		DBG(cout << "///// start new check session" << endl;)
-		registerChilds(pmos);
-		checkLoopEnd();
-		DBG(cout << "///// Terminating session" << endl;)
-		DBG(cout << "//////////////////////////////////////////" << endl;)
-		DBG(cout << endl;)
-		DBG(cout << endl;)
-		DBG(cout << endl;)
-	}
+// 	while (hasAnyChildInObjectList() && !_isObjectLoopFinished)
+// 	{
+// 		DBG(cout << "//////////////////////////////////////////" << endl;)
+// 		DBG(cout << "///// start new check session" << endl;)
+// 		registerChilds(pmos);
+// 		checkLoopEnd();
+// 		DBG(cout << "///// Terminating session" << endl;)
+// 		DBG(cout << "//////////////////////////////////////////" << endl;)
+// 		DBG(cout << endl;)
+// 		DBG(cout << endl;)
+// 		DBG(cout << endl;)
+// 	}
 
-	printObjectListInfo();
+// 	printObjectListInfo();
 
-	if (_isApplyFilter)
-	{
-		DBG(cout << "//////////////////////////////////////////" << endl;)
-		DBG(cout << "///// Start output data (Apply filter)" << endl;)
-		showFilterList();
-		DBG(cout << endl;)
-	}
-	else
-	{
-		DBG(cout << "//////////////////////////////////////////" << endl;)
-		DBG(cout << "///// Start output data (no filter, print all instances)" << endl;)
-	}
+// 	if (_isApplyFilter)
+// 	{
+// 		DBG(cout << "//////////////////////////////////////////" << endl;)
+// 		DBG(cout << "///// Start output data (Apply filter)" << endl;)
+// 		showFilterList();
+// 		DBG(cout << endl;)
+// 	}
+// 	else
+// 	{
+// 		DBG(cout << "//////////////////////////////////////////" << endl;)
+// 		DBG(cout << "///// Start output data (no filter, print all instances)" << endl;)
+// 	}
 
 	
-	RTRProxyManagedObjectPtr objPtr;
-	if ( !_pmoList.empty() )
-	{
-		int iFound = 0;
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());
-			if (_isApplyFilter)
-			{
-				if (isInFilterList(objPtr->instanceId().string()))
-				{
-					DBG(cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;)
-					DBG(cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;)
-					objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-					// start wait for callback funtion processProxyManagedObjectSync()
-					iFound++;
-				}
-			}
-			else
-			{
-				objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
-				// start wait for callback funtion processProxyManagedObjectSync()
-				iFound++;
-			}
-		}
+// 	RTRProxyManagedObjectPtr objPtr;
+// 	if ( !_pmoList.empty() )
+// 	{
+// 		int iFound = 0;
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());
+// 			if (_isApplyFilter)
+// 			{
+// 				if (isInFilterList(objPtr->instanceId().string()))
+// 				{
+// 					DBG(cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;)
+// 					DBG(cout << "!!!!! Found " << objPtr->instanceId().string() << " in filter list" << endl;)
+// 					objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
+// 					// start wait for callback funtion processProxyManagedObjectSync()
+// 					iFound++;
+// 				}
+// 			}
+// 			else
+// 			{
+// 				objPtr->addClient( (RTRProxyManagedObjectClient &) *this );
+// 				// start wait for callback funtion processProxyManagedObjectSync()
+// 				iFound++;
+// 			}
+// 		}
 
-		if (iFound == 0) {
-			DBG(cout << "Not found any matched instanceId in filater list" << endl;)
-			exit(1);
-		}
+// 		if (iFound == 0) {
+// 			DBG(cout << "Not found any matched instanceId in filater list" << endl;)
+// 			exit(1);
+// 		}
 
-		DBG(cout << endl;)
-	}
-}
+// 		DBG(cout << endl;)
+// 	}
+// }
 
-void Monitor::checkLoopEnd()
-{
-	RTRProxyManagedObjectPtr objPtr;
-	if ( !_pmoList.empty() )
-	{
-		if (_lastClassCount != _pmoList.count())
-		{
-			_lastClassCount = _pmoList.count();
-			DBG(cout << endl;)
-		}
-		else
-		{
-			DBG(cout << "### No more child " << endl;)
-			_isObjectLoopFinished = true;
-		}
-	}
-}
-#define PRINT_SEPERATE 0
-void Monitor::printObjectListInfo()
-{
-	RTRProxyManagedObjectPtr objPtr;
-	if ( !_pmoList.empty() )
-	{
-		DBG(cout << "### " << _lastClassCount << " classes in list: ";)
-#if PRINT_SEPERATE		
-		cout << "*** Instance Id List" << endl;
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());			
-			cout << "\"" << objPtr->instanceId() << "\", " << endl;
-		}
-		cout << "*** Name List" << endl;
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());			
-			cout << "\"" << objPtr->name() << "\", " << endl;
-		}
-		cout << "*** Class Id List" << endl;
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());			
-			cout << "\"" << objPtr->classId() << "\", " << endl;
-		}
-#else
-		DBG(cout << "*** Instance List" << endl;)
-		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
-		{
-			objPtr = *(_pmoList.item());			
-			DBG(cout << "\"" << objPtr->instanceId() << "\", ";)
-			DBG(cout << "\"" << objPtr->name() << "\", ";)
-			DBG(cout << "\"" << objPtr->classId() << "\", " << endl;)
-		}
-#endif
-		DBG(cout << endl;)
-	}
-}
+// void Monitor::checkLoopEnd()
+// {
+// 	RTRProxyManagedObjectPtr objPtr;
+// 	if ( !_pmoList.empty() )
+// 	{
+// 		if (_lastClassCount != _pmoList.count())
+// 		{
+// 			_lastClassCount = _pmoList.count();
+// 			DBG(cout << endl;)
+// 		}
+// 		else
+// 		{
+// 			DBG(cout << "### No more child " << endl;)
+// 			_isObjectLoopFinished = true;
+// 		}
+// 	}
+// }
+// #define PRINT_SEPERATE 0
+// void Monitor::printObjectListInfo()
+// {
+// 	RTRProxyManagedObjectPtr objPtr;
+// 	if ( !_pmoList.empty() )
+// 	{
+// 		DBG(cout << "### " << _lastClassCount << " classes in list: ";)
+// #if PRINT_SEPERATE		
+// 		cout << "*** Instance Id List" << endl;
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());			
+// 			cout << "\"" << objPtr->instanceId() << "\", " << endl;
+// 		}
+// 		cout << "*** Name List" << endl;
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());			
+// 			cout << "\"" << objPtr->name() << "\", " << endl;
+// 		}
+// 		cout << "*** Class Id List" << endl;
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());			
+// 			cout << "\"" << objPtr->classId() << "\", " << endl;
+// 		}
+// #else
+// 		DBG(cout << "*** Instance List" << endl;)
+// 		for ( _pmoList.start(); !_pmoList.off(); _pmoList.forth() )
+// 		{
+// 			objPtr = *(_pmoList.item());			
+// 			DBG(cout << "\"" << objPtr->instanceId() << "\", ";)
+// 			DBG(cout << "\"" << objPtr->name() << "\", ";)
+// 			DBG(cout << "\"" << objPtr->classId() << "\", " << endl;)
+// 		}
+// #endif
+// 		DBG(cout << endl;)
+// 	}
+// }
 
 void Monitor::processObjectServerRootAdded(
 		RTRProxyManagedObjectServer& pmos,
@@ -636,6 +636,62 @@ void Monitor::processProxyManagedObjectChildAdded(
 		)
 {
 	DBG(cout << "pmo event: ChildAdded" << endl;)
+
+	// DBG(cout << "[INFO] [OBJECT] [CALLBACK] " << pmo.instanceId().string() << " is synced" << endl;)
+	// check if the object is the parent of given class
+	// if no should not register its children, if yes register all its child but not variables
+	// if (isParentInFilterList(pmo.instanceId().string()))
+	{
+		DBG(cout << "[INFO] [OBJECT] [CALLBACK] object(" << pmo.instanceId().string() << ") need to be synced as parent" << endl;)
+		RTRProxyManagedObjectHandleIterator pchildIterator = pmo.childHandles();
+		if (pchildIterator.count())
+		{
+			DBG(cout << "[INFO] [OBJECT] [CALLBACK] " << pmo.instanceId().string() << " has " << pchildIterator.count() << " childs" << endl;)
+			for ( pchildIterator.start(); !pchildIterator.off(); pchildIterator.forth() )
+			{
+				RTRProxyManagedObjectPtr childPtr = pmo.childByName(pchildIterator.item().name());
+				DBG(
+					char strLeft[64];
+					char strCenter[64];
+					char strRight[64];
+					sprintf(strLeft, "(%s)", pmo.instanceId().string().to_c());
+					sprintf(strCenter, "(%s)", pchildIterator.item().name().to_c());
+					sprintf(strRight, "(%s)", childPtr->instanceId().string().to_c());
+					cout.width(50);
+					cout << left << strLeft;
+					cout.width(50);
+					cout << left << strCenter;
+					cout.width(50);
+					cout << left << strRight;
+					cout << endl;
+				)
+
+				childPtr->addClient(*this);
+				addToList(childPtr);
+			}
+		}
+	}
+	
+	if (isInFilterList(pmo.instanceId().string()))
+	{
+		//iterate through all Proxy Managed Variables
+		RTRProxyManagedVarHandleIterator pmvIterator = pmo.variableHandles();
+		for ( pmvIterator.start(); !pmvIterator.off(); pmvIterator.forth() )
+		{
+			//clone this Proxy Manged Variable
+			RTRProxyManagedVariablePtr pmvPtr = pmo.variableByName(pmvIterator.item().name());
+
+			if (pmvPtr->error())
+				return;
+			
+			//add to pmvList (so there will be no garabage collection with pmvPtr)
+			addToList(pmvPtr);			
+
+			pmvPtr->addClient(*this);
+		}		
+	}
+
+
 }
 
 void Monitor::processProxyManagedObjectChildRemoved(
